@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projeto_Pedido {
-	public partial class Form1: Form {
-		public Form1() {
+namespace Projeto_Pedido.Forms {
+	public partial class FormEmpresa: Form {
+		public FormEmpresa() {
 			InitializeComponent();
 		}
 	}

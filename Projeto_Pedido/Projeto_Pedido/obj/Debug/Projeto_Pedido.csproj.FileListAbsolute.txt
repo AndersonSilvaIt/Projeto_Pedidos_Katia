@@ -2,9 +2,14 @@ C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedi
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\bin\Debug\Projeto_Pedido.exe
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\bin\Debug\Projeto_Pedido.pdb
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.csprojAssemblyReference.cache
-C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.Form1.resources
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.Properties.Resources.resources
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.csproj.GenerateResource.cache
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.csproj.CoreCompileInputs.cache
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.exe
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.pdb
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.Forms.FormEmpresa.resources
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.FormMenu.resources
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.csproj.CopyComplete
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.Forms.FormListProduto.resources
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido\obj\Debug\Projeto_Pedido.Forms.Produto.FormCadProduto.resources
