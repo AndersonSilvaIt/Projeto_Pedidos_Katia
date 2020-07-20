@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Projeto_Pedido.Forms;
 using Projeto_Pedido.Forms.Entidades;
+using Projeto_Pedido.Forms.Pedido;
 
 namespace Projeto_Pedido {
 	public partial class FormMenu: Form {
@@ -98,7 +99,7 @@ namespace Projeto_Pedido {
 		private void btnPedidos_Click(object sender, System.EventArgs e)
 		{
 			ActivateButton(sender);
-			OpenChildForms(new FormListProduto());
+			OpenChildForms(new FormListPedido());
 		}
 
 		private void btnClienteFornecedor_Click(object sender, System.EventArgs e)

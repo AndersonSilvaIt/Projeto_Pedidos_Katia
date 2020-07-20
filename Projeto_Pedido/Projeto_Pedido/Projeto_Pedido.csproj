@@ -92,6 +92,12 @@
     <Compile Include="Forms\FormEmpresa.Designer.cs">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pedido\FormListPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedido\FormListPedido.Designer.cs">
+      <DependentUpon>FormListPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Produto\FormCadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,18 @@
     <Compile Include="FormUtil.Designer.cs">
       <DependentUpon>FormUtil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pedido\FormItemPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedido\FormItemPedido.Designer.cs">
+      <DependentUpon>FormItemPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pedido\FormPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedido\FormPedido.Designer.cs">
+      <DependentUpon>FormPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMenu.resx">
@@ -124,6 +142,9 @@
     <EmbeddedResource Include="Forms\FormEmpresa.resx">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedido\FormListPedido.resx">
+      <DependentUpon>FormListPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FormCadProduto.resx">
       <DependentUpon>FormCadProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtil.resx">
       <DependentUpon>FormUtil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedido\FormItemPedido.resx">
+      <DependentUpon>FormItemPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedido\FormPedido.resx">
+      <DependentUpon>FormPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

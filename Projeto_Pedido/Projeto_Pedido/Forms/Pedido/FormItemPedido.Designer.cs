@@ -1,0 +1,415 @@
+﻿namespace Projeto_Pedido.Forms.Pedido {
+	partial class FormItemPedido {
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Windows Form Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.panelDesktop = new System.Windows.Forms.Panel();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.ddlCliente = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.txtCodigo = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.btnAddProduto = new FontAwesome.Sharp.IconButton();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtDescricao = new System.Windows.Forms.TextBox();
+			this.btnDelete = new FontAwesome.Sharp.IconButton();
+			this.btnSave = new FontAwesome.Sharp.IconButton();
+			this.btnEdit = new FontAwesome.Sharp.IconButton();
+			this.panelTitleBar = new System.Windows.Forms.Panel();
+			this.btnMaximize = new FontAwesome.Sharp.IconButton();
+			this.btnMinimize = new FontAwesome.Sharp.IconButton();
+			this.btnClose = new FontAwesome.Sharp.IconButton();
+			this.btnHome = new System.Windows.Forms.PictureBox();
+			this.lblTitleChildForm = new System.Windows.Forms.Label();
+			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+			this.panelDesktop.SuspendLayout();
+			this.groupBox1.SuspendLayout();
+			this.panelTitleBar.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// panelDesktop
+			// 
+			this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(127)))), ((int)(((byte)(221)))));
+			this.panelDesktop.Controls.Add(this.groupBox1);
+			this.panelDesktop.Controls.Add(this.btnDelete);
+			this.panelDesktop.Controls.Add(this.btnSave);
+			this.panelDesktop.Controls.Add(this.btnEdit);
+			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelDesktop.Location = new System.Drawing.Point(0, 73);
+			this.panelDesktop.Name = "panelDesktop";
+			this.panelDesktop.Size = new System.Drawing.Size(685, 328);
+			this.panelDesktop.TabIndex = 10;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.textBox7);
+			this.groupBox1.Controls.Add(this.label10);
+			this.groupBox1.Controls.Add(this.textBox1);
+			this.groupBox1.Controls.Add(this.ddlCliente);
+			this.groupBox1.Controls.Add(this.label1);
+			this.groupBox1.Controls.Add(this.txtCodigo);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.btnAddProduto);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.txtDescricao);
+			this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F);
+			this.groupBox1.Location = new System.Drawing.Point(12, 17);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(652, 248);
+			this.groupBox1.TabIndex = 25;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Item";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(26, 161);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(79, 18);
+			this.label4.TabIndex = 48;
+			this.label4.Text = "Observação";
+			// 
+			// textBox7
+			// 
+			this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.textBox7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox7.Location = new System.Drawing.Point(29, 182);
+			this.textBox7.Multiline = true;
+			this.textBox7.Name = "textBox7";
+			this.textBox7.Size = new System.Drawing.Size(569, 42);
+			this.textBox7.TabIndex = 49;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.Location = new System.Drawing.Point(473, 105);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(40, 18);
+			this.label10.TabIndex = 30;
+			this.label10.Text = "Total";
+			// 
+			// textBox1
+			// 
+			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(476, 126);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(122, 19);
+			this.textBox1.TabIndex = 31;
+			// 
+			// ddlCliente
+			// 
+			this.ddlCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ddlCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ddlCliente.FormattingEnabled = true;
+			this.ddlCliente.Location = new System.Drawing.Point(29, 58);
+			this.ddlCliente.Name = "ddlCliente";
+			this.ddlCliente.Size = new System.Drawing.Size(569, 26);
+			this.ddlCliente.TabIndex = 29;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(26, 105);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(79, 18);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Quantidade";
+			// 
+			// txtCodigo
+			// 
+			this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtCodigo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCodigo.Location = new System.Drawing.Point(29, 126);
+			this.txtCodigo.Name = "txtCodigo";
+			this.txtCodigo.Size = new System.Drawing.Size(94, 19);
+			this.txtCodigo.TabIndex = 6;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(26, 37);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(55, 18);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "Produto";
+			// 
+			// btnAddProduto
+			// 
+			this.btnAddProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAddProduto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnAddProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAddProduto.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnAddProduto.IconChar = FontAwesome.Sharp.IconChar.Plus;
+			this.btnAddProduto.IconColor = System.Drawing.Color.White;
+			this.btnAddProduto.IconSize = 15;
+			this.btnAddProduto.Location = new System.Drawing.Point(604, 58);
+			this.btnAddProduto.Name = "btnAddProduto";
+			this.btnAddProduto.Rotation = 0D;
+			this.btnAddProduto.Size = new System.Drawing.Size(25, 24);
+			this.btnAddProduto.TabIndex = 10;
+			this.btnAddProduto.UseVisualStyleBackColor = true;
+			this.btnAddProduto.Click += new System.EventHandler(this.btnAddProduto_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(147, 105);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(63, 18);
+			this.label3.TabIndex = 11;
+			this.label3.Text = "Desconto";
+			// 
+			// txtDescricao
+			// 
+			this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtDescricao.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDescricao.Location = new System.Drawing.Point(150, 126);
+			this.txtDescricao.Name = "txtDescricao";
+			this.txtDescricao.Size = new System.Drawing.Size(90, 19);
+			this.txtDescricao.TabIndex = 12;
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDelete.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+			this.btnDelete.IconColor = System.Drawing.Color.Red;
+			this.btnDelete.IconSize = 35;
+			this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnDelete.Location = new System.Drawing.Point(151, 277);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Rotation = 0D;
+			this.btnDelete.Size = new System.Drawing.Size(37, 33);
+			this.btnDelete.TabIndex = 26;
+			this.btnDelete.UseVisualStyleBackColor = true;
+			// 
+			// btnSave
+			// 
+			this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSave.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
+			this.btnSave.IconColor = System.Drawing.Color.Green;
+			this.btnSave.IconSize = 35;
+			this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnSave.Location = new System.Drawing.Point(45, 277);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Rotation = 0D;
+			this.btnSave.Size = new System.Drawing.Size(37, 33);
+			this.btnSave.TabIndex = 20;
+			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			// 
+			// btnEdit
+			// 
+			this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEdit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+			this.btnEdit.IconColor = System.Drawing.Color.Gold;
+			this.btnEdit.IconSize = 35;
+			this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnEdit.Location = new System.Drawing.Point(98, 277);
+			this.btnEdit.Name = "btnEdit";
+			this.btnEdit.Rotation = 0D;
+			this.btnEdit.Size = new System.Drawing.Size(37, 33);
+			this.btnEdit.TabIndex = 25;
+			this.btnEdit.UseVisualStyleBackColor = true;
+			// 
+			// panelTitleBar
+			// 
+			this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(152)))), ((int)(((byte)(231)))));
+			this.panelTitleBar.Controls.Add(this.btnMaximize);
+			this.panelTitleBar.Controls.Add(this.btnMinimize);
+			this.panelTitleBar.Controls.Add(this.btnClose);
+			this.panelTitleBar.Controls.Add(this.btnHome);
+			this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
+			this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
+			this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
+			this.panelTitleBar.Name = "panelTitleBar";
+			this.panelTitleBar.Size = new System.Drawing.Size(685, 73);
+			this.panelTitleBar.TabIndex = 9;
+			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+			// 
+			// btnMaximize
+			// 
+			this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnMaximize.FlatAppearance.BorderColor = System.Drawing.Color.White;
+			this.btnMaximize.FlatAppearance.BorderSize = 0;
+			this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnMaximize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+			this.btnMaximize.IconColor = System.Drawing.Color.White;
+			this.btnMaximize.IconSize = 16;
+			this.btnMaximize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnMaximize.Location = new System.Drawing.Point(628, 6);
+			this.btnMaximize.Name = "btnMaximize";
+			this.btnMaximize.Rotation = 0D;
+			this.btnMaximize.Size = new System.Drawing.Size(24, 22);
+			this.btnMaximize.TabIndex = 7;
+			this.btnMaximize.UseVisualStyleBackColor = true;
+			this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+			// 
+			// btnMinimize
+			// 
+			this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.White;
+			this.btnMinimize.FlatAppearance.BorderSize = 0;
+			this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnMinimize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+			this.btnMinimize.IconColor = System.Drawing.Color.White;
+			this.btnMinimize.IconSize = 16;
+			this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnMinimize.Location = new System.Drawing.Point(598, 6);
+			this.btnMinimize.Name = "btnMinimize";
+			this.btnMinimize.Rotation = 0D;
+			this.btnMinimize.Size = new System.Drawing.Size(24, 22);
+			this.btnMinimize.TabIndex = 6;
+			this.btnMinimize.UseVisualStyleBackColor = true;
+			this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+			// 
+			// btnClose
+			// 
+			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
+			this.btnClose.FlatAppearance.BorderSize = 0;
+			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClose.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
+			this.btnClose.IconColor = System.Drawing.Color.White;
+			this.btnClose.IconSize = 16;
+			this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnClose.Location = new System.Drawing.Point(658, 6);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Rotation = 0D;
+			this.btnClose.Size = new System.Drawing.Size(24, 22);
+			this.btnClose.TabIndex = 5;
+			this.btnClose.UseVisualStyleBackColor = true;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+			// 
+			// btnHome
+			// 
+			this.btnHome.Image = global::Projeto_Pedido.Properties.Resources.Logo_Asa_Nova_sem_fundo_png;
+			this.btnHome.Location = new System.Drawing.Point(5, 6);
+			this.btnHome.Name = "btnHome";
+			this.btnHome.Size = new System.Drawing.Size(100, 50);
+			this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.btnHome.TabIndex = 2;
+			this.btnHome.TabStop = false;
+			// 
+			// lblTitleChildForm
+			// 
+			this.lblTitleChildForm.AutoSize = true;
+			this.lblTitleChildForm.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTitleChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
+			this.lblTitleChildForm.Location = new System.Drawing.Point(256, 29);
+			this.lblTitleChildForm.Name = "lblTitleChildForm";
+			this.lblTitleChildForm.Size = new System.Drawing.Size(123, 27);
+			this.lblTitleChildForm.TabIndex = 1;
+			this.lblTitleChildForm.Text = "Item Pedido";
+			// 
+			// iconCurrentChildForm
+			// 
+			this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(152)))), ((int)(((byte)(231)))));
+			this.iconCurrentChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
+			this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+			this.iconCurrentChildForm.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
+			this.iconCurrentChildForm.Location = new System.Drawing.Point(211, 26);
+			this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+			this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+			this.iconCurrentChildForm.TabIndex = 0;
+			this.iconCurrentChildForm.TabStop = false;
+			// 
+			// FormItemPedido
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(685, 401);
+			this.Controls.Add(this.panelDesktop);
+			this.Controls.Add(this.panelTitleBar);
+			this.Name = "FormItemPedido";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "FormItemPedido";
+			this.panelDesktop.ResumeLayout(false);
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.panelTitleBar.ResumeLayout(false);
+			this.panelTitleBar.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+			this.ResumeLayout(false);
+
+		}
+
+		#endregion
+
+		private System.Windows.Forms.Panel panelDesktop;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.ComboBox ddlCliente;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox txtCodigo;
+		private System.Windows.Forms.Label label2;
+		private FontAwesome.Sharp.IconButton btnAddProduto;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox txtDescricao;
+		private FontAwesome.Sharp.IconButton btnDelete;
+		private FontAwesome.Sharp.IconButton btnSave;
+		private FontAwesome.Sharp.IconButton btnEdit;
+		private System.Windows.Forms.Panel panelTitleBar;
+		private FontAwesome.Sharp.IconButton btnMaximize;
+		private FontAwesome.Sharp.IconButton btnMinimize;
+		private FontAwesome.Sharp.IconButton btnClose;
+		private System.Windows.Forms.PictureBox btnHome;
+		private System.Windows.Forms.Label lblTitleChildForm;
+		private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox textBox7;
+	}
+}
