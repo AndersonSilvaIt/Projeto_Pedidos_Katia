@@ -26,6 +26,7 @@ namespace Projeto_Pedido {
 		/// </summary>
 		private void InitializeComponent() {
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.btnProduto = new FontAwesome.Sharp.IconButton();
 			this.btnClienteFornecedor = new FontAwesome.Sharp.IconButton();
 			this.btnPedidos = new FontAwesome.Sharp.IconButton();
 			this.panelLogo = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@ namespace Projeto_Pedido {
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(188)))), ((int)(((byte)(246)))));
+			this.panelMenu.Controls.Add(this.btnProduto);
 			this.panelMenu.Controls.Add(this.btnClienteFornecedor);
 			this.panelMenu.Controls.Add(this.btnPedidos);
 			this.panelMenu.Controls.Add(this.panelLogo);
@@ -58,8 +60,32 @@ namespace Projeto_Pedido {
 			this.panelMenu.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.panelMenu.Location = new System.Drawing.Point(0, 0);
 			this.panelMenu.Name = "panelMenu";
-			this.panelMenu.Size = new System.Drawing.Size(136, 479);
+			this.panelMenu.Size = new System.Drawing.Size(175, 602);
 			this.panelMenu.TabIndex = 2;
+			// 
+			// btnProduto
+			// 
+			this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnProduto.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnProduto.FlatAppearance.BorderSize = 0;
+			this.btnProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnProduto.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnProduto.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+			this.btnProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
+			this.btnProduto.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+			this.btnProduto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
+			this.btnProduto.IconSize = 25;
+			this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnProduto.Location = new System.Drawing.Point(0, 198);
+			this.btnProduto.Name = "btnProduto";
+			this.btnProduto.Rotation = 0D;
+			this.btnProduto.Size = new System.Drawing.Size(175, 48);
+			this.btnProduto.TabIndex = 6;
+			this.btnProduto.Text = "Produtos";
+			this.btnProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnProduto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnProduto.UseVisualStyleBackColor = true;
+			this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
 			// 
 			// btnClienteFornecedor
 			// 
@@ -68,16 +94,16 @@ namespace Projeto_Pedido {
 			this.btnClienteFornecedor.FlatAppearance.BorderSize = 0;
 			this.btnClienteFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnClienteFornecedor.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnClienteFornecedor.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClienteFornecedor.ForeColor = System.Drawing.Color.White;
+			this.btnClienteFornecedor.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+			this.btnClienteFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
 			this.btnClienteFornecedor.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-			this.btnClienteFornecedor.IconColor = System.Drawing.Color.White;
-			this.btnClienteFornecedor.IconSize = 16;
+			this.btnClienteFornecedor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
+			this.btnClienteFornecedor.IconSize = 25;
 			this.btnClienteFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnClienteFornecedor.Location = new System.Drawing.Point(0, 137);
 			this.btnClienteFornecedor.Name = "btnClienteFornecedor";
 			this.btnClienteFornecedor.Rotation = 0D;
-			this.btnClienteFornecedor.Size = new System.Drawing.Size(136, 48);
+			this.btnClienteFornecedor.Size = new System.Drawing.Size(175, 61);
 			this.btnClienteFornecedor.TabIndex = 5;
 			this.btnClienteFornecedor.Text = "Cliente Fornecedor";
 			this.btnClienteFornecedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,15 +118,16 @@ namespace Projeto_Pedido {
 			this.btnPedidos.FlatAppearance.BorderSize = 0;
 			this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnPedidos.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnPedidos.ForeColor = System.Drawing.Color.White;
+			this.btnPedidos.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPedidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
 			this.btnPedidos.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-			this.btnPedidos.IconColor = System.Drawing.Color.White;
-			this.btnPedidos.IconSize = 16;
+			this.btnPedidos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
+			this.btnPedidos.IconSize = 25;
 			this.btnPedidos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnPedidos.Location = new System.Drawing.Point(0, 89);
 			this.btnPedidos.Name = "btnPedidos";
 			this.btnPedidos.Rotation = 0D;
-			this.btnPedidos.Size = new System.Drawing.Size(136, 48);
+			this.btnPedidos.Size = new System.Drawing.Size(175, 48);
 			this.btnPedidos.TabIndex = 4;
 			this.btnPedidos.Text = "Pedidos";
 			this.btnPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,7 +142,7 @@ namespace Projeto_Pedido {
 			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelLogo.Location = new System.Drawing.Point(0, 0);
 			this.panelLogo.Name = "panelLogo";
-			this.panelLogo.Size = new System.Drawing.Size(136, 89);
+			this.panelLogo.Size = new System.Drawing.Size(175, 89);
 			this.panelLogo.TabIndex = 3;
 			// 
 			// btnHome
@@ -138,9 +165,9 @@ namespace Projeto_Pedido {
 			this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
 			this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
 			this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelTitleBar.Location = new System.Drawing.Point(136, 0);
+			this.panelTitleBar.Location = new System.Drawing.Point(175, 0);
 			this.panelTitleBar.Name = "panelTitleBar";
-			this.panelTitleBar.Size = new System.Drawing.Size(709, 73);
+			this.panelTitleBar.Size = new System.Drawing.Size(968, 73);
 			this.panelTitleBar.TabIndex = 3;
 			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
 			// 
@@ -156,7 +183,7 @@ namespace Projeto_Pedido {
 			this.btnMaximize.IconColor = System.Drawing.Color.White;
 			this.btnMaximize.IconSize = 16;
 			this.btnMaximize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnMaximize.Location = new System.Drawing.Point(652, 3);
+			this.btnMaximize.Location = new System.Drawing.Point(911, 3);
 			this.btnMaximize.Name = "btnMaximize";
 			this.btnMaximize.Rotation = 0D;
 			this.btnMaximize.Size = new System.Drawing.Size(24, 22);
@@ -176,7 +203,7 @@ namespace Projeto_Pedido {
 			this.btnMinimize.IconColor = System.Drawing.Color.White;
 			this.btnMinimize.IconSize = 16;
 			this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnMinimize.Location = new System.Drawing.Point(622, 3);
+			this.btnMinimize.Location = new System.Drawing.Point(881, 3);
 			this.btnMinimize.Name = "btnMinimize";
 			this.btnMinimize.Rotation = 0D;
 			this.btnMinimize.Size = new System.Drawing.Size(24, 22);
@@ -196,7 +223,7 @@ namespace Projeto_Pedido {
 			this.btnClose.IconColor = System.Drawing.Color.White;
 			this.btnClose.IconSize = 16;
 			this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnClose.Location = new System.Drawing.Point(682, 3);
+			this.btnClose.Location = new System.Drawing.Point(941, 3);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Rotation = 0D;
 			this.btnClose.Size = new System.Drawing.Size(24, 22);
@@ -207,11 +234,11 @@ namespace Projeto_Pedido {
 			// lblTitleChildForm
 			// 
 			this.lblTitleChildForm.AutoSize = true;
-			this.lblTitleChildForm.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold);
+			this.lblTitleChildForm.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTitleChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
-			this.lblTitleChildForm.Location = new System.Drawing.Point(63, 32);
+			this.lblTitleChildForm.Location = new System.Drawing.Point(76, 28);
 			this.lblTitleChildForm.Name = "lblTitleChildForm";
-			this.lblTitleChildForm.Size = new System.Drawing.Size(43, 19);
+			this.lblTitleChildForm.Size = new System.Drawing.Size(63, 27);
 			this.lblTitleChildForm.TabIndex = 1;
 			this.lblTitleChildForm.Text = "Home";
 			// 
@@ -221,9 +248,10 @@ namespace Projeto_Pedido {
 			this.iconCurrentChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
 			this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
 			this.iconCurrentChildForm.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
-			this.iconCurrentChildForm.Location = new System.Drawing.Point(25, 23);
+			this.iconCurrentChildForm.IconSize = 44;
+			this.iconCurrentChildForm.Location = new System.Drawing.Point(25, 18);
 			this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-			this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+			this.iconCurrentChildForm.Size = new System.Drawing.Size(45, 44);
 			this.iconCurrentChildForm.TabIndex = 0;
 			this.iconCurrentChildForm.TabStop = false;
 			// 
@@ -231,9 +259,9 @@ namespace Projeto_Pedido {
 			// 
 			this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(193)))));
 			this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelShadow.Location = new System.Drawing.Point(136, 73);
+			this.panelShadow.Location = new System.Drawing.Point(175, 73);
 			this.panelShadow.Name = "panelShadow";
-			this.panelShadow.Size = new System.Drawing.Size(709, 5);
+			this.panelShadow.Size = new System.Drawing.Size(968, 5);
 			this.panelShadow.TabIndex = 4;
 			// 
 			// panelDesktop
@@ -241,16 +269,16 @@ namespace Projeto_Pedido {
 			this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(127)))), ((int)(((byte)(221)))));
 			this.panelDesktop.Controls.Add(this.pictureBox1);
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelDesktop.Location = new System.Drawing.Point(136, 78);
+			this.panelDesktop.Location = new System.Drawing.Point(175, 78);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(709, 401);
+			this.panelDesktop.Size = new System.Drawing.Size(968, 524);
 			this.panelDesktop.TabIndex = 5;
 			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.pictureBox1.Image = global::Projeto_Pedido.Properties.Resources.Logo_Asa_Nova_sem_fundo_png;
-			this.pictureBox1.Location = new System.Drawing.Point(216, 111);
+			this.pictureBox1.Location = new System.Drawing.Point(346, 173);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(270, 148);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,7 +289,7 @@ namespace Projeto_Pedido {
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(845, 479);
+			this.ClientSize = new System.Drawing.Size(1143, 602);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelShadow);
 			this.Controls.Add(this.panelTitleBar);
@@ -297,6 +325,7 @@ namespace Projeto_Pedido {
 		private FontAwesome.Sharp.IconButton btnMinimize;
 		private FontAwesome.Sharp.IconButton btnMaximize;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private FontAwesome.Sharp.IconButton btnProduto;
 	}
 }
 

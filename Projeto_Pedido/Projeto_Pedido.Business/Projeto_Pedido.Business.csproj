@@ -66,6 +66,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EntitiesRepository\BaseData.cs" />
     <Compile Include="Repositories\EntitiesRepository\BaseRepository.cs" />
+    <Compile Include="Repositories\EntitiesRepository\EntityRepository.cs" />
+    <Compile Include="Repositories\EntitiesRepository\ProductRepository.cs" />
     <Compile Include="Repositories\Operators\FilterCriteria.cs" />
     <Compile Include="Repositories\Operators\FilterData.cs" />
     <Compile Include="Repositories\Operators\FilterType.cs" />

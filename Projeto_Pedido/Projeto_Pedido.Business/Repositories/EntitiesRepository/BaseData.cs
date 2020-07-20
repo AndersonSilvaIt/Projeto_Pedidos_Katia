@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Projeto_Pedido.DAL.Entities;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Common;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -11,47 +12,49 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 	public class BaseData {
 		private static SQLiteConnection sqliteConnection;
 
-		private static string strConection = System.Configuration.ConfigurationManager.
-			ConnectionStrings["DBConnect"].ConnectionString;
-		
-		public BaseData() {
+		private static List<string> ListaTabelas = new List<string>() {
+			"Product",
+			"Entidade"
+		};
+
+		public BaseData()
+		{
 			CriarBanco();
 		}
 
-		DbProviderFactory provider = DbProviderFactories.GetFactory("System.Data.SQLite");
-
 		private static void CriarBanco() {
 			try {
+				var caminhoRaiz = Directory.GetDirectoryRoot(AppDomain.CurrentDomain.BaseDirectory);
+				string pathRoot = caminhoRaiz + "SistemaPedido";
+				string pathDB = pathRoot + @"\DBPedidos.sqlite";
 
-				string pathRoot = @"C:\Testes";
-				string pathDB = pathRoot + @"\DBControl.sqlite";
 				if(!Directory.Exists(pathRoot))
 					Directory.CreateDirectory(pathRoot);
 
 				if(!File.Exists(pathDB)) {
 					SQLiteConnection.CreateFile(pathDB);
 
-					string caminhoCompleto = Directory.GetCurrentDirectory();
-					string teste02 = caminhoCompleto.Remove(caminhoCompleto.Length - 20, 20);
-					string teste03 = teste02 + @"Data\Entidades";
-					string[] files01 = Directory.GetFiles(teste03);
-					CriarTabelaSQlite(files01);
+					CriarTabelaSQlite(ListaTabelas.ToArray());
 				}
 
-				var teste = strConection;
 			} catch(Exception ex) {
 
 			}
 		}
 
-		public static SQLiteConnection DbConnection() {
-			sqliteConnection = new SQLiteConnection(strConection);
-			string pathRoot = @"C:\Testes";
-			string pathDB = pathRoot + @"\DBControl.sqlite";
+		public static SQLiteConnection DbConnection()
+		{
+			var caminhoRaiz = Directory.GetDirectoryRoot(AppDomain.CurrentDomain.BaseDirectory);
+			string pathRoot = caminhoRaiz + "SistemaPedido";
+			string pathDB = pathRoot + @"\DBPedidos.sqlite";
 			if(!File.Exists(pathDB)) {
 				CriarBanco();
 			}
-			if(sqliteConnection.State == System.Data.ConnectionState.Open)
+			string connectionString = $@"Data Source={pathDB}; Version=3;";
+			
+			sqliteConnection = new SQLiteConnection(connectionString);
+
+			if (sqliteConnection.State == System.Data.ConnectionState.Open)
 				sqliteConnection.Close();
 
 			sqliteConnection.Open();
@@ -64,11 +67,11 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 				using(var cmd = DbConnection().CreateCommand()) {
 					StringBuilder sb;
 					foreach(var fileClass in files) {
-						var index = fileClass.LastIndexOf("\\");
-						var result = fileClass.Remove(0, index + 1);
-						var rresult02 = result.Replace(".cs", "");
 
-						EntityType = Type.GetType("Data.Entidades." + rresult02);
+						//var type = Assembly.Load("Projeto_Pedido.DAL").GetTypes().First(x => x.Name == fileClass);
+
+						EntityType = Assembly.Load("Projeto_Pedido.DAL").GetTypes().First(x => x.Name == fileClass);
+
 						object[] attributesObject = EntityType.GetCustomAttributes(false);
 						if(attributesObject != null && attributesObject.Length > 0 && attributesObject.Any(x => x is NotMappedAttribute)) {
 							continue;

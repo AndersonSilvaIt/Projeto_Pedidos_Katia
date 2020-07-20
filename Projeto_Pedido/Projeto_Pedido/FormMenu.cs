@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Projeto_Pedido.Forms;
+using Projeto_Pedido.Forms.Entidades;
 
 namespace Projeto_Pedido {
 	public partial class FormMenu: Form {
@@ -29,31 +30,31 @@ namespace Projeto_Pedido {
 
 		// Structs
 
-		private struct RGBColors {
-			public static Color color1 = Color.FromArgb(172,126,241	);
-			public static Color color2 = Color.FromArgb(249, 118, 176);
-			public static Color color3 = Color.FromArgb(253,138,114	);
-			public static Color color4 = Color.FromArgb(95,77,221);
-			public static Color color5 = Color.FromArgb(249,88,155);
-			public static Color color6 = Color.FromArgb(24,161,251 );
-		}
+		//private struct RGBColors {
+		//	public static Color color1 = Color.FromArgb(172,126,241	);
+		//	public static Color color2 = Color.FromArgb(249, 118, 176);
+		//	public static Color color3 = Color.FromArgb(253,138,114	);
+		//	public static Color color4 = Color.FromArgb(95,77,221);
+		//	public static Color color5 = Color.FromArgb(249,88,155);
+		//	public static Color color6 = Color.FromArgb(24,161,251 );
+		//}
 
 		//Methods
-		private void ActivateButton(object senderBtn,Color color)
+		private void ActivateButton(object senderBtn)
 		{
 			if(senderBtn != null)
 			{
 				DisableButton();
 				currentBtn = (IconButton)senderBtn;
 				currentBtn.BackColor = Color.FromArgb(68, 68, 193);
-				currentBtn.ForeColor = color;
+				currentBtn.ForeColor = Color.White;
 				currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-				currentBtn.IconColor = color;
+				currentBtn.IconColor = Color.White;
 				currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
 				currentBtn.ImageAlign = ContentAlignment.MiddleRight;
 
 				//left border
-				leftBorderBtn.BackColor = color;
+				//leftBorderBtn.BackColor = color;
 				leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
 				leftBorderBtn.Visible = true;
 				leftBorderBtn.BringToFront();
@@ -68,9 +69,10 @@ namespace Projeto_Pedido {
 			if(currentBtn != null)
 			{
 				currentBtn.BackColor = Color.FromArgb(178,188,246);
-				currentBtn.ForeColor = Color.White;
+				currentBtn.ForeColor = Color.FromArgb(7, 7, 87);
+				
 				currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-				currentBtn.IconColor = Color.White;
+				currentBtn.IconColor = Color.FromArgb(7, 7, 87);
 				currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
 				currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
 			}
@@ -95,13 +97,14 @@ namespace Projeto_Pedido {
 
 		private void btnPedidos_Click(object sender, System.EventArgs e)
 		{
-			ActivateButton(sender, RGBColors.color1);
+			ActivateButton(sender);
 			OpenChildForms(new FormListProduto());
 		}
 
 		private void btnClienteFornecedor_Click(object sender, System.EventArgs e)
 		{
-			ActivateButton(sender, RGBColors.color2);
+			ActivateButton(sender);
+			OpenChildForms(new FormListEntidades());
 		}
 
 		private void btnHome_Click(object sender, System.EventArgs e)
@@ -152,6 +155,12 @@ namespace Projeto_Pedido {
 		private void btnMinimize_Click(object sender, EventArgs e)
 		{
 			WindowState = FormWindowState.Minimized;
+		}
+
+		private void btnProduto_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender);
+			OpenChildForms(new FormListProduto());
 		}
 	}
 }

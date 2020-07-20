@@ -351,7 +351,7 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 			object[] attributesObject;
 
 			using(var conection = BaseData.DbConnection()) {
-				SQLiteCommand sQLiteCommand = new SQLiteCommand($"SELECT * FROM {instanceEntity.GetType().Name} ", conection);
+				SQLiteCommand sQLiteCommand = new SQLiteCommand($"SELECT * FROM {instanceEntity.GetType().Name} where id = {id} ", conection);
 				decimal decimalValue = 0;
 				double doubleValue = 0;
 				int intValue = 0;
