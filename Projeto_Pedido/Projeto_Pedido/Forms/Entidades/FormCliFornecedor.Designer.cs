@@ -716,6 +716,7 @@
 			this.btnDelete.Size = new System.Drawing.Size(37, 33);
 			this.btnDelete.TabIndex = 27;
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// btnSave
 			// 
@@ -751,6 +752,7 @@
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
 			this.btnEdit.TabIndex = 26;
 			this.btnEdit.UseVisualStyleBackColor = true;
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// FormCliFornecedor
 			// 

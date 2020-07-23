@@ -35,6 +35,8 @@ namespace Projeto_Pedido.Forms.Produto {
 
 			AtualizaFormulario();
 			FillFields02();
+			EnableFields(this, false);
+			btnSave.Visible = false;
 		}
 
 		//DragForm
@@ -188,6 +190,31 @@ namespace Projeto_Pedido.Forms.Produto {
 		private void openFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			ImagemProduto.Image = Image.FromFile(openFileDialog.FileName);
+		}
+
+		private void btnEdit_Click(object sender, EventArgs e)
+		{
+			EnableFields(this, true);
+			btnSave.Visible = true;
+			btnEdit.Visible = false;
+		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				var result = MessageBox.Show("Deseja excluir esse Registro? ", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (result == DialogResult.Yes)
+				{
+					ProductRepository.Delete(_produto);
+				}
+				MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK);
+				this.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+			}
 		}
 	}
 }

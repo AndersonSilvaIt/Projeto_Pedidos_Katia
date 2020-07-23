@@ -35,6 +35,7 @@
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.ddlUnidadeMedida = new System.Windows.Forms.ComboBox();
 			this.ddlFornecedor = new System.Windows.Forms.ComboBox();
 			this.btnImage = new System.Windows.Forms.Button();
 			this.ImagemProduto = new FontAwesome.Sharp.IconPictureBox();
@@ -52,7 +53,6 @@
 			this.txtDescricao = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.txtUM = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.txtPrecoCusto = new System.Windows.Forms.TextBox();
@@ -192,6 +192,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.ddlUnidadeMedida);
 			this.groupBox1.Controls.Add(this.ddlFornecedor);
 			this.groupBox1.Controls.Add(this.btnImage);
 			this.groupBox1.Controls.Add(this.ImagemProduto);
@@ -209,7 +210,6 @@
 			this.groupBox1.Controls.Add(this.txtDescricao);
 			this.groupBox1.Controls.Add(this.label7);
 			this.groupBox1.Controls.Add(this.label5);
-			this.groupBox1.Controls.Add(this.txtUM);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.txtPrecoCusto);
@@ -220,6 +220,16 @@
 			this.groupBox1.TabIndex = 25;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Cadastro";
+			// 
+			// ddlUnidadeMedida
+			// 
+			this.ddlUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ddlUnidadeMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ddlUnidadeMedida.FormattingEnabled = true;
+			this.ddlUnidadeMedida.Location = new System.Drawing.Point(29, 114);
+			this.ddlUnidadeMedida.Name = "ddlUnidadeMedida";
+			this.ddlUnidadeMedida.Size = new System.Drawing.Size(94, 26);
+			this.ddlUnidadeMedida.TabIndex = 30;
 			// 
 			// ddlFornecedor
 			// 
@@ -399,15 +409,6 @@
 			this.label5.TabIndex = 13;
 			this.label5.Text = "U.M";
 			// 
-			// txtUM
-			// 
-			this.txtUM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtUM.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUM.Location = new System.Drawing.Point(29, 117);
-			this.txtUM.Name = "txtUM";
-			this.txtUM.Size = new System.Drawing.Size(94, 19);
-			this.txtUM.TabIndex = 14;
-			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
@@ -453,6 +454,7 @@
 			this.btnDelete.Size = new System.Drawing.Size(37, 33);
 			this.btnDelete.TabIndex = 26;
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// btnSave
 			// 
@@ -488,6 +490,7 @@
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
 			this.btnEdit.TabIndex = 25;
 			this.btnEdit.UseVisualStyleBackColor = true;
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// openFileDialog
 			// 
@@ -533,7 +536,6 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtPrecoCusto;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox txtUM;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtTipo;
 		private System.Windows.Forms.Label label7;
@@ -552,5 +554,6 @@
 		private FontAwesome.Sharp.IconButton btnMinimize;
 		private FontAwesome.Sharp.IconButton btnClose;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
+		private System.Windows.Forms.ComboBox ddlUnidadeMedida;
 	}
 }

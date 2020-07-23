@@ -15,6 +15,11 @@ namespace Projeto_Pedido {
 			InitializeComponent();
 		}
 
+		private void VisibleControl(Control control, bool value)
+		{
+			control.Visible = value;
+		}
+
 		public List<KeyValuePair<int, string>> listaUF = new List<KeyValuePair<int, string>>()
 		{
 			new KeyValuePair<int, string>(0, ""),
@@ -279,7 +284,7 @@ namespace Projeto_Pedido {
 					((TextBox)form.Controls[i]).Text = string.Empty;
 
 				if (form.Controls[i] is MaskedTextBox)
-					((TextBox)form.Controls[i]).Text = string.Empty;
+					((MaskedTextBox)form.Controls[i]).Text = string.Empty;
 
 				if (form.Controls[i] is ComboBox)
 				{
@@ -295,6 +300,34 @@ namespace Projeto_Pedido {
 					ClearFields(form.Controls[i]);
 			}
 		}
+
+		protected void EnableFields(Control form, bool enable)
+		{
+			for (int i = 0; i < form.Controls.Count; i++)
+			{
+				if (form.Controls[i] is TextBox)
+					((TextBox)form.Controls[i]).Enabled = enable;
+
+				if (form.Controls[i] is MaskedTextBox)
+					((TextBox)form.Controls[i]).Enabled = enable;
+
+				if (form.Controls[i] is ComboBox)
+				{
+					((ComboBox)form.Controls[i]).Enabled = enable;
+					var combo = ((ComboBox)form.Controls[i]);
+				}
+
+				if (form.Controls[i] is RadioButton)
+					((RadioButton)form.Controls[i]).Enabled = enable;
+
+				if (form.Controls[i] is DataGridView)
+					((DataGridView)form.Controls[i]).Enabled = enable;
+
+				if (form.Controls[i] is Panel || form.Controls[i] is GroupBox)
+					EnableFields(form.Controls[i], enable);
+			}
+		}
+
 
 		protected void DirtyUF(ComboBox combo)
 		{

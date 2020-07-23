@@ -59,13 +59,13 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 						}
 
 						if(item.PropertyType.Name == "DateTime")
-							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd"));
+							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss"));
 						else
 							command.Parameters.AddWithValue("@" + item.Name, item.GetValue(Entity, null));
 
 						switch(item.PropertyType.Name) {
 						case "DateTime":
-							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd"));
+							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss"));
 							break;
 
 						case "String":
@@ -304,8 +304,15 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 						break;
 
 					case "Decimal":
-						sb.Append($" {item.Name} = {item.GetValue(Entity, null)},");
-						break;
+							string valor = item.GetValue(Entity, null).ToString();
+							decimal valorDecimal = 0;
+							if(decimal.TryParse(valor, out valorDecimal))
+							{
+								string result = valorDecimal.ToString().Replace(",", ".");
+								sb.Append($" {item.Name} = {result},");
+							}
+							//decimal devimalValue = 
+							break;
 
 					case "Int32":
 					case "Int64":
@@ -400,5 +407,26 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 			}
 			return null;
 		}
+
+		public static int GetMaxId(T entity)
+		{
+			var instanceEntity = Activator.CreateInstance<T>();
+			int lastId = 0;
+			using (var conection = BaseData.DbConnection())
+			{
+				SQLiteCommand sQLiteCommand = new SQLiteCommand($"SELECT max(id) FROM {instanceEntity.GetType().Name}", conection);
+				using (var read = sQLiteCommand.ExecuteReader())
+				{
+					if (read.Read())
+					{
+						int.TryParse(read[0].ToString(), out lastId);
+					}
+
+					return lastId;
+				}
+			}
+			return 0;
+		}
+
 	}
 }

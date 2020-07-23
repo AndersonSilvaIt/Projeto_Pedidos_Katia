@@ -15,6 +15,16 @@ namespace Projeto_Pedido.DAL.Entities {
 		public string Observacao { get; set; }
 
 		[NotMapped]
+		public string ProdutoString { get
+			{
+				if (string.IsNullOrWhiteSpace(Codigo) && string.IsNullOrWhiteSpace(Descricao))
+					return "";
+
+				return $"{Codigo} • {Descricao}";
+			}
+		}
+
+		[NotMapped]
 		public Entidade Fornecedor { get; set; }
 
 		[NotMapped]

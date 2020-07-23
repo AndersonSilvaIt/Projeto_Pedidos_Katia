@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorMessageException.cs" />
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,10 +93,16 @@
     <Compile Include="Forms\FormEmpresa.Designer.cs">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pedido\FormListPedido.cs">
+    <Compile Include="Forms\Pedidos\FormItemPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pedido\FormListPedido.Designer.cs">
+    <Compile Include="Forms\Pedidos\FormItemPedido.Designer.cs">
+      <DependentUpon>FormItemPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pedidos\FormListPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedidos\FormListPedido.Designer.cs">
       <DependentUpon>FormListPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Produto\FormCadProduto.cs">
@@ -116,16 +123,10 @@
     <Compile Include="FormUtil.Designer.cs">
       <DependentUpon>FormUtil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pedido\FormItemPedido.cs">
+    <Compile Include="Forms\Pedidos\FormPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pedido\FormItemPedido.Designer.cs">
-      <DependentUpon>FormItemPedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Pedido\FormPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Pedido\FormPedido.Designer.cs">
+    <Compile Include="Forms\Pedidos\FormPedido.Designer.cs">
       <DependentUpon>FormPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -142,7 +143,10 @@
     <EmbeddedResource Include="Forms\FormEmpresa.resx">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pedido\FormListPedido.resx">
+    <EmbeddedResource Include="Forms\Pedidos\FormItemPedido.resx">
+      <DependentUpon>FormItemPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedidos\FormListPedido.resx">
       <DependentUpon>FormListPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FormCadProduto.resx">
@@ -154,10 +158,7 @@
     <EmbeddedResource Include="FormUtil.resx">
       <DependentUpon>FormUtil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pedido\FormItemPedido.resx">
-      <DependentUpon>FormItemPedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pedido\FormPedido.resx">
+    <EmbeddedResource Include="Forms\Pedidos\FormPedido.resx">
       <DependentUpon>FormPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Projeto_Pedido.Forms;
 using Projeto_Pedido.Forms.Entidades;
-using Projeto_Pedido.Forms.Pedido;
+using Projeto_Pedido.Forms.Pedidos;
 
 namespace Projeto_Pedido {
 	public partial class FormMenu: Form {

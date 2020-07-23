@@ -1,5 +1,4 @@
-﻿using Projeto_Pedido.DAL.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SQLite;
@@ -14,7 +13,9 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 
 		private static List<string> ListaTabelas = new List<string>() {
 			"Product",
-			"Entidade"
+			"Entidade",
+			"Pedido",
+			"ItemPedido"
 		};
 
 		public BaseData()

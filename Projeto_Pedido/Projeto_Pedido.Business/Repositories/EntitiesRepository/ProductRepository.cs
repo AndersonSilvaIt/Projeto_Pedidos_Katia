@@ -35,7 +35,7 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 			foreach (var item in products)
 			{
 				if (item.IdFornecedor > 0)
-					item.Fornecedor = EntityRepository.GetEntity(item.Id);
+					item.Fornecedor = EntityRepository.GetEntity(item.IdFornecedor);
 			}
 		}
 	}

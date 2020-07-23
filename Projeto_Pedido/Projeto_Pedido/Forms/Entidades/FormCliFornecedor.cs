@@ -1,5 +1,6 @@
 ﻿using Projeto_Pedido.Business.Repositories.EntitiesRepository;
 using Projeto_Pedido.DAL.Entities;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -20,6 +21,8 @@ namespace Projeto_Pedido.Forms.Entidades {
 			this._entidade = entidade;
 			AtualizaFormulario();
 			FillFields02();
+			EnableFields(this, false);
+			btnSave.Visible = false;
 		}
 
 		private void FillFields02()
@@ -134,21 +137,33 @@ namespace Projeto_Pedido.Forms.Entidades {
 
 			ddlTipoDocumento.DataSource = items;
 
-
-			ddlTipoDocumento.DisplayMember = "Text";
-			ddlTipoDocumento.ValueMember = "Value";
-
-			var items02 = new[] {
-				new { Text = "P. Física", Value = "1" },
-				new { Text = "P. Jurídica", Value = "2" }
-			};
-
-			ddlTipoDocumento.DataSource = items02;
-
 			DirtyUF(ddlUF);
-
-			//(ddlTipoDocumento.SelectedItem as dynamic).Value
 		}
 
+		private void btnDelete_Click(object sender, System.EventArgs e)
+		{
+			try
+			{
+				var result = MessageBox.Show("Deseja excluir esse Registro? ", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (result == DialogResult.Yes)
+				{
+					EntityRepository.Delete(_entidade);
+				}
+
+				MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK);
+				this.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+			}
+		}
+
+		private void btnEdit_Click(object sender, EventArgs e)
+		{
+			EnableFields(this, true);
+			btnSave.Visible = true;
+			btnEdit.Visible = false;
+		}
 	}
 }

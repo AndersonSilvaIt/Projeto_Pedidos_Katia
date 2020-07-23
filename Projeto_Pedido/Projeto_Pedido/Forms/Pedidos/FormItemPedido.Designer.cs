@@ -1,4 +1,4 @@
-﻿namespace Projeto_Pedido.Forms.Pedido {
+﻿namespace Projeto_Pedido.Forms.Pedidos {
 	partial class FormItemPedido {
 		/// <summary>
 		/// Required designer variable.
@@ -29,16 +29,16 @@
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.txtObservacao = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.ddlCliente = new System.Windows.Forms.ComboBox();
+			this.txtTotal = new System.Windows.Forms.TextBox();
+			this.ddlProduto = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtCodigo = new System.Windows.Forms.TextBox();
+			this.txtQuantidade = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnAddProduto = new FontAwesome.Sharp.IconButton();
 			this.label3 = new System.Windows.Forms.Label();
-			this.txtDescricao = new System.Windows.Forms.TextBox();
+			this.txtDesconto = new System.Windows.Forms.TextBox();
 			this.btnDelete = new FontAwesome.Sharp.IconButton();
 			this.btnSave = new FontAwesome.Sharp.IconButton();
 			this.btnEdit = new FontAwesome.Sharp.IconButton();
@@ -66,22 +66,22 @@
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDesktop.Location = new System.Drawing.Point(0, 73);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(685, 328);
+			this.panelDesktop.Size = new System.Drawing.Size(676, 328);
 			this.panelDesktop.TabIndex = 10;
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.textBox7);
+			this.groupBox1.Controls.Add(this.txtObservacao);
 			this.groupBox1.Controls.Add(this.label10);
-			this.groupBox1.Controls.Add(this.textBox1);
-			this.groupBox1.Controls.Add(this.ddlCliente);
+			this.groupBox1.Controls.Add(this.txtTotal);
+			this.groupBox1.Controls.Add(this.ddlProduto);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.txtCodigo);
+			this.groupBox1.Controls.Add(this.txtQuantidade);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.btnAddProduto);
 			this.groupBox1.Controls.Add(this.label3);
-			this.groupBox1.Controls.Add(this.txtDescricao);
+			this.groupBox1.Controls.Add(this.txtDesconto);
 			this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F);
 			this.groupBox1.Location = new System.Drawing.Point(12, 17);
 			this.groupBox1.Name = "groupBox1";
@@ -100,15 +100,15 @@
 			this.label4.TabIndex = 48;
 			this.label4.Text = "Observação";
 			// 
-			// textBox7
+			// txtObservacao
 			// 
-			this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox7.Location = new System.Drawing.Point(29, 182);
-			this.textBox7.Multiline = true;
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(569, 42);
-			this.textBox7.TabIndex = 49;
+			this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtObservacao.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtObservacao.Location = new System.Drawing.Point(29, 182);
+			this.txtObservacao.Multiline = true;
+			this.txtObservacao.Name = "txtObservacao";
+			this.txtObservacao.Size = new System.Drawing.Size(569, 42);
+			this.txtObservacao.TabIndex = 6;
 			// 
 			// label10
 			// 
@@ -120,24 +120,26 @@
 			this.label10.TabIndex = 30;
 			this.label10.Text = "Total";
 			// 
-			// textBox1
+			// txtTotal
 			// 
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(476, 126);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(122, 19);
-			this.textBox1.TabIndex = 31;
+			this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtTotal.Enabled = false;
+			this.txtTotal.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTotal.Location = new System.Drawing.Point(476, 126);
+			this.txtTotal.Name = "txtTotal";
+			this.txtTotal.Size = new System.Drawing.Size(122, 19);
+			this.txtTotal.TabIndex = 5;
 			// 
-			// ddlCliente
+			// ddlProduto
 			// 
-			this.ddlCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.ddlCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.ddlCliente.FormattingEnabled = true;
-			this.ddlCliente.Location = new System.Drawing.Point(29, 58);
-			this.ddlCliente.Name = "ddlCliente";
-			this.ddlCliente.Size = new System.Drawing.Size(569, 26);
-			this.ddlCliente.TabIndex = 29;
+			this.ddlProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ddlProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ddlProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.ddlProduto.FormattingEnabled = true;
+			this.ddlProduto.Location = new System.Drawing.Point(29, 58);
+			this.ddlProduto.Name = "ddlProduto";
+			this.ddlProduto.Size = new System.Drawing.Size(569, 26);
+			this.ddlProduto.TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -149,14 +151,14 @@
 			this.label1.TabIndex = 5;
 			this.label1.Text = "Quantidade";
 			// 
-			// txtCodigo
+			// txtQuantidade
 			// 
-			this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtCodigo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCodigo.Location = new System.Drawing.Point(29, 126);
-			this.txtCodigo.Name = "txtCodigo";
-			this.txtCodigo.Size = new System.Drawing.Size(94, 19);
-			this.txtCodigo.TabIndex = 6;
+			this.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtQuantidade.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtQuantidade.Location = new System.Drawing.Point(29, 126);
+			this.txtQuantidade.Name = "txtQuantidade";
+			this.txtQuantidade.Size = new System.Drawing.Size(94, 19);
+			this.txtQuantidade.TabIndex = 3;
 			// 
 			// label2
 			// 
@@ -181,7 +183,7 @@
 			this.btnAddProduto.Name = "btnAddProduto";
 			this.btnAddProduto.Rotation = 0D;
 			this.btnAddProduto.Size = new System.Drawing.Size(25, 24);
-			this.btnAddProduto.TabIndex = 10;
+			this.btnAddProduto.TabIndex = 2;
 			this.btnAddProduto.UseVisualStyleBackColor = true;
 			this.btnAddProduto.Click += new System.EventHandler(this.btnAddProduto_Click);
 			// 
@@ -195,14 +197,15 @@
 			this.label3.TabIndex = 11;
 			this.label3.Text = "Desconto";
 			// 
-			// txtDescricao
+			// txtDesconto
 			// 
-			this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtDescricao.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDescricao.Location = new System.Drawing.Point(150, 126);
-			this.txtDescricao.Name = "txtDescricao";
-			this.txtDescricao.Size = new System.Drawing.Size(90, 19);
-			this.txtDescricao.TabIndex = 12;
+			this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtDesconto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDesconto.Location = new System.Drawing.Point(150, 126);
+			this.txtDesconto.Name = "txtDesconto";
+			this.txtDesconto.Size = new System.Drawing.Size(90, 19);
+			this.txtDesconto.TabIndex = 4;
+			this.txtDesconto.Leave += new System.EventHandler(this.txtDesconto_Leave);
 			// 
 			// btnDelete
 			// 
@@ -218,8 +221,9 @@
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Rotation = 0D;
 			this.btnDelete.Size = new System.Drawing.Size(37, 33);
-			this.btnDelete.TabIndex = 26;
+			this.btnDelete.TabIndex = 9;
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// btnSave
 			// 
@@ -235,7 +239,7 @@
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Rotation = 0D;
 			this.btnSave.Size = new System.Drawing.Size(37, 33);
-			this.btnSave.TabIndex = 20;
+			this.btnSave.TabIndex = 7;
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
@@ -253,8 +257,9 @@
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Rotation = 0D;
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
-			this.btnEdit.TabIndex = 25;
+			this.btnEdit.TabIndex = 8;
 			this.btnEdit.UseVisualStyleBackColor = true;
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// panelTitleBar
 			// 
@@ -268,7 +273,7 @@
 			this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
 			this.panelTitleBar.Name = "panelTitleBar";
-			this.panelTitleBar.Size = new System.Drawing.Size(685, 73);
+			this.panelTitleBar.Size = new System.Drawing.Size(676, 73);
 			this.panelTitleBar.TabIndex = 9;
 			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
 			// 
@@ -284,11 +289,11 @@
 			this.btnMaximize.IconColor = System.Drawing.Color.White;
 			this.btnMaximize.IconSize = 16;
 			this.btnMaximize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnMaximize.Location = new System.Drawing.Point(628, 6);
+			this.btnMaximize.Location = new System.Drawing.Point(619, 6);
 			this.btnMaximize.Name = "btnMaximize";
 			this.btnMaximize.Rotation = 0D;
 			this.btnMaximize.Size = new System.Drawing.Size(24, 22);
-			this.btnMaximize.TabIndex = 7;
+			this.btnMaximize.TabIndex = 11;
 			this.btnMaximize.UseVisualStyleBackColor = true;
 			this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
 			// 
@@ -304,11 +309,11 @@
 			this.btnMinimize.IconColor = System.Drawing.Color.White;
 			this.btnMinimize.IconSize = 16;
 			this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnMinimize.Location = new System.Drawing.Point(598, 6);
+			this.btnMinimize.Location = new System.Drawing.Point(589, 6);
 			this.btnMinimize.Name = "btnMinimize";
 			this.btnMinimize.Rotation = 0D;
 			this.btnMinimize.Size = new System.Drawing.Size(24, 22);
-			this.btnMinimize.TabIndex = 6;
+			this.btnMinimize.TabIndex = 10;
 			this.btnMinimize.UseVisualStyleBackColor = true;
 			this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
 			// 
@@ -324,11 +329,11 @@
 			this.btnClose.IconColor = System.Drawing.Color.White;
 			this.btnClose.IconSize = 16;
 			this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnClose.Location = new System.Drawing.Point(658, 6);
+			this.btnClose.Location = new System.Drawing.Point(649, 6);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Rotation = 0D;
 			this.btnClose.Size = new System.Drawing.Size(24, 22);
-			this.btnClose.TabIndex = 5;
+			this.btnClose.TabIndex = 12;
 			this.btnClose.UseVisualStyleBackColor = true;
 			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
@@ -369,7 +374,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(685, 401);
+			this.ClientSize = new System.Drawing.Size(676, 401);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelTitleBar);
 			this.Name = "FormItemPedido";
@@ -391,14 +396,14 @@
 		private System.Windows.Forms.Panel panelDesktop;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.ComboBox ddlCliente;
+		private System.Windows.Forms.TextBox txtTotal;
+		private System.Windows.Forms.ComboBox ddlProduto;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtCodigo;
+		private System.Windows.Forms.TextBox txtQuantidade;
 		private System.Windows.Forms.Label label2;
 		private FontAwesome.Sharp.IconButton btnAddProduto;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox txtDescricao;
+		private System.Windows.Forms.TextBox txtDesconto;
 		private FontAwesome.Sharp.IconButton btnDelete;
 		private FontAwesome.Sharp.IconButton btnSave;
 		private FontAwesome.Sharp.IconButton btnEdit;
@@ -410,6 +415,6 @@
 		private System.Windows.Forms.Label lblTitleChildForm;
 		private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.TextBox txtObservacao;
 	}
 }
