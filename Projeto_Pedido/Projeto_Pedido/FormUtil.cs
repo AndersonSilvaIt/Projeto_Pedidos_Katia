@@ -127,6 +127,9 @@ namespace Projeto_Pedido {
 
 			if (control is MaskedTextBox)
 				instanceEntity.GetType().GetProperty(property.Name).SetValue(instanceEntity, ((MaskedTextBox)control).Text);
+
+			if (control is Label)
+				instanceEntity.GetType().GetProperty(property.Name).SetValue(instanceEntity, ((Label)control).Text);
 		}
 
 		private void DirtyControlInt32<T>(Control control, T instanceEntity, PropertyInfo property)
@@ -173,6 +176,12 @@ namespace Projeto_Pedido {
 			if (control is MaskedTextBox)
 			{
 				decimal.TryParse(((MaskedTextBox)control).Text, out value);
+				instanceEntity.GetType().GetProperty(property.Name).SetValue(instanceEntity, value);
+			}
+
+			if (control is Label)
+			{
+				decimal.TryParse(((Label)control).Text, out value);
 				instanceEntity.GetType().GetProperty(property.Name).SetValue(instanceEntity, value);
 			}
 		}

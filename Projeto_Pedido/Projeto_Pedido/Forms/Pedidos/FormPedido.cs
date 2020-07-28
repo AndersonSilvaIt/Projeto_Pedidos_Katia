@@ -1,9 +1,12 @@
-﻿using Projeto_Pedido.Business.Repositories.EntitiesRepository;
+﻿using Microsoft.Reporting.WinForms;
+using Projeto_Pedido.Business.Repositories.EntitiesRepository;
 using Projeto_Pedido.DAL.Entities;
 using Projeto_Pedido.Forms.Entidades;
+using Projeto_Pedido.Forms.FormsConfig;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -13,6 +16,9 @@ namespace Projeto_Pedido.Forms.Pedidos {
 	public partial class FormPedido : FormUtil {
 
 		private Pedido _pedido;
+
+		private ReportViewer reportViewer;
+		private Empresa _empresa;
 
 		public FormPedido(Pedido pedido)
 		{
@@ -31,8 +37,10 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			btnCancel.Visible = true;
 			btnSave.Visible = false;
 			btnAdd.Visible = false;
+			btnAddCliente.Visible = false;
+			btnAddAddress.Visible = false;
 
-			if(_pedido.Status == 1)
+			if (_pedido.Status == 1)
 			{
 				btnLock.Visible = true;
 				btnOpen.Visible = false;
@@ -44,18 +52,19 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				btnCancel.Visible = false;
 				btnAdd.Visible = false;
 			}
-			
-			if(_pedido.Status == 3)
+
+			if (_pedido.Status == 3)
 			{
 				btnLock.Visible = false;
 				btnOpen.Visible = true;
+				btnCancel.Visible = true;
 			}
 		}
 
 		public FormPedido()
 		{
 			InitializeComponent();
-			
+			btnPrint.Visible = false;
 			_pedido = RepositorySingleton.GetInstance().PedidoAux;
 			txtEstado.Text = _pedido._StatusString;
 
@@ -124,6 +133,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 
 			if (_pedido != null && _pedido.TipoPagamento > 0)
 				ddlTipoPagamento.SelectedIndex = _pedido.TipoPagamento;
+
 		}
 
 		private void FillFields02()
@@ -138,6 +148,20 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				ddlCliente.SelectedIndex = index;
 			}
 
+			if (_pedido.ItensPedido != null && _pedido.ItensPedido.Count > 0)
+			{
+				decimal totalLiquidoItens = _pedido.ItensPedido.Sum(x => x.TotalLiquido);
+				lblLiquidoItens.Text = totalLiquidoItens.ToString("F");
+				lblTotalLiquido.Text = totalLiquidoItens.ToString("F");
+
+				decimal totalBrutoItens = _pedido.ItensPedido.Sum(x => x.TotalBruto);
+
+				lblTotalBruto.Text = totalBrutoItens.ToString("F");
+
+				decimal totalDescontosItens = _pedido.ItensPedido.Sum(x => x.Desconto);
+				lblDescontoItens.Text = totalDescontosItens.ToString("F");
+			}
+
 			txtEstado.Text = _pedido._StatusString;
 
 			ddlTipoPagamento.SelectedIndex = _pedido.TipoPagamento;
@@ -145,9 +169,12 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			txtDesconto.Text = _pedido.Desconto.ToString("F");
 			txtEntrada.Text = _pedido.Entrada.ToString("F");
 
-			txtTotalBruto.Text = _pedido.TotalBruto.ToString("F");
-			txtTotalLiquido.Text = _pedido.TotalLiquido.ToString("F");
+			lblTotalBruto.Text = _pedido.TotalBruto.ToString("F");
+			lblTotalLiquido.Text = _pedido.TotalLiquido.ToString("F");
 			txtObservacao.Text = _pedido.Observacao;
+
+			lblValorDesconto.Text = _pedido.ValorDesconto.ToString("F");
+			lblValorPagar.Text = (_pedido.TotalLiquido - _pedido.Entrada).ToString("F");
 
 			if (_pedido.ItensPedido != null && _pedido.ItensPedido.Count > 0)
 			{
@@ -183,7 +210,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			ReleaseCapture();
 			SendMessage(this.Handle, 0x112, 0xf012, 0);
 		}
-		
+
 		private void btnAdd_Click(object sender, System.EventArgs e)
 		{
 			var cliente = ddlCliente.SelectedItem as Entidade;
@@ -202,18 +229,57 @@ namespace Projeto_Pedido.Forms.Pedidos {
 
 			ddlTipoPagamento.SelectedIndex = tipoPagamento;
 
-			CalcularTotalBruto();
+			CalcularValores();
 		}
 
-		private void CalcularTotalBruto()
+		private void CalcularValores()
 		{
-			if(RepositorySingleton.GetInstance().PedidoAux != null && 
+			decimal totalLiquidoItens = 0;
+			decimal totalBrutoItens = 0;
+			decimal totalDescontosItens = 0;
+			decimal totalAPagar = 0;
+
+			if (RepositorySingleton.GetInstance().PedidoAux != null &&
 				RepositorySingleton.GetInstance().PedidoAux.ItensPedido != null &&
 				RepositorySingleton.GetInstance().PedidoAux.ItensPedido.Count > 0)
 			{
-				var total = RepositorySingleton.GetInstance().PedidoAux.ItensPedido.Sum(x => x.Total);
-				txtTotalLiquido.Text = total.ToString("F");
+				var pedidoAux = RepositorySingleton.GetInstance().PedidoAux;
+				totalLiquidoItens = pedidoAux.ItensPedido.Sum(x => x.TotalLiquido);
+				lblLiquidoItens.Text = totalLiquidoItens.ToString("F");
+				lblTotalLiquido.Text = totalLiquidoItens.ToString("F");
+
+				totalBrutoItens = pedidoAux.ItensPedido.Sum(x => x.TotalBruto);
+				lblTotalBruto.Text = totalBrutoItens.ToString("F");
+
+				totalDescontosItens = pedidoAux.ItensPedido.Sum(x => x.Desconto);
+				lblDescontoItens.Text = totalDescontosItens.ToString("F");
 			}
+
+			decimal desconto = 0;
+			decimal entrada = 0;
+
+			decimal.TryParse(txtDesconto.Text.Trim().Replace(".", ""), out desconto);
+			decimal.TryParse(txtEntrada.Text.Trim().Replace(".", ""), out entrada);
+
+			decimal totalLiquido = totalLiquidoItens;
+
+			if (desconto > 0)
+			{
+				decimal valorDesconto = totalLiquidoItens * (desconto / 100);
+				lblValorDesconto.Text = valorDesconto.ToString("F");
+
+				totalLiquido = totalLiquidoItens - valorDesconto;
+			}
+			totalAPagar = totalLiquido;
+
+			lblTotalLiquido.Text = totalLiquido.ToString("F");
+
+			if (entrada > 0)
+				totalLiquido -= entrada;
+
+			totalAPagar = totalLiquido;
+
+			lblValorPagar.Text = totalAPagar.ToString("F");
 		}
 
 		private void btnSave_Click(object sender, System.EventArgs e)
@@ -225,7 +291,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				PedidoRepository.Save(_pedido);
 				_pedido.Id = PedidoRepository.GetMaxId(_pedido);
 
-				if(_pedido.ItensPedido != null && _pedido.ItensPedido.Count > 0)
+				if (_pedido.ItensPedido != null && _pedido.ItensPedido.Count > 0)
 				{
 					foreach (var item in _pedido.ItensPedido)
 					{
@@ -233,6 +299,22 @@ namespace Projeto_Pedido.Forms.Pedidos {
 						ItensPedidoRepository.Save(item);
 					}
 				}
+
+				if (_pedido.EnderecoEntrega != null)
+				{
+					if (_pedido.NovoEnderecoEntrega != null)
+					{
+						_pedido.EnderecoEntrega = _pedido.NovoEnderecoEntrega;
+					}
+					_pedido.EnderecoEntrega.PedidoId = _pedido.Id;
+					EnderecoRepository.Save(_pedido.EnderecoEntrega);
+				}
+				else if (_pedido.NovoEnderecoEntrega != null)
+				{
+					_pedido.EnderecoEntrega = _pedido.NovoEnderecoEntrega;
+				}
+				_pedido.EnderecoEntrega.PedidoId = _pedido.Id;
+				EnderecoRepository.Save(_pedido.EnderecoEntrega);
 			}
 			else
 			{
@@ -256,6 +338,22 @@ namespace Projeto_Pedido.Forms.Pedidos {
 						PedidoItemRepository.Delete(item);
 					}
 				}
+
+				if (_pedido.EnderecoEntrega != null)
+				{
+					if (_pedido.NovoEnderecoEntrega != null)
+					{
+						int idDelete = _pedido.EnderecoEntrega.Id;
+						EnderecoRepository.Delete(_pedido.EnderecoEntrega);
+						_pedido.EnderecoEntrega = _pedido.NovoEnderecoEntrega;
+						EnderecoRepository.Save(_pedido.EnderecoEntrega);
+					}
+					else
+					{
+						EnderecoRepository.Update(_pedido.EnderecoEntrega);
+					}
+				}
+
 			}
 
 			this.Close();
@@ -278,7 +376,9 @@ namespace Projeto_Pedido.Forms.Pedidos {
 		private void btnAddCliente_Click(object sender, System.EventArgs e)
 		{
 			int tipoPagamento = 0;
-			int.TryParse((ddlTipoPagamento.SelectedValue as dynamic).Value, out tipoPagamento);
+			if (ddlTipoPagamento.SelectedValue != "0")
+				int.TryParse((ddlTipoPagamento.SelectedValue as dynamic).Value, out tipoPagamento);
+
 			var cliente = ddlCliente.SelectedItem as Entidade;
 
 			new FormCliFornecedor().ShowDialog();
@@ -298,7 +398,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			try
 			{
 				var result = MessageBox.Show("Deseja excluir esse Registro? ", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-				if (result  == DialogResult.Yes)
+				if (result == DialogResult.Yes)
 				{
 					if (_pedido.ItensPedido != null && _pedido.ItensPedido.Count > 0)
 					{
@@ -318,7 +418,8 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK);
 				this.Close();
 
-			}catch(Exception ex)
+			}
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
 			}
@@ -330,8 +431,10 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			btnSave.Visible = true;
 			btnDelete.Visible = true;
 			btnAdd.Visible = true;
+			btnAddCliente.Visible = true;
 			EnableFields(this, true);
 			btnCancel.Visible = false;
+			btnAddAddress.Visible = true;
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -404,7 +507,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				var cliente = ddlCliente.SelectedItem as Entidade;
 
 				var _itemPedido = (ItemPedido)grdItensPedido.Rows[e.RowIndex].DataBoundItem;
-				
+
 				FormItemPedido frmItemPedido = new FormItemPedido(_itemPedido);
 				frmItemPedido.ShowDialog();
 
@@ -416,6 +519,228 @@ namespace Projeto_Pedido.Forms.Pedidos {
 					var index = (ddlCliente.DataSource as List<Entidade>).FindIndex(x => x.Id == cliente.Id);
 					ddlCliente.SelectedIndex = index;
 				}
+
+				CalcularValores();
+			}
+		}
+
+		private void txtEntrada_Leave(object sender, EventArgs e)
+		{
+			CalcularValores();
+		}
+
+		private void txtDesconto_Leave(object sender, EventArgs e)
+		{
+			CalcularValores();
+		}
+
+		private void btnPrint_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				var lista = EmpresaRepository.GetAll();
+				if (lista == null || lista.Count == 0)
+				{
+					throw new ErrorMessageException("É necessário realizar o cadastro da Empresa em COnfigurações");
+				}
+				_empresa = lista[0];
+
+				string path = @"Projeto_Pedido.Reports.ImpressaoPedido.rdlc";
+				if (this.reportViewer == null)
+					this.reportViewer = new ReportViewer();
+
+				var listItens = _pedido.ItensPedido;
+
+				this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet2", listItens));
+
+				FormReport frmReport = new FormReport(this.reportViewer, path, GetParametersToPrint());
+				frmReport.ShowDialog();
+			}
+			catch (ErrorMessageException eme)
+			{
+				MessageBox.Show(eme.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+
+			catch (Exception ex)
+			{
+
+			}
+		}
+
+		private IList<ReportParameter> GetParametersToPrint()
+		{
+			try
+			{
+				IList<ReportParameter> listReportParameter;
+				ReportParameter Imagem = new ReportParameter("Imagem", _empresa.CaminhoImagem);
+				ReportParameter RazaoSocial = new ReportParameter("RazaoSocial", _empresa.RazaoSocial);
+				ReportParameter Documento = new ReportParameter("Documento", _empresa.Documento);
+				ReportParameter RuaEmpresa = new ReportParameter("RuaEmpresa", _empresa.Rua);
+				ReportParameter NumeroEmpresa = new ReportParameter("NumeroEmpresa", _empresa.Numero);
+				ReportParameter BairroEmpresa = new ReportParameter("BairroEmpresa", _empresa.Bairro);
+				ReportParameter CidadeEmpresa = new ReportParameter("CidadeEmpresa", _empresa.Cidade);
+				ReportParameter EstadoEmpresa = new ReportParameter("EstadoEmpresa", _empresa.Estado);
+				ReportParameter CEPEmpresa = new ReportParameter("CEPEmpresa", _empresa.CEP);
+				ReportParameter FoneFixoEmpresa = new ReportParameter("FoneFixoEmpresa", _empresa.FoneFixo);
+				ReportParameter FoneCelularEmpresa = new ReportParameter("FoneCelularEmpresa", _empresa.FoneCelular);
+				ReportParameter EmailEmpresa = new ReportParameter("EmailEmpresa", _empresa.Email);
+				ReportParameter Site = new ReportParameter("Site", _empresa.Site);
+
+				ReportParameter DataPedido = new ReportParameter("DataPedido", _pedido.DataPedido);
+				ReportParameter HoraPedido = new ReportParameter("HoraPedido", _pedido.HoraPedido);
+				ReportParameter Numero = new ReportParameter("Numero", _pedido.Numero);
+				ReportParameter ClienteString = new ReportParameter("ClienteString", _pedido.ClienteString);
+
+				ReportParameter RuaCliente = new ReportParameter("RuaCliente", _pedido.Cliente.Rua);
+				ReportParameter NumeroCliente = new ReportParameter("NumeroCliente", _pedido.Cliente.Numero);
+				ReportParameter BairroCliente = new ReportParameter("BairroCliente", _pedido.Cliente.Bairro);
+				ReportParameter CidadeCliente = new ReportParameter("CidadeCliente", _pedido.Cliente.Cidade);
+				ReportParameter EstadoCliente = new ReportParameter("EstadoCliente", _pedido.Cliente.Estado);
+				ReportParameter CEPCliente = new ReportParameter("CEPCliente", _pedido.Cliente.CEP);
+				ReportParameter FoneFixoCliente = new ReportParameter("FoneFixoCliente", _pedido.Cliente.FoneFixo);
+				ReportParameter FoneCelularCliente = new ReportParameter("FoneCelularCliente", _pedido.Cliente.FoneCelular);
+				ReportParameter ClienteCodigo = new ReportParameter("ClienteCodigo", _pedido.Cliente.Codigo);
+
+				ReportParameter TipoPagamentoString = new ReportParameter("TipoPagamentoString", _pedido.TipoPagamentoString);
+				ReportParameter TotalBrutoToString = new ReportParameter("TotalBrutoToString", _pedido.TotalBrutoToString);
+				ReportParameter TotalLiquidoToString = new ReportParameter("TotalLiquidoToString", _pedido.TotalLiquidoToString);
+				ReportParameter TotalDescontos = new ReportParameter("TotalDescontos", _pedido.TotalDescontos);
+
+				ReportParameter Entrada = new ReportParameter("Entrada", _pedido.Entrada.ToString("F"));
+				ReportParameter ObservacaoPedido = new ReportParameter("ObservacaoPedido", _pedido.Observacao);
+
+				CultureInfo culture = new CultureInfo("pt-BR");
+				DateTimeFormatInfo dtfi = culture.DateTimeFormat;
+				DateTime dtImpressao = DateTime.Now;
+				int dia = dtImpressao.Day;
+				int ano = dtImpressao.Year;
+
+				string mes = culture.TextInfo.ToTitleCase(dtfi.GetMonthName(dtImpressao.Month));
+				string diasemana = culture.TextInfo.ToTitleCase(dtfi.GetDayName(dtImpressao.DayOfWeek));
+
+				string data = $"{diasemana}, {dia} de {mes} de {ano}";
+
+				ReportParameter DataImpressaoPedido = new ReportParameter("DataImpressaoPedido", data);
+
+				ReportParameter RuaEntrega, NumeroEntrega, BairroEntrega, CidadeEntrega, EstadoEntrega, CEPEntrega, Destinatario;
+
+				/// Endereço Entrega
+				if (_pedido.EnderecoEntrega != null)
+				{
+					RuaEntrega = new ReportParameter("RuaEntrega", _pedido.EnderecoEntrega.Rua);
+					NumeroEntrega = new ReportParameter("NumeroEntrega", _pedido.EnderecoEntrega.Numero);
+					BairroEntrega = new ReportParameter("BairroEntrega", _pedido.EnderecoEntrega.Bairro);
+					CidadeEntrega = new ReportParameter("CidadeEntrega", _pedido.EnderecoEntrega.Cidade);
+					EstadoEntrega = new ReportParameter("EstadoEntrega", _pedido.EnderecoEntrega.Estado);
+					CEPEntrega = new ReportParameter("CEPEntrega", _pedido.EnderecoEntrega.CEP);
+					Destinatario = new ReportParameter("Destinatario", _pedido.EnderecoEntrega.Destinatario);
+				}
+				else
+				{
+					RuaEntrega = new ReportParameter("RuaEntrega", "");
+					NumeroEntrega = new ReportParameter("NumeroEntrega", "");
+					BairroEntrega = new ReportParameter("BairroEntrega", "");
+					CidadeEntrega = new ReportParameter("CidadeEntrega", "");
+					EstadoEntrega = new ReportParameter("EstadoEntrega", "");
+					CEPEntrega = new ReportParameter("CEPEntrega", "");
+					Destinatario = new ReportParameter("Destinatario", "");
+				}
+
+				listReportParameter = new List<ReportParameter>()
+				{
+					RazaoSocial , Documento , RuaEmpresa  , NumeroEmpresa , BairroEmpresa , CidadeEmpresa , EstadoEmpresa ,
+					CEPEmpresa   , FoneFixoEmpresa , FoneCelularEmpresa , EmailEmpresa, DataPedido  , HoraPedido  , Numero ,
+					ClienteString , RuaCliente , NumeroCliente , BairroCliente , CidadeCliente , EstadoCliente , CEPCliente ,
+					FoneFixoCliente , FoneCelularCliente  , ClienteCodigo  , Site, TipoPagamentoString,
+					TotalBrutoToString, TotalLiquidoToString, TotalDescontos, Entrada, ObservacaoPedido, DataImpressaoPedido,
+					Imagem, RuaEntrega, NumeroEntrega, BairroEntrega, CidadeEntrega, EstadoEntrega, CEPEntrega, Destinatario
+				};
+
+				return listReportParameter;
+			}
+			catch (Exception ex)
+			{
+				// mensagem de erro caso nao existir o cadastro da empresa
+			}
+
+			return null;
+		}
+
+		private void ddlCliente_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			var cliente = ddlCliente.SelectedItem as Entidade;
+			if (cliente != null)
+			{
+				var endereco = new EnderecoEntrega();
+				endereco.Rua = cliente.Rua;
+				endereco.Numero = cliente.Numero;
+				endereco.Bairro = cliente.Bairro;
+				endereco.Cidade = cliente.Cidade;
+				endereco.Estado = cliente.Estado;
+				endereco.CEP = cliente.CEP;
+				endereco.Complemento = cliente.Complemento;
+				endereco.Destinatario = cliente.Descricao;
+				//_pedido.EnderecoEntrega = endereco;
+
+				var listaEndereco = new List<EnderecoEntrega>();
+				listaEndereco.Add(endereco);
+
+				var binding = new BindingList<EnderecoEntrega>(listaEndereco);
+				grdEndereco.DataSource = binding;
+				grdEndereco.Refresh();
+			}
+
+			if (_pedido.EnderecoEntrega != null)
+			{
+				var listaEndereco = new List<EnderecoEntrega>();
+				listaEndereco.Add(_pedido.EnderecoEntrega);
+
+				var binding = new BindingList<EnderecoEntrega>(listaEndereco);
+				grdEndereco.DataSource = binding;
+				grdEndereco.Refresh();
+			}
+
+			if (_pedido.NovoEnderecoEntrega != null)
+			{
+				var listaEndereco = new List<EnderecoEntrega>();
+				listaEndereco.Add(_pedido.NovoEnderecoEntrega);
+
+				var binding = new BindingList<EnderecoEntrega>(listaEndereco);
+				grdEndereco.DataSource = binding;
+				grdEndereco.Refresh();
+			}
+		}
+
+		private void btnAddAddress_Click(object sender, EventArgs e)
+		{
+			var result = MessageBox.Show("Deseja alterar o Endereço de Entrega?", "Endereço de Entrega", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+			{
+				_pedido.Numero = txtNumero.Text;
+
+				EnderecoEntrega endereco;
+				var lista = grdEndereco.DataSource as BindingList<EnderecoEntrega>;
+				if (lista != null && lista.Count > 0)
+				{
+					endereco = lista[0];
+				}
+				else
+					endereco = new EnderecoEntrega();
+
+				new FormEndereco(_pedido, endereco).ShowDialog();
+				AtualizarGridEndereco();
+			}
+		}
+
+		private void AtualizarGridEndereco()
+		{
+			if (_pedido.NovoEnderecoEntrega != null)
+			{
+				var listaEndereco = new List<Endereco>();
+				listaEndereco.Add(_pedido.NovoEnderecoEntrega);
+				var binding = new BindingList<Endereco>(listaEndereco);
+				grdEndereco.DataSource = binding;
+				grdEndereco.Refresh();
 			}
 		}
 	}

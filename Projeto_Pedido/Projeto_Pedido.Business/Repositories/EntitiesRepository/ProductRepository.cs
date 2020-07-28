@@ -1,6 +1,7 @@
 ﻿using Projeto_Pedido.Business.Repositories.Operators;
 using Projeto_Pedido.DAL.Entities;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 
 namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
@@ -37,6 +38,35 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 				if (item.IdFornecedor > 0)
 					item.Fornecedor = EntityRepository.GetEntity(item.IdFornecedor);
 			}
+		}
+
+		public static void PreencherUnidadeMedida(IList<Product> products)
+		{
+			foreach (var item in products)
+			{
+				if (item.UnidadeMedidaId > 0)
+					item.UM = UnidadeRepository.GetEntity(item.UnidadeMedidaId);
+			}
+		}
+
+		public static bool VerificaDuplicidade(int idProduto, string codigo)
+		{
+			var instanceEntity = new Product();
+
+			using (var conection = BaseData.DbConnection())
+			{
+				string orderByCommand = string.Empty;
+
+				SQLiteCommand sQLiteCommand = new SQLiteCommand($"SELECT * FROM {instanceEntity.GetType().Name} where Codigo = '{codigo}' and id <> {idProduto} ", conection);
+
+				using (var read = sQLiteCommand.ExecuteReader())
+				{
+					if (read.Read())
+						return true;
+				}
+			}
+
+			return false; 
 		}
 	}
 }

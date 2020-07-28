@@ -26,6 +26,7 @@ namespace Projeto_Pedido {
 		/// </summary>
 		private void InitializeComponent() {
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.btnConfig = new FontAwesome.Sharp.IconButton();
 			this.btnProduto = new FontAwesome.Sharp.IconButton();
 			this.btnClienteFornecedor = new FontAwesome.Sharp.IconButton();
 			this.btnPedidos = new FontAwesome.Sharp.IconButton();
@@ -52,6 +53,7 @@ namespace Projeto_Pedido {
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(188)))), ((int)(((byte)(246)))));
+			this.panelMenu.Controls.Add(this.btnConfig);
 			this.panelMenu.Controls.Add(this.btnProduto);
 			this.panelMenu.Controls.Add(this.btnClienteFornecedor);
 			this.panelMenu.Controls.Add(this.btnPedidos);
@@ -62,6 +64,30 @@ namespace Projeto_Pedido {
 			this.panelMenu.Name = "panelMenu";
 			this.panelMenu.Size = new System.Drawing.Size(175, 602);
 			this.panelMenu.TabIndex = 2;
+			// 
+			// btnConfig
+			// 
+			this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnConfig.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnConfig.FlatAppearance.BorderSize = 0;
+			this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnConfig.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnConfig.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold);
+			this.btnConfig.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
+			this.btnConfig.IconChar = FontAwesome.Sharp.IconChar.Cogs;
+			this.btnConfig.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(7)))), ((int)(((byte)(87)))));
+			this.btnConfig.IconSize = 25;
+			this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnConfig.Location = new System.Drawing.Point(0, 246);
+			this.btnConfig.Name = "btnConfig";
+			this.btnConfig.Rotation = 0D;
+			this.btnConfig.Size = new System.Drawing.Size(175, 48);
+			this.btnConfig.TabIndex = 7;
+			this.btnConfig.Text = "Configurações";
+			this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnConfig.UseVisualStyleBackColor = true;
+			this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
 			// 
 			// btnProduto
 			// 
@@ -326,6 +352,7 @@ namespace Projeto_Pedido {
 		private FontAwesome.Sharp.IconButton btnMaximize;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private FontAwesome.Sharp.IconButton btnProduto;
+		private FontAwesome.Sharp.IconButton btnConfig;
 	}
 }
 

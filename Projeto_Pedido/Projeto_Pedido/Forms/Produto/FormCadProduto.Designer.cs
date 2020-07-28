@@ -43,15 +43,11 @@
 			this.txtObservacao = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.txtCodigo = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnAddFornecedor = new FontAwesome.Sharp.IconButton();
 			this.label3 = new System.Windows.Forms.Label();
-			this.txtTipo = new System.Windows.Forms.TextBox();
 			this.txtDescricao = new System.Windows.Forms.TextBox();
-			this.label7 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +56,7 @@
 			this.btnSave = new FontAwesome.Sharp.IconButton();
 			this.btnEdit = new FontAwesome.Sharp.IconButton();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+			this.btnAddUnidadeMedida = new FontAwesome.Sharp.IconButton();
 			this.panelTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
@@ -100,7 +97,7 @@
 			this.btnMaximize.Name = "btnMaximize";
 			this.btnMaximize.Rotation = 0D;
 			this.btnMaximize.Size = new System.Drawing.Size(24, 22);
-			this.btnMaximize.TabIndex = 7;
+			this.btnMaximize.TabIndex = 15;
 			this.btnMaximize.UseVisualStyleBackColor = true;
 			this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
 			// 
@@ -120,7 +117,7 @@
 			this.btnMinimize.Name = "btnMinimize";
 			this.btnMinimize.Rotation = 0D;
 			this.btnMinimize.Size = new System.Drawing.Size(24, 22);
-			this.btnMinimize.TabIndex = 6;
+			this.btnMinimize.TabIndex = 14;
 			this.btnMinimize.UseVisualStyleBackColor = true;
 			this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
 			// 
@@ -140,7 +137,7 @@
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Rotation = 0D;
 			this.btnClose.Size = new System.Drawing.Size(24, 22);
-			this.btnClose.TabIndex = 5;
+			this.btnClose.TabIndex = 16;
 			this.btnClose.UseVisualStyleBackColor = true;
 			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
@@ -192,6 +189,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.btnAddUnidadeMedida);
 			this.groupBox1.Controls.Add(this.ddlUnidadeMedida);
 			this.groupBox1.Controls.Add(this.ddlFornecedor);
 			this.groupBox1.Controls.Add(this.btnImage);
@@ -200,15 +198,11 @@
 			this.groupBox1.Controls.Add(this.txtObservacao);
 			this.groupBox1.Controls.Add(this.label9);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.textBox7);
 			this.groupBox1.Controls.Add(this.txtCodigo);
-			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.btnAddFornecedor);
 			this.groupBox1.Controls.Add(this.label3);
-			this.groupBox1.Controls.Add(this.txtTipo);
 			this.groupBox1.Controls.Add(this.txtDescricao);
-			this.groupBox1.Controls.Add(this.label7);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.label4);
@@ -229,7 +223,7 @@
 			this.ddlUnidadeMedida.Location = new System.Drawing.Point(29, 114);
 			this.ddlUnidadeMedida.Name = "ddlUnidadeMedida";
 			this.ddlUnidadeMedida.Size = new System.Drawing.Size(94, 26);
-			this.ddlUnidadeMedida.TabIndex = 30;
+			this.ddlUnidadeMedida.TabIndex = 3;
 			// 
 			// ddlFornecedor
 			// 
@@ -239,7 +233,7 @@
 			this.ddlFornecedor.Location = new System.Drawing.Point(29, 180);
 			this.ddlFornecedor.Name = "ddlFornecedor";
 			this.ddlFornecedor.Size = new System.Drawing.Size(314, 26);
-			this.ddlFornecedor.TabIndex = 29;
+			this.ddlFornecedor.TabIndex = 7;
 			// 
 			// btnImage
 			// 
@@ -248,7 +242,7 @@
 			this.btnImage.Location = new System.Drawing.Point(685, 168);
 			this.btnImage.Name = "btnImage";
 			this.btnImage.Size = new System.Drawing.Size(113, 23);
-			this.btnImage.TabIndex = 28;
+			this.btnImage.TabIndex = 9;
 			this.btnImage.Text = "Escolher Imagem";
 			this.btnImage.UseVisualStyleBackColor = true;
 			this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
@@ -272,10 +266,11 @@
 			// 
 			this.txtPrecoVenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtPrecoVenda.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtPrecoVenda.Location = new System.Drawing.Point(332, 117);
+			this.txtPrecoVenda.Location = new System.Drawing.Point(365, 117);
 			this.txtPrecoVenda.Name = "txtPrecoVenda";
 			this.txtPrecoVenda.Size = new System.Drawing.Size(138, 19);
-			this.txtPrecoVenda.TabIndex = 18;
+			this.txtPrecoVenda.TabIndex = 6;
+			this.txtPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// txtObservacao
 			// 
@@ -284,7 +279,7 @@
 			this.txtObservacao.Multiline = true;
 			this.txtObservacao.Name = "txtObservacao";
 			this.txtObservacao.Size = new System.Drawing.Size(599, 47);
-			this.txtObservacao.TabIndex = 24;
+			this.txtObservacao.TabIndex = 10;
 			// 
 			// label9
 			// 
@@ -306,15 +301,6 @@
 			this.label1.TabIndex = 5;
 			this.label1.Text = "Código";
 			// 
-			// textBox7
-			// 
-			this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox7.Location = new System.Drawing.Point(524, 183);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(104, 19);
-			this.textBox7.TabIndex = 22;
-			// 
 			// txtCodigo
 			// 
 			this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -322,17 +308,7 @@
 			this.txtCodigo.Location = new System.Drawing.Point(29, 62);
 			this.txtCodigo.Name = "txtCodigo";
 			this.txtCodigo.Size = new System.Drawing.Size(94, 19);
-			this.txtCodigo.TabIndex = 6;
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(521, 162);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(94, 18);
-			this.label8.TabIndex = 21;
-			this.label8.Text = "Data Cadastro";
+			this.txtCodigo.TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -357,7 +333,7 @@
 			this.btnAddFornecedor.Name = "btnAddFornecedor";
 			this.btnAddFornecedor.Rotation = 0D;
 			this.btnAddFornecedor.Size = new System.Drawing.Size(25, 24);
-			this.btnAddFornecedor.TabIndex = 10;
+			this.btnAddFornecedor.TabIndex = 8;
 			this.btnAddFornecedor.UseVisualStyleBackColor = true;
 			this.btnAddFornecedor.Click += new System.EventHandler(this.btnAddFornecedor_Click);
 			// 
@@ -365,39 +341,20 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(147, 41);
+			this.label3.Location = new System.Drawing.Point(180, 41);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(68, 18);
 			this.label3.TabIndex = 11;
 			this.label3.Text = "Descrição";
 			// 
-			// txtTipo
-			// 
-			this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtTipo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTipo.Location = new System.Drawing.Point(524, 117);
-			this.txtTipo.Name = "txtTipo";
-			this.txtTipo.Size = new System.Drawing.Size(104, 19);
-			this.txtTipo.TabIndex = 20;
-			// 
 			// txtDescricao
 			// 
 			this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtDescricao.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDescricao.Location = new System.Drawing.Point(150, 62);
+			this.txtDescricao.Location = new System.Drawing.Point(183, 62);
 			this.txtDescricao.Name = "txtDescricao";
-			this.txtDescricao.Size = new System.Drawing.Size(478, 19);
-			this.txtDescricao.TabIndex = 12;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(521, 96);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(35, 18);
-			this.label7.TabIndex = 19;
-			this.label7.Text = "Tipo";
+			this.txtDescricao.Size = new System.Drawing.Size(442, 19);
+			this.txtDescricao.TabIndex = 2;
 			// 
 			// label5
 			// 
@@ -413,7 +370,7 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(329, 96);
+			this.label6.Location = new System.Drawing.Point(362, 96);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(83, 18);
 			this.label6.TabIndex = 17;
@@ -423,7 +380,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(147, 96);
+			this.label4.Location = new System.Drawing.Point(180, 96);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(79, 18);
 			this.label4.TabIndex = 15;
@@ -433,10 +390,11 @@
 			// 
 			this.txtPrecoCusto.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtPrecoCusto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtPrecoCusto.Location = new System.Drawing.Point(150, 117);
+			this.txtPrecoCusto.Location = new System.Drawing.Point(183, 117);
 			this.txtPrecoCusto.Name = "txtPrecoCusto";
 			this.txtPrecoCusto.Size = new System.Drawing.Size(138, 19);
-			this.txtPrecoCusto.TabIndex = 16;
+			this.txtPrecoCusto.TabIndex = 5;
+			this.txtPrecoCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// btnDelete
 			// 
@@ -452,7 +410,7 @@
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Rotation = 0D;
 			this.btnDelete.Size = new System.Drawing.Size(37, 33);
-			this.btnDelete.TabIndex = 26;
+			this.btnDelete.TabIndex = 13;
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
@@ -470,7 +428,7 @@
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Rotation = 0D;
 			this.btnSave.Size = new System.Drawing.Size(37, 33);
-			this.btnSave.TabIndex = 20;
+			this.btnSave.TabIndex = 11;
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
@@ -488,7 +446,7 @@
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Rotation = 0D;
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
-			this.btnEdit.TabIndex = 25;
+			this.btnEdit.TabIndex = 12;
 			this.btnEdit.UseVisualStyleBackColor = true;
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
@@ -496,6 +454,23 @@
 			// 
 			this.openFileDialog.FileName = "openFileDialog";
 			this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk);
+			// 
+			// btnAddUnidadeMedida
+			// 
+			this.btnAddUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAddUnidadeMedida.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnAddUnidadeMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAddUnidadeMedida.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnAddUnidadeMedida.IconChar = FontAwesome.Sharp.IconChar.Plus;
+			this.btnAddUnidadeMedida.IconColor = System.Drawing.Color.White;
+			this.btnAddUnidadeMedida.IconSize = 15;
+			this.btnAddUnidadeMedida.Location = new System.Drawing.Point(129, 117);
+			this.btnAddUnidadeMedida.Name = "btnAddUnidadeMedida";
+			this.btnAddUnidadeMedida.Rotation = 0D;
+			this.btnAddUnidadeMedida.Size = new System.Drawing.Size(25, 24);
+			this.btnAddUnidadeMedida.TabIndex = 4;
+			this.btnAddUnidadeMedida.UseVisualStyleBackColor = true;
+			this.btnAddUnidadeMedida.Click += new System.EventHandler(this.btnAddUnidadeMedida_Click);
 			// 
 			// FormCadProduto
 			// 
@@ -537,12 +512,8 @@
 		private System.Windows.Forms.TextBox txtPrecoCusto;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox txtTipo;
-		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TextBox txtObservacao;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private FontAwesome.Sharp.IconPictureBox ImagemProduto;
 		private System.Windows.Forms.Button btnImage;
@@ -555,5 +526,6 @@
 		private FontAwesome.Sharp.IconButton btnClose;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.ComboBox ddlUnidadeMedida;
+		private FontAwesome.Sharp.IconButton btnAddUnidadeMedida;
 	}
 }

@@ -9,7 +9,12 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 			foreach (var item in itemPedidos)
 			{
 				if (item.IdProduto > 0)
+				{
 					item.Produto = ProductRepository.GetEntity(item.IdProduto);
+
+					if(item.Produto.UnidadeMedidaId > 0)
+						item.Produto.UM = UnidadeRepository.GetEntity(item.Produto.UnidadeMedidaId);
+				}
 			}
 		}
 

@@ -163,5 +163,11 @@ namespace Projeto_Pedido {
 			ActivateButton(sender);
 			OpenChildForms(new FormListProduto());
 		}
+
+		private void btnConfig_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender);
+			OpenChildForms(new FormConfig());
+		}
 	}
 }

@@ -26,6 +26,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			_itemPedido = itemPedido;
 
 			AtualizaFormulario();
+			FillFields02();
 
 			EnableFields(this, false);
 			btnEdit.Visible = true;
@@ -41,7 +42,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
 			var listaProduto = new List<Product>();
-		
+
 			listaProduto = new List<Product>() { new Product() { Codigo = "", Descricao = "", Id = 0 } };
 			listaProduto.AddRange(ProductRepository.GetAll());
 
@@ -50,12 +51,6 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			ddlProduto.Refresh();
 			ddlProduto.DisplayMember = "ProdutoString";
 			ddlProduto.ValueMember = "Id";
-
-			if (_itemPedido != null && _itemPedido.IdProduto > 0)
-			{
-				var index = (ddlProduto.DataSource as List<Product>).FindIndex(x => x.Id == _itemPedido.IdProduto);
-				ddlProduto.SelectedIndex = index;
-			}
 		}
 
 		private void btnMinimize_Click(object sender, EventArgs e)
@@ -102,7 +97,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 
 			DirtyFields(this, _itemPedido);
 			DirtyFields02();
-			
+
 			if (RepositorySingleton.GetInstance().PedidoAux == null)
 				RepositorySingleton.GetInstance().PedidoAux = new DAL.Entities.Pedido();
 
@@ -128,12 +123,29 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			{
 				_itemPedido.Produto = produto;
 				_itemPedido.IdProduto = produto.Id;
+
+				_itemPedido.TotalBruto = _itemPedido.Quantidade * produto.PrecoVenda;
 			}
+			
 		}
 
-		private void txtDesconto_Leave(object sender, EventArgs e)
+		private void FillFields02()
 		{
-			var teste = "";
+			if (_itemPedido != null && _itemPedido.IdProduto > 0)
+			{
+				var index = (ddlProduto.DataSource as List<Product>).FindIndex(x => x.Id == _itemPedido.IdProduto);
+				ddlProduto.SelectedIndex = index;
+			}
+
+			if (_itemPedido.Produto != null)
+				lblValorProduto.Text = _itemPedido.Produto.PrecoVenda.ToString("F");
+			else
+				lblValorProduto.Text = 0.ToString("F");
+
+			txtQuantidade.Text = _itemPedido.QuantidadeToString;
+			txtDesconto.Text = _itemPedido.Desconto.ToString("F");
+			lblTotalLiquido.Text = _itemPedido.TotalToString;
+			lblValorDesconto.Text = _itemPedido.ValorDesconto.ToString("F");
 		}
 
 		private void btnEdit_Click(object sender, EventArgs e)
@@ -151,7 +163,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				var result = MessageBox.Show("Deseja excluir esse Registro? ", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				if (result == DialogResult.Yes)
 				{
-					if(_itemPedido.Id == 0)
+					if (_itemPedido.Id == 0)
 					{
 						RepositorySingleton.GetInstance().PedidoAux.ItensPedido.Remove(_itemPedido);
 					}
@@ -172,6 +184,53 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			{
 				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
 			}
+		}
+
+		private void ddlProduto_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			var produto = (ddlProduto.SelectedItem as Product);
+			if (produto != null)
+				lblValorProduto.Text = produto.PrecoVenda.ToString("F");
+			else
+				lblValorProduto.Text = 0.ToString("F");
+			
+			TratarEventBlur();
+		}
+
+		private void txtQuantidade_Leave(object sender, EventArgs e)
+		{
+			TratarEventBlur();
+		}
+
+		private void TratarEventBlur()
+		{
+			decimal quantidade = 0;
+			decimal desconto = 1;
+			decimal valorProduto = 0;
+			decimal total = 0;
+
+			if ((!string.IsNullOrWhiteSpace(txtQuantidade.Text.Trim())
+				&& decimal.TryParse(txtQuantidade.Text.Trim().Replace(".", ""), out quantidade))
+				
+				&& (!string.IsNullOrWhiteSpace(lblValorProduto.Text.Trim())
+				&& decimal.TryParse(lblValorProduto.Text.Trim().Replace(".", ""), out valorProduto))
+				)
+			{
+				decimal.TryParse(txtDesconto.Text.Trim().Replace(".", ""), out desconto);
+				total = quantidade * valorProduto;
+				if (desconto > 0)
+				{
+					decimal valorDesconto = quantidade * valorProduto * (desconto / 100);
+					lblValorDesconto.Text = valorDesconto.ToString("F");
+					total -= valorDesconto;
+				}
+			}
+			lblTotalLiquido.Text = total.ToString("F");
+		}
+
+		private void txtDesconto_Leave(object sender, EventArgs e)
+		{
+			TratarEventBlur();
 		}
 	}
 }

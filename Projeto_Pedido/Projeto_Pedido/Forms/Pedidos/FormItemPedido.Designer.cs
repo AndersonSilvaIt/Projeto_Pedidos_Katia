@@ -28,10 +28,11 @@
 		{
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.txtObservacao = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
-			this.txtTotal = new System.Windows.Forms.TextBox();
 			this.ddlProduto = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtQuantidade = new System.Windows.Forms.TextBox();
@@ -49,6 +50,9 @@
 			this.btnHome = new System.Windows.Forms.PictureBox();
 			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+			this.lblValorDesconto = new System.Windows.Forms.Label();
+			this.lblTotalLiquido = new System.Windows.Forms.Label();
+			this.lblValorProduto = new System.Windows.Forms.Label();
 			this.panelDesktop.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
@@ -66,15 +70,19 @@
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDesktop.Location = new System.Drawing.Point(0, 73);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(676, 328);
+			this.panelDesktop.Size = new System.Drawing.Size(676, 332);
 			this.panelDesktop.TabIndex = 10;
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.lblValorProduto);
+			this.groupBox1.Controls.Add(this.lblTotalLiquido);
+			this.groupBox1.Controls.Add(this.lblValorDesconto);
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.txtObservacao);
 			this.groupBox1.Controls.Add(this.label10);
-			this.groupBox1.Controls.Add(this.txtTotal);
 			this.groupBox1.Controls.Add(this.ddlProduto);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.txtQuantidade);
@@ -85,16 +93,36 @@
 			this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F);
 			this.groupBox1.Location = new System.Drawing.Point(12, 17);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(652, 248);
+			this.groupBox1.Size = new System.Drawing.Size(652, 254);
 			this.groupBox1.TabIndex = 25;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Item";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(226, 115);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(84, 18);
+			this.label6.TabIndex = 52;
+			this.label6.Text = "Desconto R$";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(463, 80);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(99, 18);
+			this.label5.TabIndex = 50;
+			this.label5.Text = "Valor Produto: ";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(26, 161);
+			this.label4.Location = new System.Drawing.Point(26, 175);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(79, 18);
 			this.label4.TabIndex = 48;
@@ -104,7 +132,7 @@
 			// 
 			this.txtObservacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtObservacao.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtObservacao.Location = new System.Drawing.Point(29, 182);
+			this.txtObservacao.Location = new System.Drawing.Point(29, 196);
 			this.txtObservacao.Multiline = true;
 			this.txtObservacao.Name = "txtObservacao";
 			this.txtObservacao.Size = new System.Drawing.Size(569, 42);
@@ -114,21 +142,11 @@
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(473, 105);
+			this.label10.Location = new System.Drawing.Point(355, 114);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(40, 18);
+			this.label10.Size = new System.Drawing.Size(61, 18);
 			this.label10.TabIndex = 30;
-			this.label10.Text = "Total";
-			// 
-			// txtTotal
-			// 
-			this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtTotal.Enabled = false;
-			this.txtTotal.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTotal.Location = new System.Drawing.Point(476, 126);
-			this.txtTotal.Name = "txtTotal";
-			this.txtTotal.Size = new System.Drawing.Size(122, 19);
-			this.txtTotal.TabIndex = 5;
+			this.label10.Text = "Total R$";
 			// 
 			// ddlProduto
 			// 
@@ -136,16 +154,17 @@
 			this.ddlProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.ddlProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.ddlProduto.FormattingEnabled = true;
-			this.ddlProduto.Location = new System.Drawing.Point(29, 58);
+			this.ddlProduto.Location = new System.Drawing.Point(29, 47);
 			this.ddlProduto.Name = "ddlProduto";
 			this.ddlProduto.Size = new System.Drawing.Size(569, 26);
 			this.ddlProduto.TabIndex = 1;
+			this.ddlProduto.SelectedIndexChanged += new System.EventHandler(this.ddlProduto_SelectedIndexChanged);
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(26, 105);
+			this.label1.Location = new System.Drawing.Point(26, 115);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(79, 18);
 			this.label1.TabIndex = 5;
@@ -155,16 +174,18 @@
 			// 
 			this.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtQuantidade.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtQuantidade.Location = new System.Drawing.Point(29, 126);
+			this.txtQuantidade.Location = new System.Drawing.Point(29, 136);
 			this.txtQuantidade.Name = "txtQuantidade";
 			this.txtQuantidade.Size = new System.Drawing.Size(94, 19);
 			this.txtQuantidade.TabIndex = 3;
+			this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtQuantidade.Leave += new System.EventHandler(this.txtQuantidade_Leave);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(26, 37);
+			this.label2.Location = new System.Drawing.Point(26, 26);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(55, 18);
 			this.label2.TabIndex = 7;
@@ -179,7 +200,7 @@
 			this.btnAddProduto.IconChar = FontAwesome.Sharp.IconChar.Plus;
 			this.btnAddProduto.IconColor = System.Drawing.Color.White;
 			this.btnAddProduto.IconSize = 15;
-			this.btnAddProduto.Location = new System.Drawing.Point(604, 58);
+			this.btnAddProduto.Location = new System.Drawing.Point(604, 47);
 			this.btnAddProduto.Name = "btnAddProduto";
 			this.btnAddProduto.Rotation = 0D;
 			this.btnAddProduto.Size = new System.Drawing.Size(25, 24);
@@ -191,20 +212,21 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(147, 105);
+			this.label3.Location = new System.Drawing.Point(147, 115);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(63, 18);
+			this.label3.Size = new System.Drawing.Size(52, 18);
 			this.label3.TabIndex = 11;
-			this.label3.Text = "Desconto";
+			this.label3.Text = "Desc %";
 			// 
 			// txtDesconto
 			// 
 			this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtDesconto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDesconto.Location = new System.Drawing.Point(150, 126);
+			this.txtDesconto.Location = new System.Drawing.Point(150, 136);
 			this.txtDesconto.Name = "txtDesconto";
-			this.txtDesconto.Size = new System.Drawing.Size(90, 19);
+			this.txtDesconto.Size = new System.Drawing.Size(49, 19);
 			this.txtDesconto.TabIndex = 4;
+			this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.txtDesconto.Leave += new System.EventHandler(this.txtDesconto_Leave);
 			// 
 			// btnDelete
@@ -217,7 +239,7 @@
 			this.btnDelete.IconColor = System.Drawing.Color.Red;
 			this.btnDelete.IconSize = 35;
 			this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnDelete.Location = new System.Drawing.Point(151, 277);
+			this.btnDelete.Location = new System.Drawing.Point(138, 285);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Rotation = 0D;
 			this.btnDelete.Size = new System.Drawing.Size(37, 33);
@@ -235,7 +257,7 @@
 			this.btnSave.IconColor = System.Drawing.Color.Green;
 			this.btnSave.IconSize = 35;
 			this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnSave.Location = new System.Drawing.Point(45, 277);
+			this.btnSave.Location = new System.Drawing.Point(32, 285);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Rotation = 0D;
 			this.btnSave.Size = new System.Drawing.Size(37, 33);
@@ -253,7 +275,7 @@
 			this.btnEdit.IconColor = System.Drawing.Color.Gold;
 			this.btnEdit.IconSize = 35;
 			this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnEdit.Location = new System.Drawing.Point(98, 277);
+			this.btnEdit.Location = new System.Drawing.Point(85, 285);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Rotation = 0D;
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
@@ -370,11 +392,41 @@
 			this.iconCurrentChildForm.TabIndex = 0;
 			this.iconCurrentChildForm.TabStop = false;
 			// 
+			// lblValorDesconto
+			// 
+			this.lblValorDesconto.AutoSize = true;
+			this.lblValorDesconto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValorDesconto.Location = new System.Drawing.Point(257, 136);
+			this.lblValorDesconto.Name = "lblValorDesconto";
+			this.lblValorDesconto.Size = new System.Drawing.Size(28, 18);
+			this.lblValorDesconto.TabIndex = 53;
+			this.lblValorDesconto.Text = "0,0";
+			// 
+			// lblTotalLiquido
+			// 
+			this.lblTotalLiquido.AutoSize = true;
+			this.lblTotalLiquido.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTotalLiquido.Location = new System.Drawing.Point(370, 136);
+			this.lblTotalLiquido.Name = "lblTotalLiquido";
+			this.lblTotalLiquido.Size = new System.Drawing.Size(28, 18);
+			this.lblTotalLiquido.TabIndex = 54;
+			this.lblTotalLiquido.Text = "0,0";
+			// 
+			// lblValorProduto
+			// 
+			this.lblValorProduto.AutoSize = true;
+			this.lblValorProduto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValorProduto.Location = new System.Drawing.Point(560, 80);
+			this.lblValorProduto.Name = "lblValorProduto";
+			this.lblValorProduto.Size = new System.Drawing.Size(28, 18);
+			this.lblValorProduto.TabIndex = 55;
+			this.lblValorProduto.Text = "0,0";
+			// 
 			// FormItemPedido
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(676, 401);
+			this.ClientSize = new System.Drawing.Size(676, 405);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelTitleBar);
 			this.Name = "FormItemPedido";
@@ -396,7 +448,6 @@
 		private System.Windows.Forms.Panel panelDesktop;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.TextBox txtTotal;
 		private System.Windows.Forms.ComboBox ddlProduto;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtQuantidade;
@@ -416,5 +467,10 @@
 		private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox txtObservacao;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label lblTotalLiquido;
+		private System.Windows.Forms.Label lblValorDesconto;
+		private System.Windows.Forms.Label lblValorProduto;
 	}
 }

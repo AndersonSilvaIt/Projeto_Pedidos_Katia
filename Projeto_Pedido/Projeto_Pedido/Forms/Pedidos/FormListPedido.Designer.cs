@@ -52,9 +52,13 @@
 			this.txtNumero = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.NovoEnderecoEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.EnderecoEntregaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.EnderecoEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.HoraPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ClienteString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.DataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TipoPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,9 +71,13 @@
 			this.ItensPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItensPedidoDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CadasterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this._StatusString = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DataToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TipoPagamentoString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TotalBrutoToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TotalDescontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this._Desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TotalLiquidoToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this._StatusString = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdPedido)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -127,9 +135,13 @@
 			this.grdPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.grdPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.NovoEnderecoEntrega,
+            this.EnderecoEntregaId,
+            this.EnderecoEntrega,
+            this.DataPedido,
+            this.HoraPedido,
             this.Numero,
             this.ClienteString,
-            this.DataPedido,
             this.ClienteId,
             this.Status,
             this.TipoPagamento,
@@ -142,9 +154,13 @@
             this.ItensPedido,
             this.ItensPedidoDelete,
             this.CadasterDate,
-            this._StatusString,
             this.DataToString,
-            this.TipoPagamentoString});
+            this.TipoPagamentoString,
+            this.TotalBrutoToString,
+            this.TotalDescontos,
+            this._Desconto,
+            this.TotalLiquidoToString,
+            this._StatusString});
 			this.grdPedido.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.grdPedido.Location = new System.Drawing.Point(20, 49);
 			this.grdPedido.MultiSelect = false;
@@ -409,6 +425,46 @@
 			this.Id.ReadOnly = true;
 			this.Id.Visible = false;
 			// 
+			// NovoEnderecoEntrega
+			// 
+			this.NovoEnderecoEntrega.DataPropertyName = "NovoEnderecoEntrega";
+			this.NovoEnderecoEntrega.HeaderText = "NovoEnderecoEntrega";
+			this.NovoEnderecoEntrega.Name = "NovoEnderecoEntrega";
+			this.NovoEnderecoEntrega.ReadOnly = true;
+			this.NovoEnderecoEntrega.Visible = false;
+			// 
+			// EnderecoEntregaId
+			// 
+			this.EnderecoEntregaId.DataPropertyName = "EnderecoEntregaId";
+			this.EnderecoEntregaId.HeaderText = "EnderecoEntregaId";
+			this.EnderecoEntregaId.Name = "EnderecoEntregaId";
+			this.EnderecoEntregaId.ReadOnly = true;
+			this.EnderecoEntregaId.Visible = false;
+			// 
+			// EnderecoEntrega
+			// 
+			this.EnderecoEntrega.DataPropertyName = "EnderecoEntrega";
+			this.EnderecoEntrega.HeaderText = "EnderecoEntrega";
+			this.EnderecoEntrega.Name = "EnderecoEntrega";
+			this.EnderecoEntrega.ReadOnly = true;
+			this.EnderecoEntrega.Visible = false;
+			// 
+			// DataPedido
+			// 
+			this.DataPedido.DataPropertyName = "DataPedido";
+			this.DataPedido.HeaderText = "DataPedido";
+			this.DataPedido.Name = "DataPedido";
+			this.DataPedido.ReadOnly = true;
+			this.DataPedido.Visible = false;
+			// 
+			// HoraPedido
+			// 
+			this.HoraPedido.DataPropertyName = "HoraPedido";
+			this.HoraPedido.HeaderText = "HoraPedido";
+			this.HoraPedido.Name = "HoraPedido";
+			this.HoraPedido.ReadOnly = true;
+			this.HoraPedido.Visible = false;
+			// 
 			// Numero
 			// 
 			this.Numero.DataPropertyName = "Numero";
@@ -422,14 +478,6 @@
 			this.ClienteString.HeaderText = "Cliente";
 			this.ClienteString.Name = "ClienteString";
 			this.ClienteString.ReadOnly = true;
-			// 
-			// DataPedido
-			// 
-			this.DataPedido.DataPropertyName = "DataPedido";
-			this.DataPedido.HeaderText = "Data Pedido";
-			this.DataPedido.Name = "DataPedido";
-			this.DataPedido.ReadOnly = true;
-			this.DataPedido.Visible = false;
 			// 
 			// ClienteId
 			// 
@@ -457,7 +505,7 @@
 			// 
 			// Desconto
 			// 
-			this.Desconto.DataPropertyName = "Desconto";
+			this.Desconto.DataPropertyName = "ValorDesconto";
 			this.Desconto.HeaderText = "Desconto";
 			this.Desconto.Name = "Desconto";
 			this.Desconto.ReadOnly = true;
@@ -477,6 +525,7 @@
 			this.TotalBruto.HeaderText = "Total Bruto";
 			this.TotalBruto.Name = "TotalBruto";
 			this.TotalBruto.ReadOnly = true;
+			this.TotalBruto.Visible = false;
 			// 
 			// TotalLiquido
 			// 
@@ -484,6 +533,7 @@
 			this.TotalLiquido.HeaderText = "Total Líquido";
 			this.TotalLiquido.Name = "TotalLiquido";
 			this.TotalLiquido.ReadOnly = true;
+			this.TotalLiquido.Visible = false;
 			// 
 			// Observacao
 			// 
@@ -525,17 +575,10 @@
 			this.CadasterDate.ReadOnly = true;
 			this.CadasterDate.Visible = false;
 			// 
-			// _StatusString
-			// 
-			this._StatusString.DataPropertyName = "_StatusString";
-			this._StatusString.HeaderText = "Status";
-			this._StatusString.Name = "_StatusString";
-			this._StatusString.ReadOnly = true;
-			// 
 			// DataToString
 			// 
 			this.DataToString.DataPropertyName = "DataToString";
-			this.DataToString.HeaderText = "Data Pedido";
+			this.DataToString.HeaderText = "Data";
 			this.DataToString.Name = "DataToString";
 			this.DataToString.ReadOnly = true;
 			// 
@@ -546,12 +589,48 @@
 			this.TipoPagamentoString.Name = "TipoPagamentoString";
 			this.TipoPagamentoString.ReadOnly = true;
 			// 
+			// TotalBrutoToString
+			// 
+			this.TotalBrutoToString.DataPropertyName = "TotalBrutoToString";
+			this.TotalBrutoToString.HeaderText = "Bruto";
+			this.TotalBrutoToString.Name = "TotalBrutoToString";
+			this.TotalBrutoToString.ReadOnly = true;
+			// 
+			// TotalDescontos
+			// 
+			this.TotalDescontos.DataPropertyName = "TotalDescontos";
+			this.TotalDescontos.HeaderText = "Desconto";
+			this.TotalDescontos.Name = "TotalDescontos";
+			this.TotalDescontos.ReadOnly = true;
+			// 
+			// _Desconto
+			// 
+			this._Desconto.DataPropertyName = "Desconto";
+			this._Desconto.HeaderText = "_Desconto";
+			this._Desconto.Name = "_Desconto";
+			this._Desconto.ReadOnly = true;
+			this._Desconto.Visible = false;
+			// 
+			// TotalLiquidoToString
+			// 
+			this.TotalLiquidoToString.DataPropertyName = "TotalLiquidoToString";
+			this.TotalLiquidoToString.HeaderText = "Líquido";
+			this.TotalLiquidoToString.Name = "TotalLiquidoToString";
+			this.TotalLiquidoToString.ReadOnly = true;
+			// 
+			// _StatusString
+			// 
+			this._StatusString.DataPropertyName = "_StatusString";
+			this._StatusString.HeaderText = "Status";
+			this._StatusString.Name = "_StatusString";
+			this._StatusString.ReadOnly = true;
+			// 
 			// FormListPedido
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(188)))), ((int)(((byte)(246)))));
-			this.ClientSize = new System.Drawing.Size(800, 619);
+			this.ClientSize = new System.Drawing.Size(763, 619);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "FormListPedido";
@@ -593,9 +672,13 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NovoEnderecoEntrega;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoEntregaId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoEntrega;
+		private System.Windows.Forms.DataGridViewTextBoxColumn DataPedido;
+		private System.Windows.Forms.DataGridViewTextBoxColumn HoraPedido;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ClienteString;
-		private System.Windows.Forms.DataGridViewTextBoxColumn DataPedido;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ClienteId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Status;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TipoPagamento;
@@ -608,8 +691,12 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItensPedido;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItensPedidoDelete;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CadasterDate;
-		private System.Windows.Forms.DataGridViewTextBoxColumn _StatusString;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DataToString;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TipoPagamentoString;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TotalBrutoToString;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TotalDescontos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn _Desconto;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TotalLiquidoToString;
+		private System.Windows.Forms.DataGridViewTextBoxColumn _StatusString;
 	}
 }

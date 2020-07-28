@@ -13,4 +13,9 @@ namespace Projeto_Pedido.DAL.Entities {
 		public string CEP { get; set; }
 		public string Complemento { get; set; }
 	}
+
+	public class EnderecoEntrega : Endereco {
+		public int PedidoId { get; set; }
+		public string Destinatario { get; set; }
+	}
 }

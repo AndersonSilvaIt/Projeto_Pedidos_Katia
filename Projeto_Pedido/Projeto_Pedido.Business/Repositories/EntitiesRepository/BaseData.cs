@@ -15,7 +15,10 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 			"Product",
 			"Entidade",
 			"Pedido",
-			"ItemPedido"
+			"ItemPedido",
+			"Empresa",
+			"UnidadeMedida",
+			"EnderecoEntrega"
 		};
 
 		public BaseData()

@@ -46,6 +46,5 @@ namespace Projeto_Pedido.DAL.Entities {
 				return $"{this.Codigo} • {this.RazaoSocial}";
 			}
 		}
-
 	}
 }

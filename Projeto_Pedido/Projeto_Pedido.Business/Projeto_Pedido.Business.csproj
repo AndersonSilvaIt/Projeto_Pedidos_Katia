@@ -65,17 +65,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EntitiesRepository\BaseData.cs" />
     <Compile Include="Repositories\EntitiesRepository\BaseRepository.cs" />
+    <Compile Include="Repositories\EntitiesRepository\EmpresaRepository.cs" />
+    <Compile Include="Repositories\EntitiesRepository\EnderecoRepository.cs" />
     <Compile Include="Repositories\EntitiesRepository\EntityRepository.cs" />
     <Compile Include="Repositories\EntitiesRepository\ItensPedidoRepository.cs" />
     <Compile Include="Repositories\EntitiesRepository\PedidoItemRepository.cs" />
     <Compile Include="Repositories\EntitiesRepository\PedidoRepository.cs" />
     <Compile Include="Repositories\EntitiesRepository\ProductRepository.cs" />
     <Compile Include="Repositories\EntitiesRepository\RepositorySingleton.cs" />
+    <Compile Include="Repositories\EntitiesRepository\UnidadeRepository.cs" />
     <Compile Include="Repositories\Operators\FilterCriteria.cs" />
     <Compile Include="Repositories\Operators\FilterData.cs" />
     <Compile Include="Repositories\Operators\FilterType.cs" />
     <Compile Include="Repositories\Operators\LikeOperator.cs" />
     <Compile Include="Repositories\Operators\OperationType.cs" />
+    <Compile Include="Valitadors\EntityValidator.cs" />
+    <Compile Include="Valitadors\ProdutoValidator.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

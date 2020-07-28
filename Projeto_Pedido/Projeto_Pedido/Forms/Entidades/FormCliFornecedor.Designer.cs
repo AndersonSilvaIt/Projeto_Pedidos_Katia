@@ -124,7 +124,7 @@
 			this.btnMaximize.Name = "btnMaximize";
 			this.btnMaximize.Rotation = 0D;
 			this.btnMaximize.Size = new System.Drawing.Size(24, 22);
-			this.btnMaximize.TabIndex = 7;
+			this.btnMaximize.TabIndex = 28;
 			this.btnMaximize.UseVisualStyleBackColor = true;
 			this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
 			// 
@@ -144,7 +144,7 @@
 			this.btnMinimize.Name = "btnMinimize";
 			this.btnMinimize.Rotation = 0D;
 			this.btnMinimize.Size = new System.Drawing.Size(24, 22);
-			this.btnMinimize.TabIndex = 6;
+			this.btnMinimize.TabIndex = 27;
 			this.btnMinimize.UseVisualStyleBackColor = true;
 			this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
 			// 
@@ -164,7 +164,7 @@
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Rotation = 0D;
 			this.btnClose.Size = new System.Drawing.Size(24, 22);
-			this.btnClose.TabIndex = 5;
+			this.btnClose.TabIndex = 29;
 			this.btnClose.UseVisualStyleBackColor = true;
 			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
@@ -236,7 +236,7 @@
 			this.txtObservacao.Multiline = true;
 			this.txtObservacao.Name = "txtObservacao";
 			this.txtObservacao.Size = new System.Drawing.Size(178, 131);
-			this.txtObservacao.TabIndex = 24;
+			this.txtObservacao.TabIndex = 23;
 			// 
 			// groupBox3
 			// 
@@ -272,7 +272,7 @@
 			this.ddlUF.Location = new System.Drawing.Point(565, 98);
 			this.ddlUF.Name = "ddlUF";
 			this.ddlUF.Size = new System.Drawing.Size(54, 26);
-			this.ddlUF.TabIndex = 45;
+			this.ddlUF.TabIndex = 20;
 			// 
 			// label15
 			// 
@@ -291,7 +291,7 @@
 			this.txtComplemento.Location = new System.Drawing.Point(173, 157);
 			this.txtComplemento.Name = "txtComplemento";
 			this.txtComplemento.Size = new System.Drawing.Size(373, 19);
-			this.txtComplemento.TabIndex = 23;
+			this.txtComplemento.TabIndex = 22;
 			// 
 			// label7
 			// 
@@ -310,7 +310,7 @@
 			this.txtCEP.Location = new System.Drawing.Point(31, 157);
 			this.txtCEP.Name = "txtCEP";
 			this.txtCEP.Size = new System.Drawing.Size(122, 19);
-			this.txtCEP.TabIndex = 22;
+			this.txtCEP.TabIndex = 21;
 			// 
 			// label14
 			// 
@@ -339,7 +339,7 @@
 			this.txtNumero.Location = new System.Drawing.Point(525, 45);
 			this.txtNumero.Name = "txtNumero";
 			this.txtNumero.Size = new System.Drawing.Size(136, 19);
-			this.txtNumero.TabIndex = 18;
+			this.txtNumero.TabIndex = 17;
 			// 
 			// label8
 			// 
@@ -358,7 +358,7 @@
 			this.txtCidade.Location = new System.Drawing.Point(375, 101);
 			this.txtCidade.Name = "txtCidade";
 			this.txtCidade.Size = new System.Drawing.Size(171, 19);
-			this.txtCidade.TabIndex = 20;
+			this.txtCidade.TabIndex = 19;
 			// 
 			// label9
 			// 
@@ -377,7 +377,7 @@
 			this.txtRua.Location = new System.Drawing.Point(29, 45);
 			this.txtRua.Name = "txtRua";
 			this.txtRua.Size = new System.Drawing.Size(483, 19);
-			this.txtRua.TabIndex = 17;
+			this.txtRua.TabIndex = 16;
 			// 
 			// label12
 			// 
@@ -396,7 +396,7 @@
 			this.txtBairro.Location = new System.Drawing.Point(29, 101);
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(333, 19);
-			this.txtBairro.TabIndex = 19;
+			this.txtBairro.TabIndex = 18;
 			// 
 			// groupBox2
 			// 
@@ -427,7 +427,7 @@
 			this.txtFoneCelular.Location = new System.Drawing.Point(253, 154);
 			this.txtFoneCelular.Name = "txtFoneCelular";
 			this.txtFoneCelular.Size = new System.Drawing.Size(98, 19);
-			this.txtFoneCelular.TabIndex = 15;
+			this.txtFoneCelular.TabIndex = 14;
 			// 
 			// label6
 			// 
@@ -446,7 +446,7 @@
 			this.txtDDDFoneCelular.Location = new System.Drawing.Point(210, 154);
 			this.txtDDDFoneCelular.Name = "txtDDDFoneCelular";
 			this.txtDDDFoneCelular.Size = new System.Drawing.Size(37, 19);
-			this.txtDDDFoneCelular.TabIndex = 14;
+			this.txtDDDFoneCelular.TabIndex = 13;
 			// 
 			// txtFoneFixo
 			// 
@@ -455,7 +455,7 @@
 			this.txtFoneFixo.Location = new System.Drawing.Point(72, 154);
 			this.txtFoneFixo.Name = "txtFoneFixo";
 			this.txtFoneFixo.Size = new System.Drawing.Size(98, 19);
-			this.txtFoneFixo.TabIndex = 13;
+			this.txtFoneFixo.TabIndex = 12;
 			// 
 			// label4
 			// 
@@ -474,7 +474,7 @@
 			this.txtDDDFoneFixo.Location = new System.Drawing.Point(29, 154);
 			this.txtDDDFoneFixo.Name = "txtDDDFoneFixo";
 			this.txtDDDFoneFixo.Size = new System.Drawing.Size(37, 19);
-			this.txtDDDFoneFixo.TabIndex = 12;
+			this.txtDDDFoneFixo.TabIndex = 11;
 			// 
 			// txtSite
 			// 
@@ -482,7 +482,7 @@
 			this.txtSite.Location = new System.Drawing.Point(29, 213);
 			this.txtSite.Name = "txtSite";
 			this.txtSite.Size = new System.Drawing.Size(322, 26);
-			this.txtSite.TabIndex = 16;
+			this.txtSite.TabIndex = 15;
 			// 
 			// label10
 			// 
@@ -511,7 +511,7 @@
 			this.txtContato.Location = new System.Drawing.Point(29, 45);
 			this.txtContato.Name = "txtContato";
 			this.txtContato.Size = new System.Drawing.Size(322, 19);
-			this.txtContato.TabIndex = 10;
+			this.txtContato.TabIndex = 9;
 			// 
 			// label16
 			// 
@@ -530,7 +530,7 @@
 			this.txtEmail.Location = new System.Drawing.Point(29, 101);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(218, 19);
-			this.txtEmail.TabIndex = 11;
+			this.txtEmail.TabIndex = 10;
 			// 
 			// groupBox1
 			// 
@@ -567,7 +567,7 @@
 			this.ddlTipoDocumento.Location = new System.Drawing.Point(31, 212);
 			this.ddlTipoDocumento.Name = "ddlTipoDocumento";
 			this.ddlTipoDocumento.Size = new System.Drawing.Size(95, 26);
-			this.ddlTipoDocumento.TabIndex = 40;
+			this.ddlTipoDocumento.TabIndex = 6;
 			// 
 			// label18
 			// 
@@ -605,7 +605,7 @@
 			this.btnImage.Location = new System.Drawing.Point(386, 213);
 			this.btnImage.Name = "btnImage";
 			this.btnImage.Size = new System.Drawing.Size(113, 23);
-			this.btnImage.TabIndex = 9;
+			this.btnImage.TabIndex = 8;
 			this.btnImage.Text = "Escolher Imagem";
 			this.btnImage.UseVisualStyleBackColor = true;
 			// 
@@ -714,7 +714,7 @@
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Rotation = 0D;
 			this.btnDelete.Size = new System.Drawing.Size(37, 33);
-			this.btnDelete.TabIndex = 27;
+			this.btnDelete.TabIndex = 26;
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
@@ -732,7 +732,7 @@
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Rotation = 0D;
 			this.btnSave.Size = new System.Drawing.Size(37, 33);
-			this.btnSave.TabIndex = 25;
+			this.btnSave.TabIndex = 24;
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
@@ -750,7 +750,7 @@
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Rotation = 0D;
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
-			this.btnEdit.TabIndex = 26;
+			this.btnEdit.TabIndex = 25;
 			this.btnEdit.UseVisualStyleBackColor = true;
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 

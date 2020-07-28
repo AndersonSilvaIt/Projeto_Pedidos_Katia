@@ -1,6 +1,7 @@
 ﻿using Projeto_Pedido.Business.Repositories.Operators;
 using Projeto_Pedido.DAL.Entities;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 
 namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
@@ -38,6 +39,50 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 				return GetAll(orderBy: "Codigo and RazaoSocial ");
 		}
 
+		public static bool VerificaDuplicidade(int idEntidade, string codigo)
+		{
+			var instanceEntity = new Entidade();
 
+			using (var conection = BaseData.DbConnection())
+			{
+				string orderByCommand = string.Empty;
+
+				SQLiteCommand sQLiteCommand = new SQLiteCommand($"SELECT * FROM {instanceEntity.GetType().Name} where Codigo = '{codigo}' and id <> {idEntidade} ", conection);
+
+				using (var read = sQLiteCommand.ExecuteReader())
+				{
+					if (read.Read())
+						return true;
+				}
+			}
+
+			return false;
+		}
+
+		public static bool VerificaVinculoProduto_Pedido(int idEntidade)
+		{
+			using (var conection = BaseData.DbConnection())
+			{
+				string orderByCommand = string.Empty;
+
+				//Verifica vinculo com fornecedor
+				SQLiteCommand sQLiteCommand = new SQLiteCommand($"SELECT * FROM Product where IdFornecedor =  {idEntidade} ", conection);
+				using (var read = sQLiteCommand.ExecuteReader())
+				{
+					if (read.Read())
+						return true;
+				}
+
+				//Verifica vinculo com Pedido
+				sQLiteCommand = new SQLiteCommand($"SELECT * FROM Pedido where ClienteId =  {idEntidade} ", conection);
+				using (var read = sQLiteCommand.ExecuteReader())
+				{
+					if (read.Read())
+						return true;
+				}
+			}
+
+			return false;
+		}
 	}
 }

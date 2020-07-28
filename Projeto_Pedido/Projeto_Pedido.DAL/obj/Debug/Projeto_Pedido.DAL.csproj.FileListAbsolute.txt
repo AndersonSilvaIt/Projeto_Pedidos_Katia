@@ -3,3 +3,4 @@ C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedi
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido.DAL\obj\Debug\Projeto_Pedido.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido.DAL\obj\Debug\Projeto_Pedido.DAL.dll
 C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido.DAL\obj\Debug\Projeto_Pedido.DAL.pdb
+C:\Users\Prodwin\Desktop\Projeto_Pedido_Katia\Projeto_Pedidos_Katia\Projeto_Pedido\Projeto_Pedido.DAL\obj\Debug\Projeto_Pedido.DAL.csprojAssemblyReference.cache

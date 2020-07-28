@@ -29,6 +29,8 @@ namespace Projeto_Pedido.Forms {
 
 			var lista = ProductRepository.SearchEntity(codigo, descricao, idFornecedor);
 			ProductRepository.PreencherForencedor(lista);
+			ProductRepository.PreencherUnidadeMedida(lista);
+
 			var binding = new BindingList<Product>(lista);
 			grdProduto.DataSource = binding;
 			grdProduto.Refresh();

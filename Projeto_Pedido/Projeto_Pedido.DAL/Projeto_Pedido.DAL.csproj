@@ -43,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Empresa.cs" />
     <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\Entidade.cs" />
     <Compile Include="Entities\ItemPedido.cs" />
     <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\UnidadeMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

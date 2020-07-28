@@ -12,7 +12,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 		public FormListPedido()
 		{
 			InitializeComponent();
-
+			
 			AtualizaFormulario();
 		}
 
@@ -60,7 +60,13 @@ namespace Projeto_Pedido.Forms.Pedidos {
 
 			var lista = PedidoRepository.SearchPedido(numero, clientId, status, dtPedidoInicio, dtPedidoFim, tipoPagamento);
 			PedidoRepository.PreencherCliente(lista);
-			
+			//PedidoRepository.ObterEnderecoEntregaPorPedido(lista);
+
+			for (int i = 0; i < lista.Count; i++)
+			{
+				lista[i].ItensPedido = PedidoRepository.GetListaItemPedido(lista[i].Id).ToList();
+			}
+
 			var binding = new BindingList<Pedido>(lista);
 			grdPedido.DataSource = binding;
 			grdPedido.Refresh();
@@ -176,9 +182,9 @@ namespace Projeto_Pedido.Forms.Pedidos {
 			if (e.RowIndex > -1 && e.ColumnIndex > -1)
 			{
 				var _pedido = (Pedido)grdPedido.Rows[e.RowIndex].DataBoundItem;
-				_pedido.ItensPedido = PedidoRepository.GetListaItemPedido(_pedido.Id).ToList();
-				PedidoItemRepository.PreencherProduto(_pedido.ItensPedido);
 
+				PedidoItemRepository.PreencherProduto(_pedido.ItensPedido);
+				_pedido.EnderecoEntrega = EnderecoRepository.ObterEnderecoEntregaPorPedido(_pedido.Id);
 				FormPedido frmPedido = new FormPedido(_pedido);
 				
 				frmPedido.ShowDialog();

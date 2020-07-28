@@ -6,10 +6,18 @@ namespace Projeto_Pedido.DAL.Entities {
 
 		public string Codigo { get; set; }
 		public string Descricao { get; set; }
-		public string UM { get; set; }
+
+		[NotMapped]
+		public string UnidadeMedidaString
+		{ get { if (UM != null) { return UM.Unidade; } return ""; } }
+
+		public int UnidadeMedidaId { get; set; }
+
+		[NotMapped]
+		public UnidadeMedida UM { get; set; }
+
 		public decimal PrecoCusto { get; set; }
 		public decimal PrecoVenda { get; set; }
-		public int Tipo { get; set; }
 		public int IdFornecedor { get; set; }
 		public byte[] Imagem { get; set; }
 		public string Observacao { get; set; }

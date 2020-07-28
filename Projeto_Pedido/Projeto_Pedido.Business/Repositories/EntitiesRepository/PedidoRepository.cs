@@ -139,5 +139,6 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 					item.Cliente = EntityRepository.GetEntity(item.ClienteId);
 			}
 		}
+
 	}
 }

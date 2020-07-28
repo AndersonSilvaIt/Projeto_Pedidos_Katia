@@ -23,6 +23,13 @@ namespace Projeto_Pedido.Forms.Entidades {
 			FillFields02();
 			EnableFields(this, false);
 			btnSave.Visible = false;
+
+			//Caso já conter algum cadastro de produto ou pedido vinculados com essa entidade, eu não posso trocar o tipo de entidade
+			if (EntityRepository.VerificaVinculoProduto_Pedido(entidade.Id))
+			{
+				rdbCliente.Enabled = false;
+				rdbFornecedor.Enabled = false;
+			}
 		}
 
 		private void FillFields02()
@@ -47,6 +54,7 @@ namespace Projeto_Pedido.Forms.Entidades {
 			txtSite.Text = _entidade.Site;
 				
 			txtRua.Text = _entidade.Rua;
+			txtNumero.Text = _entidade.Numero;
 			txtBairro.Text = _entidade.Bairro;
 			txtCidade.Text = _entidade.Cidade;
 			if (!string.IsNullOrWhiteSpace(_entidade.Estado))
