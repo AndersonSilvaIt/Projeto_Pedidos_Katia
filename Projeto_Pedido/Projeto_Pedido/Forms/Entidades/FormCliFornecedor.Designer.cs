@@ -54,10 +54,8 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.txtFoneCelular = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.txtDDDFoneCelular = new System.Windows.Forms.TextBox();
 			this.txtFoneFixo = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.txtDDDFoneFixo = new System.Windows.Forms.TextBox();
 			this.txtSite = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
@@ -69,8 +67,6 @@
 			this.label18 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtDocumento = new System.Windows.Forms.TextBox();
-			this.btnImage = new System.Windows.Forms.Button();
-			this.picImagem = new FontAwesome.Sharp.IconPictureBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtNomeFantasia = new System.Windows.Forms.TextBox();
 			this.rdbFornecedor = new System.Windows.Forms.RadioButton();
@@ -89,7 +85,6 @@
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelTitleBar
@@ -402,10 +397,8 @@
 			// 
 			this.groupBox2.Controls.Add(this.txtFoneCelular);
 			this.groupBox2.Controls.Add(this.label6);
-			this.groupBox2.Controls.Add(this.txtDDDFoneCelular);
 			this.groupBox2.Controls.Add(this.txtFoneFixo);
 			this.groupBox2.Controls.Add(this.label4);
-			this.groupBox2.Controls.Add(this.txtDDDFoneFixo);
 			this.groupBox2.Controls.Add(this.txtSite);
 			this.groupBox2.Controls.Add(this.label10);
 			this.groupBox2.Controls.Add(this.label11);
@@ -424,7 +417,7 @@
 			// 
 			this.txtFoneCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtFoneCelular.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtFoneCelular.Location = new System.Drawing.Point(253, 154);
+			this.txtFoneCelular.Location = new System.Drawing.Point(210, 154);
 			this.txtFoneCelular.Name = "txtFoneCelular";
 			this.txtFoneCelular.Size = new System.Drawing.Size(98, 19);
 			this.txtFoneCelular.TabIndex = 14;
@@ -439,22 +432,13 @@
 			this.label6.TabIndex = 28;
 			this.label6.Text = "Fone Celular";
 			// 
-			// txtDDDFoneCelular
-			// 
-			this.txtDDDFoneCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtDDDFoneCelular.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDDDFoneCelular.Location = new System.Drawing.Point(210, 154);
-			this.txtDDDFoneCelular.Name = "txtDDDFoneCelular";
-			this.txtDDDFoneCelular.Size = new System.Drawing.Size(37, 19);
-			this.txtDDDFoneCelular.TabIndex = 13;
-			// 
 			// txtFoneFixo
 			// 
 			this.txtFoneFixo.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtFoneFixo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtFoneFixo.Location = new System.Drawing.Point(72, 154);
+			this.txtFoneFixo.Location = new System.Drawing.Point(29, 154);
 			this.txtFoneFixo.Name = "txtFoneFixo";
-			this.txtFoneFixo.Size = new System.Drawing.Size(98, 19);
+			this.txtFoneFixo.Size = new System.Drawing.Size(107, 19);
 			this.txtFoneFixo.TabIndex = 12;
 			// 
 			// label4
@@ -467,21 +451,13 @@
 			this.label4.TabIndex = 25;
 			this.label4.Text = "Fone Fixo";
 			// 
-			// txtDDDFoneFixo
-			// 
-			this.txtDDDFoneFixo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtDDDFoneFixo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDDDFoneFixo.Location = new System.Drawing.Point(29, 154);
-			this.txtDDDFoneFixo.Name = "txtDDDFoneFixo";
-			this.txtDDDFoneFixo.Size = new System.Drawing.Size(37, 19);
-			this.txtDDDFoneFixo.TabIndex = 11;
-			// 
 			// txtSite
 			// 
+			this.txtSite.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSite.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSite.Location = new System.Drawing.Point(29, 213);
 			this.txtSite.Name = "txtSite";
-			this.txtSite.Size = new System.Drawing.Size(322, 26);
+			this.txtSite.Size = new System.Drawing.Size(322, 19);
 			this.txtSite.TabIndex = 15;
 			// 
 			// label10
@@ -538,8 +514,6 @@
 			this.groupBox1.Controls.Add(this.label18);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txtDocumento);
-			this.groupBox1.Controls.Add(this.btnImage);
-			this.groupBox1.Controls.Add(this.picImagem);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.txtNomeFantasia);
 			this.groupBox1.Controls.Add(this.rdbFornecedor);
@@ -597,31 +571,6 @@
 			this.txtDocumento.Name = "txtDocumento";
 			this.txtDocumento.Size = new System.Drawing.Size(163, 19);
 			this.txtDocumento.TabIndex = 7;
-			// 
-			// btnImage
-			// 
-			this.btnImage.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnImage.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnImage.Location = new System.Drawing.Point(386, 213);
-			this.btnImage.Name = "btnImage";
-			this.btnImage.Size = new System.Drawing.Size(113, 23);
-			this.btnImage.TabIndex = 8;
-			this.btnImage.Text = "Escolher Imagem";
-			this.btnImage.UseVisualStyleBackColor = true;
-			// 
-			// picImagem
-			// 
-			this.picImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(127)))), ((int)(((byte)(221)))));
-			this.picImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picImagem.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.picImagem.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.picImagem.IconColor = System.Drawing.SystemColors.ControlText;
-			this.picImagem.IconSize = 101;
-			this.picImagem.Location = new System.Drawing.Point(393, 94);
-			this.picImagem.Name = "picImagem";
-			this.picImagem.Size = new System.Drawing.Size(101, 105);
-			this.picImagem.TabIndex = 29;
-			this.picImagem.TabStop = false;
 			// 
 			// label2
 			// 
@@ -776,7 +725,6 @@
 			this.groupBox2.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -813,11 +761,9 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtDocumento;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox txtDDDFoneFixo;
 		private System.Windows.Forms.TextBox txtFoneFixo;
 		private System.Windows.Forms.TextBox txtFoneCelular;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox txtDDDFoneCelular;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox txtCidade;
@@ -832,8 +778,6 @@
 		private System.Windows.Forms.TextBox txtComplemento;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TextBox txtCEP;
-		private System.Windows.Forms.Button btnImage;
-		private FontAwesome.Sharp.IconPictureBox picImagem;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.TextBox txtObservacao;
 		private System.Windows.Forms.ComboBox ddlTipoDocumento;

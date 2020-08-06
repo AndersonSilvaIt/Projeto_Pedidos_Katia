@@ -26,10 +26,26 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.btnRefresh = new FontAwesome.Sharp.IconButton();
 			this.grdEntidade = new System.Windows.Forms.DataGridView();
+			this.btnAdd = new FontAwesome.Sharp.IconButton();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.ddlTipoDoc = new System.Windows.Forms.ComboBox();
+			this.ddlTipoCli = new System.Windows.Forms.ComboBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.ddlUF = new System.Windows.Forms.ComboBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.txtDocumento = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.btnSearch = new FontAwesome.Sharp.IconButton();
+			this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtCodigo = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,21 +71,6 @@
 			this.FoneCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Site = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.btnAdd = new FontAwesome.Sharp.IconButton();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.ddlTipoDoc = new System.Windows.Forms.ComboBox();
-			this.ddlTipoCli = new System.Windows.Forms.ComboBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.ddlUF = new System.Windows.Forms.ComboBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.txtDocumento = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.btnSearch = new FontAwesome.Sharp.IconButton();
-			this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.txtCodigo = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdEntidade)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -164,200 +165,6 @@
 			this.grdEntidade.Size = new System.Drawing.Size(693, 225);
 			this.grdEntidade.TabIndex = 5;
 			this.grdEntidade.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEntidade_CellDoubleClick);
-			// 
-			// Codigo
-			// 
-			this.Codigo.DataPropertyName = "Codigo";
-			this.Codigo.HeaderText = "Código";
-			this.Codigo.Name = "Codigo";
-			this.Codigo.ReadOnly = true;
-			// 
-			// TipoDocumento
-			// 
-			this.TipoDocumento.DataPropertyName = "TipoDocumento";
-			this.TipoDocumento.HeaderText = "TipoDocumento";
-			this.TipoDocumento.Name = "TipoDocumento";
-			this.TipoDocumento.ReadOnly = true;
-			this.TipoDocumento.Visible = false;
-			// 
-			// Descricao
-			// 
-			this.Descricao.DataPropertyName = "Descricao";
-			this.Descricao.HeaderText = "Descricao";
-			this.Descricao.Name = "Descricao";
-			this.Descricao.ReadOnly = true;
-			this.Descricao.Visible = false;
-			// 
-			// RazaoSocial
-			// 
-			this.RazaoSocial.DataPropertyName = "RazaoSocial";
-			this.RazaoSocial.HeaderText = "Razão Social";
-			this.RazaoSocial.Name = "RazaoSocial";
-			this.RazaoSocial.ReadOnly = true;
-			// 
-			// Id
-			// 
-			this.Id.DataPropertyName = "Id";
-			this.Id.HeaderText = "Id";
-			this.Id.Name = "Id";
-			this.Id.ReadOnly = true;
-			this.Id.Visible = false;
-			// 
-			// Rua
-			// 
-			this.Rua.DataPropertyName = "Rua";
-			this.Rua.HeaderText = "Rua";
-			this.Rua.Name = "Rua";
-			this.Rua.ReadOnly = true;
-			this.Rua.Visible = false;
-			// 
-			// Numero
-			// 
-			this.Numero.DataPropertyName = "Numero";
-			this.Numero.HeaderText = "Numero";
-			this.Numero.Name = "Numero";
-			this.Numero.ReadOnly = true;
-			this.Numero.Visible = false;
-			// 
-			// Bairro
-			// 
-			this.Bairro.DataPropertyName = "Bairro";
-			this.Bairro.HeaderText = "Bairro";
-			this.Bairro.Name = "Bairro";
-			this.Bairro.ReadOnly = true;
-			this.Bairro.Visible = false;
-			// 
-			// Cidade
-			// 
-			this.Cidade.DataPropertyName = "Cidade";
-			this.Cidade.HeaderText = "Cidade";
-			this.Cidade.Name = "Cidade";
-			this.Cidade.ReadOnly = true;
-			// 
-			// Estado
-			// 
-			this.Estado.DataPropertyName = "Estado";
-			this.Estado.HeaderText = "Estado";
-			this.Estado.Name = "Estado";
-			this.Estado.ReadOnly = true;
-			// 
-			// CEP
-			// 
-			this.CEP.DataPropertyName = "CEP";
-			this.CEP.HeaderText = "CEP";
-			this.CEP.Name = "CEP";
-			this.CEP.ReadOnly = true;
-			this.CEP.Visible = false;
-			// 
-			// Complemento
-			// 
-			this.Complemento.DataPropertyName = "Complemento";
-			this.Complemento.HeaderText = "Complemento";
-			this.Complemento.Name = "Complemento";
-			this.Complemento.ReadOnly = true;
-			this.Complemento.Visible = false;
-			// 
-			// CadasterDate
-			// 
-			this.CadasterDate.DataPropertyName = "CadasterDate";
-			this.CadasterDate.HeaderText = "CadasterDate";
-			this.CadasterDate.Name = "CadasterDate";
-			this.CadasterDate.ReadOnly = true;
-			this.CadasterDate.Visible = false;
-			// 
-			// NomeFantasia
-			// 
-			this.NomeFantasia.DataPropertyName = "NomeFantasia";
-			this.NomeFantasia.HeaderText = "NomeFantasia";
-			this.NomeFantasia.Name = "NomeFantasia";
-			this.NomeFantasia.ReadOnly = true;
-			this.NomeFantasia.Visible = false;
-			// 
-			// Tipo
-			// 
-			this.Tipo.DataPropertyName = "TipoCli";
-			this.Tipo.HeaderText = "Tipo";
-			this.Tipo.Name = "Tipo";
-			this.Tipo.ReadOnly = true;
-			this.Tipo.Visible = false;
-			// 
-			// TipoCliString
-			// 
-			this.TipoCliString.DataPropertyName = "TipoCliString";
-			this.TipoCliString.HeaderText = "Tipo";
-			this.TipoCliString.Name = "TipoCliString";
-			this.TipoCliString.ReadOnly = true;
-			// 
-			// Documento
-			// 
-			this.Documento.DataPropertyName = "Documento";
-			this.Documento.HeaderText = "Documento";
-			this.Documento.Name = "Documento";
-			this.Documento.ReadOnly = true;
-			this.Documento.Visible = false;
-			// 
-			// Contato
-			// 
-			this.Contato.DataPropertyName = "Contato";
-			this.Contato.HeaderText = "Contato";
-			this.Contato.Name = "Contato";
-			this.Contato.ReadOnly = true;
-			// 
-			// Email
-			// 
-			this.Email.DataPropertyName = "Email";
-			this.Email.HeaderText = "Email";
-			this.Email.Name = "Email";
-			this.Email.ReadOnly = true;
-			this.Email.Visible = false;
-			// 
-			// DDDFoneFixo
-			// 
-			this.DDDFoneFixo.DataPropertyName = "DDDFoneFixo";
-			this.DDDFoneFixo.HeaderText = "DDDFoneFixo";
-			this.DDDFoneFixo.Name = "DDDFoneFixo";
-			this.DDDFoneFixo.ReadOnly = true;
-			this.DDDFoneFixo.Visible = false;
-			// 
-			// FoneFixo
-			// 
-			this.FoneFixo.DataPropertyName = "FoneFixo";
-			this.FoneFixo.HeaderText = "FoneFixo";
-			this.FoneFixo.Name = "FoneFixo";
-			this.FoneFixo.ReadOnly = true;
-			this.FoneFixo.Visible = false;
-			// 
-			// DDDFoneCelular
-			// 
-			this.DDDFoneCelular.DataPropertyName = "DDDFoneCelular";
-			this.DDDFoneCelular.HeaderText = "DDDFoneCelular";
-			this.DDDFoneCelular.Name = "DDDFoneCelular";
-			this.DDDFoneCelular.ReadOnly = true;
-			this.DDDFoneCelular.Visible = false;
-			// 
-			// FoneCelular
-			// 
-			this.FoneCelular.DataPropertyName = "FoneCelular";
-			this.FoneCelular.HeaderText = "FoneCelular";
-			this.FoneCelular.Name = "FoneCelular";
-			this.FoneCelular.ReadOnly = true;
-			this.FoneCelular.Visible = false;
-			// 
-			// Site
-			// 
-			this.Site.DataPropertyName = "Site";
-			this.Site.HeaderText = "Site";
-			this.Site.Name = "Site";
-			this.Site.ReadOnly = true;
-			this.Site.Visible = false;
-			// 
-			// Observacao
-			// 
-			this.Observacao.DataPropertyName = "Observacao";
-			this.Observacao.HeaderText = "Observacao";
-			this.Observacao.Name = "Observacao";
-			this.Observacao.ReadOnly = true;
-			this.Observacao.Visible = false;
 			// 
 			// btnAdd
 			// 
@@ -535,6 +342,209 @@
 			this.label1.Size = new System.Drawing.Size(49, 18);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Código";
+			// 
+			// Codigo
+			// 
+			this.Codigo.DataPropertyName = "Codigo";
+			this.Codigo.FillWeight = 40F;
+			this.Codigo.HeaderText = "Código";
+			this.Codigo.Name = "Codigo";
+			this.Codigo.ReadOnly = true;
+			// 
+			// TipoDocumento
+			// 
+			this.TipoDocumento.DataPropertyName = "TipoDocumento";
+			this.TipoDocumento.HeaderText = "TipoDocumento";
+			this.TipoDocumento.Name = "TipoDocumento";
+			this.TipoDocumento.ReadOnly = true;
+			this.TipoDocumento.Visible = false;
+			// 
+			// Descricao
+			// 
+			this.Descricao.DataPropertyName = "Descricao";
+			this.Descricao.HeaderText = "Descricao";
+			this.Descricao.Name = "Descricao";
+			this.Descricao.ReadOnly = true;
+			this.Descricao.Visible = false;
+			// 
+			// RazaoSocial
+			// 
+			this.RazaoSocial.DataPropertyName = "RazaoSocial";
+			this.RazaoSocial.FillWeight = 120F;
+			this.RazaoSocial.HeaderText = "Razão Social";
+			this.RazaoSocial.Name = "RazaoSocial";
+			this.RazaoSocial.ReadOnly = true;
+			// 
+			// Id
+			// 
+			this.Id.DataPropertyName = "Id";
+			this.Id.HeaderText = "Id";
+			this.Id.Name = "Id";
+			this.Id.ReadOnly = true;
+			this.Id.Visible = false;
+			// 
+			// Rua
+			// 
+			this.Rua.DataPropertyName = "Rua";
+			this.Rua.HeaderText = "Rua";
+			this.Rua.Name = "Rua";
+			this.Rua.ReadOnly = true;
+			this.Rua.Visible = false;
+			// 
+			// Numero
+			// 
+			this.Numero.DataPropertyName = "Numero";
+			this.Numero.HeaderText = "Numero";
+			this.Numero.Name = "Numero";
+			this.Numero.ReadOnly = true;
+			this.Numero.Visible = false;
+			// 
+			// Bairro
+			// 
+			this.Bairro.DataPropertyName = "Bairro";
+			this.Bairro.HeaderText = "Bairro";
+			this.Bairro.Name = "Bairro";
+			this.Bairro.ReadOnly = true;
+			this.Bairro.Visible = false;
+			// 
+			// Cidade
+			// 
+			this.Cidade.DataPropertyName = "Cidade";
+			this.Cidade.FillWeight = 65F;
+			this.Cidade.HeaderText = "Cidade";
+			this.Cidade.Name = "Cidade";
+			this.Cidade.ReadOnly = true;
+			// 
+			// Estado
+			// 
+			this.Estado.DataPropertyName = "Estado";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Estado.DefaultCellStyle = dataGridViewCellStyle1;
+			this.Estado.FillWeight = 30F;
+			this.Estado.HeaderText = "Estado";
+			this.Estado.Name = "Estado";
+			this.Estado.ReadOnly = true;
+			this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// CEP
+			// 
+			this.CEP.DataPropertyName = "CEP";
+			this.CEP.HeaderText = "CEP";
+			this.CEP.Name = "CEP";
+			this.CEP.ReadOnly = true;
+			this.CEP.Visible = false;
+			// 
+			// Complemento
+			// 
+			this.Complemento.DataPropertyName = "Complemento";
+			this.Complemento.HeaderText = "Complemento";
+			this.Complemento.Name = "Complemento";
+			this.Complemento.ReadOnly = true;
+			this.Complemento.Visible = false;
+			// 
+			// CadasterDate
+			// 
+			this.CadasterDate.DataPropertyName = "CadasterDate";
+			this.CadasterDate.HeaderText = "CadasterDate";
+			this.CadasterDate.Name = "CadasterDate";
+			this.CadasterDate.ReadOnly = true;
+			this.CadasterDate.Visible = false;
+			// 
+			// NomeFantasia
+			// 
+			this.NomeFantasia.DataPropertyName = "NomeFantasia";
+			this.NomeFantasia.HeaderText = "NomeFantasia";
+			this.NomeFantasia.Name = "NomeFantasia";
+			this.NomeFantasia.ReadOnly = true;
+			this.NomeFantasia.Visible = false;
+			// 
+			// Tipo
+			// 
+			this.Tipo.DataPropertyName = "TipoCli";
+			this.Tipo.HeaderText = "Tipo";
+			this.Tipo.Name = "Tipo";
+			this.Tipo.ReadOnly = true;
+			this.Tipo.Visible = false;
+			// 
+			// TipoCliString
+			// 
+			this.TipoCliString.DataPropertyName = "TipoCliString";
+			this.TipoCliString.FillWeight = 40F;
+			this.TipoCliString.HeaderText = "Tipo";
+			this.TipoCliString.Name = "TipoCliString";
+			this.TipoCliString.ReadOnly = true;
+			// 
+			// Documento
+			// 
+			this.Documento.DataPropertyName = "Documento";
+			this.Documento.HeaderText = "Documento";
+			this.Documento.Name = "Documento";
+			this.Documento.ReadOnly = true;
+			this.Documento.Visible = false;
+			// 
+			// Contato
+			// 
+			this.Contato.DataPropertyName = "Contato";
+			this.Contato.FillWeight = 70F;
+			this.Contato.HeaderText = "Contato";
+			this.Contato.Name = "Contato";
+			this.Contato.ReadOnly = true;
+			// 
+			// Email
+			// 
+			this.Email.DataPropertyName = "Email";
+			this.Email.HeaderText = "Email";
+			this.Email.Name = "Email";
+			this.Email.ReadOnly = true;
+			this.Email.Visible = false;
+			// 
+			// DDDFoneFixo
+			// 
+			this.DDDFoneFixo.DataPropertyName = "DDDFoneFixo";
+			this.DDDFoneFixo.HeaderText = "DDDFoneFixo";
+			this.DDDFoneFixo.Name = "DDDFoneFixo";
+			this.DDDFoneFixo.ReadOnly = true;
+			this.DDDFoneFixo.Visible = false;
+			// 
+			// FoneFixo
+			// 
+			this.FoneFixo.DataPropertyName = "FoneFixo";
+			this.FoneFixo.HeaderText = "FoneFixo";
+			this.FoneFixo.Name = "FoneFixo";
+			this.FoneFixo.ReadOnly = true;
+			this.FoneFixo.Visible = false;
+			// 
+			// DDDFoneCelular
+			// 
+			this.DDDFoneCelular.DataPropertyName = "DDDFoneCelular";
+			this.DDDFoneCelular.HeaderText = "DDDFoneCelular";
+			this.DDDFoneCelular.Name = "DDDFoneCelular";
+			this.DDDFoneCelular.ReadOnly = true;
+			this.DDDFoneCelular.Visible = false;
+			// 
+			// FoneCelular
+			// 
+			this.FoneCelular.DataPropertyName = "FoneCelular";
+			this.FoneCelular.HeaderText = "FoneCelular";
+			this.FoneCelular.Name = "FoneCelular";
+			this.FoneCelular.ReadOnly = true;
+			this.FoneCelular.Visible = false;
+			// 
+			// Site
+			// 
+			this.Site.DataPropertyName = "Site";
+			this.Site.HeaderText = "Site";
+			this.Site.Name = "Site";
+			this.Site.ReadOnly = true;
+			this.Site.Visible = false;
+			// 
+			// Observacao
+			// 
+			this.Observacao.DataPropertyName = "Observacao";
+			this.Observacao.HeaderText = "Observacao";
+			this.Observacao.Name = "Observacao";
+			this.Observacao.ReadOnly = true;
+			this.Observacao.Visible = false;
 			// 
 			// FormListEntidades
 			// 

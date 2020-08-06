@@ -1,14 +1,22 @@
-﻿using Projeto_Pedido.Business.Repositories.EntitiesRepository;
+﻿using Microsoft.Reporting.WinForms;
+using Projeto_Pedido.Business.Repositories.EntitiesRepository;
 using Projeto_Pedido.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_Pedido.Forms.Pedidos {
 
 	public partial class FormListPedido : FormUtil {
+
+		private ReportViewer reportViewer;
+		private Empresa _empresa;
+		List<Pedido> listagemImpressao;
+
 		public FormListPedido()
 		{
 			InitializeComponent();
@@ -60,12 +68,15 @@ namespace Projeto_Pedido.Forms.Pedidos {
 
 			var lista = PedidoRepository.SearchPedido(numero, clientId, status, dtPedidoInicio, dtPedidoFim, tipoPagamento);
 			PedidoRepository.PreencherCliente(lista);
-			//PedidoRepository.ObterEnderecoEntregaPorPedido(lista);
 
+			listagemImpressao = lista.ToList();
 			for (int i = 0; i < lista.Count; i++)
 			{
 				lista[i].ItensPedido = PedidoRepository.GetListaItemPedido(lista[i].Id).ToList();
 			}
+
+			if (lista != null && lista.Count > 0)
+				btnPrint.Visible = true;
 
 			var binding = new BindingList<Pedido>(lista);
 			grdPedido.DataSource = binding;
@@ -192,11 +203,75 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				AtualizaFormulario();
 			}
 		}
-
+		FormReport frmReport;
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
 			ClearFields(this);
 			AtualizaFormulario();
 		}
+
+		private void btnPrint_Click(object sender, EventArgs e)
+		{
+			var lista = EmpresaRepository.GetAll();
+			if (lista == null || lista.Count == 0)
+			{
+				throw new ErrorMessageException("É necessário realizar o cadastro da Empresa em COnfigurações");
+			}
+			_empresa = lista[0];
+
+			//imgLoop.Visible = true;
+			this.Enabled = false;
+
+			//string path = @"Projeto_Pedido.Reports.ReportPedido.rdlc";
+			if (this.reportViewer == null)
+				this.reportViewer = new ReportViewer();
+
+			this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet2", listagemImpressao));
+			string path = @"Projeto_Pedido.Reports.ReportPedido.rdlc";
+			frmReport = new FormReport(this.reportViewer, path, GetParametersToPrint());
+
+			this.Enabled = true;
+			frmReport.ShowDialog();
+		}
+
+		private IList<ReportParameter> GetParametersToPrint()
+		{
+			try
+			{
+				IList<ReportParameter> listReportParameter;
+				ReportParameter Imagem = new ReportParameter("Imagem", _empresa.CaminhoImagem);
+				ReportParameter RazaoSocial = new ReportParameter("RazaoSocial", _empresa.RazaoSocial);
+				ReportParameter Documento = new ReportParameter("Documento", _empresa.Documento);
+				ReportParameter RuaEmpresa = new ReportParameter("RuaEmpresa", _empresa.Rua);
+				ReportParameter NumeroEmpresa = new ReportParameter("NumeroEmpresa", _empresa.Numero);
+				ReportParameter BairroEmpresa = new ReportParameter("BairroEmpresa", _empresa.Bairro);
+				ReportParameter CidadeEmpresa = new ReportParameter("CidadeEmpresa", _empresa.Cidade);
+				ReportParameter EstadoEmpresa = new ReportParameter("EstadoEmpresa", _empresa.Estado);
+				ReportParameter CEPEmpresa = new ReportParameter("CEPEmpresa", _empresa.CEP);
+				ReportParameter FoneFixoEmpresa = new ReportParameter("FoneFixoEmpresa", _empresa.FoneFixo);
+				ReportParameter FoneCelularEmpresa = new ReportParameter("FoneCelularEmpresa", _empresa.FoneCelular);
+				ReportParameter EmailEmpresa = new ReportParameter("EmailEmpresa", _empresa.Email);
+				ReportParameter Site = new ReportParameter("Site", _empresa.Site);
+
+				//Imprimir Data
+
+				listReportParameter = new List<ReportParameter>()
+				{
+					RazaoSocial , Documento , RuaEmpresa  , NumeroEmpresa , BairroEmpresa , CidadeEmpresa , EstadoEmpresa ,
+					CEPEmpresa   , FoneFixoEmpresa , FoneCelularEmpresa , EmailEmpresa, Site,
+					Imagem
+				};
+
+				return listReportParameter;
+			}
+			catch (Exception ex)
+			{
+				// mensagem de erro caso nao existir o cadastro da empresa
+			}
+
+			return null;
+		}
+
+
 	}
 }

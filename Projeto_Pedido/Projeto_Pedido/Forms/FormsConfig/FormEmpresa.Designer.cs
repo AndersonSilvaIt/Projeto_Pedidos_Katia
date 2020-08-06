@@ -604,11 +604,11 @@
 			// 
 			// ImagemLogo
 			// 
-			this.ImagemLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(127)))), ((int)(((byte)(221)))));
+			this.ImagemLogo.BackColor = System.Drawing.Color.Transparent;
 			this.ImagemLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.ImagemLogo.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.ImagemLogo.ForeColor = System.Drawing.Color.Transparent;
 			this.ImagemLogo.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.ImagemLogo.IconColor = System.Drawing.SystemColors.ControlText;
+			this.ImagemLogo.IconColor = System.Drawing.Color.Transparent;
 			this.ImagemLogo.IconSize = 105;
 			this.ImagemLogo.Location = new System.Drawing.Point(602, 357);
 			this.ImagemLogo.Name = "ImagemLogo";

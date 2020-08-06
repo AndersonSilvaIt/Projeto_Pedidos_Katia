@@ -28,6 +28,9 @@
 		{
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.lblValorProduto = new System.Windows.Forms.Label();
+			this.lblTotalLiquido = new System.Windows.Forms.Label();
+			this.lblValorDesconto = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -50,9 +53,6 @@
 			this.btnHome = new System.Windows.Forms.PictureBox();
 			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-			this.lblValorDesconto = new System.Windows.Forms.Label();
-			this.lblTotalLiquido = new System.Windows.Forms.Label();
-			this.lblValorProduto = new System.Windows.Forms.Label();
 			this.panelDesktop.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
@@ -97,6 +97,36 @@
 			this.groupBox1.TabIndex = 25;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Item";
+			// 
+			// lblValorProduto
+			// 
+			this.lblValorProduto.AutoSize = true;
+			this.lblValorProduto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValorProduto.Location = new System.Drawing.Point(560, 80);
+			this.lblValorProduto.Name = "lblValorProduto";
+			this.lblValorProduto.Size = new System.Drawing.Size(28, 18);
+			this.lblValorProduto.TabIndex = 55;
+			this.lblValorProduto.Text = "0,0";
+			// 
+			// lblTotalLiquido
+			// 
+			this.lblTotalLiquido.AutoSize = true;
+			this.lblTotalLiquido.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTotalLiquido.Location = new System.Drawing.Point(370, 136);
+			this.lblTotalLiquido.Name = "lblTotalLiquido";
+			this.lblTotalLiquido.Size = new System.Drawing.Size(28, 18);
+			this.lblTotalLiquido.TabIndex = 54;
+			this.lblTotalLiquido.Text = "0,0";
+			// 
+			// lblValorDesconto
+			// 
+			this.lblValorDesconto.AutoSize = true;
+			this.lblValorDesconto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValorDesconto.Location = new System.Drawing.Point(257, 136);
+			this.lblValorDesconto.Name = "lblValorDesconto";
+			this.lblValorDesconto.Size = new System.Drawing.Size(28, 18);
+			this.lblValorDesconto.TabIndex = 53;
+			this.lblValorDesconto.Text = "0,0";
 			// 
 			// label6
 			// 
@@ -391,36 +421,6 @@
 			this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
 			this.iconCurrentChildForm.TabIndex = 0;
 			this.iconCurrentChildForm.TabStop = false;
-			// 
-			// lblValorDesconto
-			// 
-			this.lblValorDesconto.AutoSize = true;
-			this.lblValorDesconto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblValorDesconto.Location = new System.Drawing.Point(257, 136);
-			this.lblValorDesconto.Name = "lblValorDesconto";
-			this.lblValorDesconto.Size = new System.Drawing.Size(28, 18);
-			this.lblValorDesconto.TabIndex = 53;
-			this.lblValorDesconto.Text = "0,0";
-			// 
-			// lblTotalLiquido
-			// 
-			this.lblTotalLiquido.AutoSize = true;
-			this.lblTotalLiquido.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTotalLiquido.Location = new System.Drawing.Point(370, 136);
-			this.lblTotalLiquido.Name = "lblTotalLiquido";
-			this.lblTotalLiquido.Size = new System.Drawing.Size(28, 18);
-			this.lblTotalLiquido.TabIndex = 54;
-			this.lblTotalLiquido.Text = "0,0";
-			// 
-			// lblValorProduto
-			// 
-			this.lblValorProduto.AutoSize = true;
-			this.lblValorProduto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblValorProduto.Location = new System.Drawing.Point(560, 80);
-			this.lblValorProduto.Name = "lblValorProduto";
-			this.lblValorProduto.Size = new System.Drawing.Size(28, 18);
-			this.lblValorProduto.TabIndex = 55;
-			this.lblValorProduto.Text = "0,0";
 			// 
 			// FormItemPedido
 			// 

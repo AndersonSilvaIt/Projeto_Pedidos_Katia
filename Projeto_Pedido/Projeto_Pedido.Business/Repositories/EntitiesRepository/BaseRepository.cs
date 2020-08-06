@@ -352,6 +352,103 @@ namespace Projeto_Pedido.Business.Repositories.EntitiesRepository {
 			}
 		}
 
+		public static void Update02(T Entity)
+		{
+			object[] attributesObject;
+			long idEntity = 0;
+			using (var conection = BaseData.DbConnection())
+			{
+				StringBuilder sb = new StringBuilder();
+				sb.Append($"update { Entity.GetType().Name } set  ");
+				var properties = Entity.GetType().GetProperties();
+
+				object instanceEntity = Activator.CreateInstance(Entity.GetType());
+
+				foreach (var item in properties)
+				{
+					attributesObject = item.GetCustomAttributes(false);
+					if (attributesObject != null && attributesObject.Length > 0 && attributesObject.Any(x => x is NotMappedAttribute))
+					{
+						continue;
+					}
+
+					if (item.Name.ToUpper() != "ID")
+						sb.Append($"{item.Name} = @{item.Name}, ");
+					else
+					{
+						string value = item.GetValue(Entity, null).ToString();
+						long.TryParse(value, out idEntity);
+					}
+				}
+
+				sb.Remove(sb.Length - 1, 1);
+
+				if (idEntity > 0)
+				{
+					sb.Append($" where id =  {idEntity}");
+				}
+
+				using (var command = conection.CreateCommand())
+				{
+					command.CommandText = sb.ToString().Remove(sb.ToString().LastIndexOf(','), 1);
+
+					foreach (var item in properties)
+					{
+
+						attributesObject = item.GetCustomAttributes(false);
+						if (attributesObject != null && attributesObject.Length > 0 && attributesObject.Any(x => x is NotMappedAttribute))
+						{
+							continue;
+						}
+
+						if (item.PropertyType.Name == "DateTime")
+							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss"));
+						else
+							command.Parameters.AddWithValue("@" + item.Name, item.GetValue(Entity, null));
+
+						switch (item.PropertyType.Name)
+						{
+							case "DateTime":
+								command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss"));
+								break;
+
+							case "String":
+								command.Parameters.AddWithValue("@" + item.Name, item.GetValue(Entity, null));
+								break;
+
+							case "Decimal":
+							case "Double":
+								command.Parameters.AddWithValue("@" + item.Name, item.GetValue(Entity, null));
+								break;
+
+							case "Int32":
+							case "Int64":
+								if (item.Name.ToUpper() != "ID")
+								{
+									command.Parameters.AddWithValue("@" + item.Name, item.GetValue(Entity, null));
+								}
+								break;
+
+							case "Boolean":
+								bool valueBool = (bool)item.GetValue(Entity, null);
+								int intBoolValue = valueBool == true ? 1 : 0;
+
+								command.Parameters.AddWithValue("@" + item.Name, intBoolValue);
+								break;
+
+							case "Byte[]":
+							case "byte[]":
+								byte[] byteValue = (byte[])item.GetValue(Entity, null);
+								command.Parameters.AddWithValue("@" + item.Name, byteValue);
+								break;
+						}
+					}
+
+					command.ExecuteNonQuery();
+				}
+			}
+		}
+
 		public static T GetEntity(int id) {
 			var instanceEntity = Activator.CreateInstance<T>();
 			var properties = instanceEntity.GetType().GetProperties();

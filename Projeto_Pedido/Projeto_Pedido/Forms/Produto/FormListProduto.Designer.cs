@@ -26,6 +26,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnRefresh = new FontAwesome.Sharp.IconButton();
@@ -275,6 +278,7 @@
 			// Código
 			// 
 			this.Código.DataPropertyName = "Codigo";
+			this.Código.FillWeight = 40F;
 			this.Código.HeaderText = "Código";
 			this.Código.Name = "Código";
 			this.Código.ReadOnly = true;
@@ -305,6 +309,9 @@
 			// UnidadeMedidaString
 			// 
 			this.UnidadeMedidaString.DataPropertyName = "UnidadeMedidaString";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.UnidadeMedidaString.DefaultCellStyle = dataGridViewCellStyle1;
+			this.UnidadeMedidaString.FillWeight = 30F;
 			this.UnidadeMedidaString.HeaderText = "Und";
 			this.UnidadeMedidaString.Name = "UnidadeMedidaString";
 			this.UnidadeMedidaString.ReadOnly = true;
@@ -312,6 +319,9 @@
 			// PrecoCusto
 			// 
 			this.PrecoCusto.DataPropertyName = "PrecoCusto";
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.PrecoCusto.DefaultCellStyle = dataGridViewCellStyle2;
+			this.PrecoCusto.FillWeight = 80F;
 			this.PrecoCusto.HeaderText = "Preco Custo";
 			this.PrecoCusto.Name = "PrecoCusto";
 			this.PrecoCusto.ReadOnly = true;
@@ -319,6 +329,9 @@
 			// PrecoVenda
 			// 
 			this.PrecoVenda.DataPropertyName = "PrecoVenda";
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.PrecoVenda.DefaultCellStyle = dataGridViewCellStyle3;
+			this.PrecoVenda.FillWeight = 80F;
 			this.PrecoVenda.HeaderText = "Preco Venda";
 			this.PrecoVenda.Name = "PrecoVenda";
 			this.PrecoVenda.ReadOnly = true;

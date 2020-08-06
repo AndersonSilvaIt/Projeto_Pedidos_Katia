@@ -28,11 +28,9 @@ namespace Projeto_Pedido.DAL.Entities {
 
 		public string Contato { get; set; }
 		public string Email { get; set; }
-		public string DDDFoneFixo { get; set; }
 		public string FoneFixo { get; set; }
-
-		public string DDDFoneCelular { get; set; }
 		public string FoneCelular { get; set; }
+
 		public string Site { get; set; }
 
 		public string Observacao { get; set; }

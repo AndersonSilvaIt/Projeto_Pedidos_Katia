@@ -35,6 +35,7 @@
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.btnAddUnidadeMedida = new FontAwesome.Sharp.IconButton();
 			this.ddlUnidadeMedida = new System.Windows.Forms.ComboBox();
 			this.ddlFornecedor = new System.Windows.Forms.ComboBox();
 			this.btnImage = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
 			this.btnSave = new FontAwesome.Sharp.IconButton();
 			this.btnEdit = new FontAwesome.Sharp.IconButton();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-			this.btnAddUnidadeMedida = new FontAwesome.Sharp.IconButton();
 			this.panelTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
@@ -215,6 +215,23 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Cadastro";
 			// 
+			// btnAddUnidadeMedida
+			// 
+			this.btnAddUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAddUnidadeMedida.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnAddUnidadeMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAddUnidadeMedida.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnAddUnidadeMedida.IconChar = FontAwesome.Sharp.IconChar.Plus;
+			this.btnAddUnidadeMedida.IconColor = System.Drawing.Color.White;
+			this.btnAddUnidadeMedida.IconSize = 15;
+			this.btnAddUnidadeMedida.Location = new System.Drawing.Point(129, 117);
+			this.btnAddUnidadeMedida.Name = "btnAddUnidadeMedida";
+			this.btnAddUnidadeMedida.Rotation = 0D;
+			this.btnAddUnidadeMedida.Size = new System.Drawing.Size(25, 24);
+			this.btnAddUnidadeMedida.TabIndex = 4;
+			this.btnAddUnidadeMedida.UseVisualStyleBackColor = true;
+			this.btnAddUnidadeMedida.Click += new System.EventHandler(this.btnAddUnidadeMedida_Click);
+			// 
 			// ddlUnidadeMedida
 			// 
 			this.ddlUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -249,11 +266,11 @@
 			// 
 			// ImagemProduto
 			// 
-			this.ImagemProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(127)))), ((int)(((byte)(221)))));
+			this.ImagemProduto.BackColor = System.Drawing.Color.Transparent;
 			this.ImagemProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.ImagemProduto.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.ImagemProduto.ForeColor = System.Drawing.Color.Transparent;
 			this.ImagemProduto.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.ImagemProduto.IconColor = System.Drawing.SystemColors.ControlText;
+			this.ImagemProduto.IconColor = System.Drawing.Color.Transparent;
 			this.ImagemProduto.IconSize = 105;
 			this.ImagemProduto.Location = new System.Drawing.Point(657, 62);
 			this.ImagemProduto.Name = "ImagemProduto";
@@ -454,23 +471,6 @@
 			// 
 			this.openFileDialog.FileName = "openFileDialog";
 			this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk);
-			// 
-			// btnAddUnidadeMedida
-			// 
-			this.btnAddUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAddUnidadeMedida.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnAddUnidadeMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAddUnidadeMedida.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-			this.btnAddUnidadeMedida.IconChar = FontAwesome.Sharp.IconChar.Plus;
-			this.btnAddUnidadeMedida.IconColor = System.Drawing.Color.White;
-			this.btnAddUnidadeMedida.IconSize = 15;
-			this.btnAddUnidadeMedida.Location = new System.Drawing.Point(129, 117);
-			this.btnAddUnidadeMedida.Name = "btnAddUnidadeMedida";
-			this.btnAddUnidadeMedida.Rotation = 0D;
-			this.btnAddUnidadeMedida.Size = new System.Drawing.Size(25, 24);
-			this.btnAddUnidadeMedida.TabIndex = 4;
-			this.btnAddUnidadeMedida.UseVisualStyleBackColor = true;
-			this.btnAddUnidadeMedida.Click += new System.EventHandler(this.btnAddUnidadeMedida_Click);
 			// 
 			// FormCadProduto
 			// 

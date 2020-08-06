@@ -83,7 +83,6 @@ namespace Projeto_Pedido.Forms.Entidades {
 
 				FormCliFornecedor frmCliFornecedor = new FormCliFornecedor(_entidade);
 				frmCliFornecedor.ShowDialog();
-				this.Close();
 
 				AtualizaFormulario();
 			}

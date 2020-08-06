@@ -313,6 +313,15 @@ namespace Projeto_Pedido.Forms.Pedidos {
 				{
 					_pedido.EnderecoEntrega = _pedido.NovoEnderecoEntrega;
 				}
+				if(_pedido.EnderecoEntrega == null)
+				{
+					var lista = grdEndereco.DataSource as BindingList<EnderecoEntrega>;
+					if (lista != null && lista.Count > 0)
+					{
+						_pedido.EnderecoEntrega = lista[0];
+					}
+				}
+
 				_pedido.EnderecoEntrega.PedidoId = _pedido.Id;
 				EnderecoRepository.Save(_pedido.EnderecoEntrega);
 			}
@@ -328,7 +337,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 						PedidoItemRepository.Save(item);
 					}
 					else
-						PedidoItemRepository.Update(item);
+						PedidoItemRepository.Update02(item);
 				}
 
 				if (_pedido.ItensPedidoDelete != null && _pedido.ItensPedidoDelete.Count > 0)
@@ -350,7 +359,7 @@ namespace Projeto_Pedido.Forms.Pedidos {
 					}
 					else
 					{
-						EnderecoRepository.Update(_pedido.EnderecoEntrega);
+						EnderecoRepository.Update02(_pedido.EnderecoEntrega);
 					}
 				}
 

@@ -34,6 +34,8 @@
 			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.txtDestinatario = new System.Windows.Forms.TextBox();
 			this.ddlUF = new System.Windows.Forms.ComboBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
 			this.lblPedido = new System.Windows.Forms.Label();
 			this.btnSave = new FontAwesome.Sharp.IconButton();
 			this.btnEdit = new FontAwesome.Sharp.IconButton();
-			this.label5 = new System.Windows.Forms.Label();
-			this.txtDestinatario = new System.Windows.Forms.TextBox();
 			this.panelTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
@@ -195,6 +195,25 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Endereço";
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(26, 32);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(82, 18);
+			this.label5.TabIndex = 45;
+			this.label5.Text = "Destinatário";
+			// 
+			// txtDestinatario
+			// 
+			this.txtDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtDestinatario.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDestinatario.Location = new System.Drawing.Point(29, 53);
+			this.txtDestinatario.Name = "txtDestinatario";
+			this.txtDestinatario.Size = new System.Drawing.Size(279, 19);
+			this.txtDestinatario.TabIndex = 1;
+			// 
 			// ddlUF
 			// 
 			this.ddlUF.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -205,7 +224,7 @@
 			this.ddlUF.Location = new System.Drawing.Point(485, 158);
 			this.ddlUF.Name = "ddlUF";
 			this.ddlUF.Size = new System.Drawing.Size(54, 26);
-			this.ddlUF.TabIndex = 13;
+			this.ddlUF.TabIndex = 6;
 			// 
 			// label15
 			// 
@@ -224,7 +243,7 @@
 			this.txtComplemento.Location = new System.Drawing.Point(173, 214);
 			this.txtComplemento.Name = "txtComplemento";
 			this.txtComplemento.Size = new System.Drawing.Size(366, 19);
-			this.txtComplemento.TabIndex = 15;
+			this.txtComplemento.TabIndex = 8;
 			// 
 			// label1
 			// 
@@ -243,7 +262,7 @@
 			this.txtCEP.Location = new System.Drawing.Point(31, 214);
 			this.txtCEP.Name = "txtCEP";
 			this.txtCEP.Size = new System.Drawing.Size(96, 19);
-			this.txtCEP.TabIndex = 14;
+			this.txtCEP.TabIndex = 7;
 			// 
 			// label14
 			// 
@@ -272,7 +291,7 @@
 			this.txtNumero.Location = new System.Drawing.Point(447, 102);
 			this.txtNumero.Name = "txtNumero";
 			this.txtNumero.Size = new System.Drawing.Size(92, 19);
-			this.txtNumero.TabIndex = 10;
+			this.txtNumero.TabIndex = 3;
 			// 
 			// label2
 			// 
@@ -291,7 +310,7 @@
 			this.txtCidade.Location = new System.Drawing.Point(292, 158);
 			this.txtCidade.Name = "txtCidade";
 			this.txtCidade.Size = new System.Drawing.Size(149, 19);
-			this.txtCidade.TabIndex = 12;
+			this.txtCidade.TabIndex = 5;
 			// 
 			// label3
 			// 
@@ -310,7 +329,7 @@
 			this.txtRua.Location = new System.Drawing.Point(29, 102);
 			this.txtRua.Name = "txtRua";
 			this.txtRua.Size = new System.Drawing.Size(412, 19);
-			this.txtRua.TabIndex = 9;
+			this.txtRua.TabIndex = 2;
 			// 
 			// label12
 			// 
@@ -329,7 +348,7 @@
 			this.txtBairro.Location = new System.Drawing.Point(29, 158);
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(246, 19);
-			this.txtBairro.TabIndex = 11;
+			this.txtBairro.TabIndex = 4;
 			// 
 			// label4
 			// 
@@ -366,7 +385,7 @@
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Rotation = 0D;
 			this.btnSave.Size = new System.Drawing.Size(37, 33);
-			this.btnSave.TabIndex = 50;
+			this.btnSave.TabIndex = 9;
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
@@ -384,28 +403,9 @@
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Rotation = 0D;
 			this.btnEdit.Size = new System.Drawing.Size(37, 33);
-			this.btnEdit.TabIndex = 51;
+			this.btnEdit.TabIndex = 10;
 			this.btnEdit.UseVisualStyleBackColor = true;
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(26, 32);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(82, 18);
-			this.label5.TabIndex = 45;
-			this.label5.Text = "Destinatário";
-			// 
-			// txtDestinatario
-			// 
-			this.txtDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtDestinatario.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDestinatario.Location = new System.Drawing.Point(29, 53);
-			this.txtDestinatario.Name = "txtDestinatario";
-			this.txtDestinatario.Size = new System.Drawing.Size(279, 19);
-			this.txtDestinatario.TabIndex = 46;
 			// 
 			// FormEndereco
 			// 

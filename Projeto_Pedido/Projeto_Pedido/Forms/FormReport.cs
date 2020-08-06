@@ -45,6 +45,7 @@ namespace Projeto_Pedido.Forms {
 			{
 				this.reportViewer.LocalReport.DataSources.Add(item);
 			}
+
 		}
 
 		private void FormReport_Load(object sender, EventArgs e)

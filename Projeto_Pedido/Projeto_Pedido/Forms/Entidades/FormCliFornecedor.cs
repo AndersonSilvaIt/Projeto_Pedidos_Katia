@@ -1,7 +1,9 @@
 ﻿using Projeto_Pedido.Business.Repositories.EntitiesRepository;
+using Projeto_Pedido.Business.Valitadors;
 using Projeto_Pedido.DAL.Entities;
 using System;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Projeto_Pedido.Forms.Entidades {
@@ -23,7 +25,6 @@ namespace Projeto_Pedido.Forms.Entidades {
 			FillFields02();
 			EnableFields(this, false);
 			btnSave.Visible = false;
-
 			//Caso já conter algum cadastro de produto ou pedido vinculados com essa entidade, eu não posso trocar o tipo de entidade
 			if (EntityRepository.VerificaVinculoProduto_Pedido(entidade.Id))
 			{
@@ -48,9 +49,8 @@ namespace Projeto_Pedido.Forms.Entidades {
 			//Verificar o preenchimento da imagem
 			txtContato.Text = _entidade.Contato;
 			txtEmail.Text = _entidade.Email;
-			txtDDDFoneFixo.Text = _entidade.DDDFoneFixo;
 			txtFoneFixo.Text = _entidade.FoneFixo;
-			txtDDDFoneCelular.Text = _entidade.FoneCelular;
+			txtFoneCelular.Text = _entidade.FoneCelular;
 			txtSite.Text = _entidade.Site;
 				
 			txtRua.Text = _entidade.Rua;
@@ -106,10 +106,14 @@ namespace Projeto_Pedido.Forms.Entidades {
 			DirtyFields(this, _entidade);
 			DirtyFields02();
 
+			EntityValidator.ValidarEntidade(_entidade);
+			if (ValidacoesEntidade() > 0)
+				return;
+
 			if (_entidade.Id == 0)
 				EntityRepository.Save(_entidade);
 			else
-				EntityRepository.Update(_entidade);
+				EntityRepository.Update02(_entidade);
 
 			this.Close();
 		}
@@ -152,6 +156,12 @@ namespace Projeto_Pedido.Forms.Entidades {
 		{
 			try
 			{
+				if (EntityRepository.VerificaVinculoProduto_Pedido(_entidade.Id))
+				{
+					MessageBox.Show("Esse regiso possui vínculo com Produto ou Produto, não pode ser excluído!", "Aviso", MessageBoxButtons.OK);
+					return;
+				}
+
 				var result = MessageBox.Show("Deseja excluir esse Registro? ", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				if (result == DialogResult.Yes)
 				{
@@ -173,5 +183,23 @@ namespace Projeto_Pedido.Forms.Entidades {
 			btnSave.Visible = true;
 			btnEdit.Visible = false;
 		}
+
+		private int ValidacoesEntidade()
+		{
+			if (EntityValidator.ListaValidacoes.Count > 0)
+			{
+				StringBuilder sb = new StringBuilder();
+				foreach (var item in EntityValidator.ListaValidacoes)
+				{
+					sb.Append(item.Item1).Append(": ").Append(item.Item2);
+					sb.AppendLine();
+				}
+
+				MessageBox.Show(sb.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return 1;
+			}
+			return 0;
+		}
+
 	}
 }

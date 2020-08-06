@@ -56,7 +56,7 @@ namespace Projeto_Pedido.Forms {
 			txtCEP.Text = _empresa.CEP;
 			txtComplemento.Text = _empresa.Complemento;
 
-			if (_empresa.Imagem != null && _empresa.Imagem.Count() > 0)
+			if (_empresa.Imagem != null && _empresa.Imagem.Count() > 1000)
 				ImagemLogo.Image = ByteToImage(_empresa.Imagem);
 		}
 
@@ -120,7 +120,7 @@ namespace Projeto_Pedido.Forms {
 			if (_empresa.Id == 0)
 				EmpresaRepository.Save(_empresa);
 			else
-				EmpresaRepository.Update(_empresa);
+				EmpresaRepository.Update02(_empresa);
 
 			this.Close();
 		}
@@ -145,7 +145,6 @@ namespace Projeto_Pedido.Forms {
 
 		private void btnImage_Click(object sender, System.EventArgs e)
 		{
-			openFileDialog.FileName = "teste";
 			openFileDialog.Title = "Escolha a foto";
 			openFileDialog.Filter = "JPEG|*.JPG|PNG|*.png";
 			openFileDialog.ShowDialog();

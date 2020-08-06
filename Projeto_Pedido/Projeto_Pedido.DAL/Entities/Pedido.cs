@@ -109,5 +109,8 @@ namespace Projeto_Pedido.DAL.Entities {
 
 		[NotMapped]
 		public EnderecoEntrega NovoEnderecoEntrega { get; set; }
+
+		[NotMapped]
+		public string ObterEstadoPedido { get { return _StatusString; } }
 	}
 }

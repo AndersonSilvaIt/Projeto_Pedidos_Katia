@@ -40,6 +40,7 @@ namespace Projeto_Pedido.Forms.Produto {
 			FillFields02();
 			EnableFields(this, false);
 			btnSave.Visible = false;
+			btnImage.Visible = false;
 		}
 
 		//DragForm
@@ -75,7 +76,7 @@ namespace Projeto_Pedido.Forms.Produto {
 				if (_produto.Id == 0)
 					ProductRepository.Save(_produto);
 				else
-					ProductRepository.Update(_produto);
+					ProductRepository.Update02(_produto);
 
 				this.Close();
 			}
@@ -214,7 +215,6 @@ namespace Projeto_Pedido.Forms.Produto {
 			txtCodigo.Text = _produto.Codigo;
 			txtDescricao.Text = _produto.Descricao;
 
-			// verificar  a unidade de medida, criar o combobox
 			txtPrecoCusto.Text = _produto.PrecoCusto.ToString("F");
 			txtPrecoVenda.Text = _produto.PrecoVenda.ToString("F");
 
@@ -232,29 +232,17 @@ namespace Projeto_Pedido.Forms.Produto {
 
 			txtObservacao.Text = _produto.Observacao;
 
-			if (_produto.Imagem != null && _produto.Imagem.Count() > 0)
+			if (_produto.Imagem != null && _produto.Imagem.Count() > 1000)
 				ImagemProduto.Image = ByteToImage(_produto.Imagem);
 		}
 
 		private void btnImage_Click(object sender, EventArgs e)
 		{
-			openFileDialog.FileName = "teste";
 			openFileDialog.Title = "Escolha a foto";
 			openFileDialog.Filter = "JPEG|*.JPG|PNG|*.png";
 			openFileDialog.ShowDialog();
 		}
 
-		/*public byte[] ImageToByte(Image image, System.Drawing.Imaging.ImageFormat format)
-		{
-			using (MemoryStream ms = new MemoryStream())
-			{
-				// Convert Image to byte[]
-				image.Save(ms, format);
-				byte[] imageBytes = ms.ToArray();
-				return imageBytes;
-			}
-		}
-		*/
 		public Image ByteToImage(byte[] imageBytes)
 		{
 			// Convert byte[] to Image
@@ -266,6 +254,7 @@ namespace Projeto_Pedido.Forms.Produto {
 
 		private void openFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
 		{
+			string teste = "";
 			ImagemProduto.Image = Image.FromFile(openFileDialog.FileName);
 		}
 
@@ -274,6 +263,7 @@ namespace Projeto_Pedido.Forms.Produto {
 			EnableFields(this, true);
 			btnSave.Visible = true;
 			btnEdit.Visible = false;
+			btnImage.Visible = true;
 		}
 
 		private void btnDelete_Click(object sender, EventArgs e)

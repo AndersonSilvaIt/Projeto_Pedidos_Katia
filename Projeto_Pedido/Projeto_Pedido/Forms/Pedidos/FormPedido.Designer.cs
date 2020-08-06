@@ -60,26 +60,6 @@
 			this.lblDescontoItens = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.grdItensPedido = new System.Windows.Forms.DataGridView();
-			this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.UnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.DescricaoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CodigoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TotalBrutoToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TotalBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ValorDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.QuantidadeToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ProdutoString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ValorDescontoToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TotalToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CadasterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnAdd = new FontAwesome.Sharp.IconButton();
 			this.label10 = new System.Windows.Forms.Label();
@@ -104,6 +84,26 @@
 			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.ProdutoString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.UnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DescricaoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CodigoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TotalBrutoToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TotalBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ValorDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.QuantidadeToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ValorDescontoToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TotalToString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CadasterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this._CadasterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -259,7 +259,7 @@
 			this.groupBox1.Location = new System.Drawing.Point(12, 6);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(687, 599);
-			this.groupBox1.TabIndex = 25;
+			this.groupBox1.TabIndex = 100;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados do Pedido";
 			// 
@@ -272,7 +272,7 @@
 			this.groupBox3.Location = new System.Drawing.Point(29, 95);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(633, 100);
-			this.groupBox3.TabIndex = 33;
+			this.groupBox3.TabIndex = 110;
 			this.groupBox3.TabStop = false;
 			// 
 			// btnAddAddress
@@ -289,7 +289,7 @@
 			this.btnAddAddress.Name = "btnAddAddress";
 			this.btnAddAddress.Rotation = 0D;
 			this.btnAddAddress.Size = new System.Drawing.Size(25, 25);
-			this.btnAddAddress.TabIndex = 35;
+			this.btnAddAddress.TabIndex = 5;
 			this.toolTip.SetToolTip(this.btnAddAddress, "Editar");
 			this.btnAddAddress.UseVisualStyleBackColor = true;
 			this.btnAddAddress.Click += new System.EventHandler(this.btnAddAddress_Click);
@@ -337,7 +337,7 @@
 			this.grdEndereco.ShowEditingIcon = false;
 			this.grdEndereco.ShowRowErrors = false;
 			this.grdEndereco.Size = new System.Drawing.Size(597, 51);
-			this.grdEndereco.TabIndex = 5;
+			this.grdEndereco.TabIndex = 130;
 			// 
 			// label15
 			// 
@@ -529,7 +529,7 @@
 			this.groupBox2.Location = new System.Drawing.Point(29, 195);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(633, 225);
-			this.groupBox2.TabIndex = 32;
+			this.groupBox2.TabIndex = 120;
 			this.groupBox2.TabStop = false;
 			// 
 			// lblLiquidoItens
@@ -583,6 +583,8 @@
 			this.grdItensPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.grdItensPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.grdItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProdutoString,
+            this.Preco,
             this.Id,
             this.UnidadeMedida,
             this.DescricaoProduto,
@@ -591,7 +593,6 @@
             this.TotalBruto,
             this.ValorDesconto,
             this.QuantidadeToString,
-            this.ProdutoString,
             this.IdPedido,
             this.IdProduto,
             this.Produto,
@@ -600,7 +601,6 @@
             this.ValorDescontoToString,
             this.Total,
             this.TotalToString,
-            this.Preco,
             this.Observacao,
             this.CadasterDate});
 			this.grdItensPedido.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -615,162 +615,8 @@
 			this.grdItensPedido.ShowEditingIcon = false;
 			this.grdItensPedido.ShowRowErrors = false;
 			this.grdItensPedido.Size = new System.Drawing.Size(597, 153);
-			this.grdItensPedido.TabIndex = 5;
+			this.grdItensPedido.TabIndex = 140;
 			this.grdItensPedido.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdItensPedido_CellDoubleClick);
-			// 
-			// Id
-			// 
-			this.Id.DataPropertyName = "Id";
-			this.Id.HeaderText = "Id";
-			this.Id.Name = "Id";
-			this.Id.ReadOnly = true;
-			this.Id.Visible = false;
-			// 
-			// UnidadeMedida
-			// 
-			this.UnidadeMedida.DataPropertyName = "UnidadeMedida";
-			this.UnidadeMedida.HeaderText = "UnidadeMedida";
-			this.UnidadeMedida.Name = "UnidadeMedida";
-			this.UnidadeMedida.ReadOnly = true;
-			this.UnidadeMedida.Visible = false;
-			// 
-			// DescricaoProduto
-			// 
-			this.DescricaoProduto.DataPropertyName = "DescricaoProduto";
-			this.DescricaoProduto.HeaderText = "DescricaoProduto";
-			this.DescricaoProduto.Name = "DescricaoProduto";
-			this.DescricaoProduto.ReadOnly = true;
-			this.DescricaoProduto.Visible = false;
-			// 
-			// CodigoProduto
-			// 
-			this.CodigoProduto.DataPropertyName = "CodigoProduto";
-			this.CodigoProduto.HeaderText = "CodigoProduto";
-			this.CodigoProduto.Name = "CodigoProduto";
-			this.CodigoProduto.ReadOnly = true;
-			this.CodigoProduto.Visible = false;
-			// 
-			// TotalBrutoToString
-			// 
-			this.TotalBrutoToString.DataPropertyName = "TotalBrutoToString";
-			this.TotalBrutoToString.HeaderText = "TotalBrutoToString";
-			this.TotalBrutoToString.Name = "TotalBrutoToString";
-			this.TotalBrutoToString.ReadOnly = true;
-			this.TotalBrutoToString.Visible = false;
-			// 
-			// TotalBruto
-			// 
-			this.TotalBruto.DataPropertyName = "TotalBruto";
-			this.TotalBruto.HeaderText = "TotalBruto";
-			this.TotalBruto.Name = "TotalBruto";
-			this.TotalBruto.ReadOnly = true;
-			this.TotalBruto.Visible = false;
-			// 
-			// ValorDesconto
-			// 
-			this.ValorDesconto.DataPropertyName = "ValorDesconto";
-			this.ValorDesconto.HeaderText = "ValorDesconto";
-			this.ValorDesconto.Name = "ValorDesconto";
-			this.ValorDesconto.ReadOnly = true;
-			this.ValorDesconto.Visible = false;
-			// 
-			// QuantidadeToString
-			// 
-			this.QuantidadeToString.DataPropertyName = "QuantidadeToString";
-			this.QuantidadeToString.HeaderText = "Quantidade";
-			this.QuantidadeToString.Name = "QuantidadeToString";
-			this.QuantidadeToString.ReadOnly = true;
-			// 
-			// ProdutoString
-			// 
-			this.ProdutoString.DataPropertyName = "ProdutoString";
-			this.ProdutoString.HeaderText = "Produto";
-			this.ProdutoString.Name = "ProdutoString";
-			this.ProdutoString.ReadOnly = true;
-			// 
-			// IdPedido
-			// 
-			this.IdPedido.DataPropertyName = "IdPedido";
-			this.IdPedido.HeaderText = "IdPedido";
-			this.IdPedido.Name = "IdPedido";
-			this.IdPedido.ReadOnly = true;
-			this.IdPedido.Visible = false;
-			// 
-			// IdProduto
-			// 
-			this.IdProduto.DataPropertyName = "IdProduto";
-			this.IdProduto.HeaderText = "IdProduto";
-			this.IdProduto.Name = "IdProduto";
-			this.IdProduto.ReadOnly = true;
-			this.IdProduto.Visible = false;
-			// 
-			// Produto
-			// 
-			this.Produto.DataPropertyName = "Produto";
-			this.Produto.HeaderText = "_Produto";
-			this.Produto.Name = "Produto";
-			this.Produto.ReadOnly = true;
-			this.Produto.Visible = false;
-			// 
-			// Quantidade
-			// 
-			this.Quantidade.DataPropertyName = "Quantidade";
-			this.Quantidade.HeaderText = "Quantidade";
-			this.Quantidade.Name = "Quantidade";
-			this.Quantidade.ReadOnly = true;
-			this.Quantidade.Visible = false;
-			// 
-			// Desconto
-			// 
-			this.Desconto.DataPropertyName = "Desconto";
-			this.Desconto.HeaderText = "Desconto";
-			this.Desconto.Name = "Desconto";
-			this.Desconto.ReadOnly = true;
-			// 
-			// ValorDescontoToString
-			// 
-			this.ValorDescontoToString.DataPropertyName = "ValorDescontoToString";
-			this.ValorDescontoToString.HeaderText = "Valor Desc.";
-			this.ValorDescontoToString.Name = "ValorDescontoToString";
-			this.ValorDescontoToString.ReadOnly = true;
-			// 
-			// Total
-			// 
-			this.Total.DataPropertyName = "TotalLiquido";
-			this.Total.HeaderText = "Total";
-			this.Total.Name = "Total";
-			this.Total.ReadOnly = true;
-			this.Total.Visible = false;
-			// 
-			// TotalToString
-			// 
-			this.TotalToString.DataPropertyName = "TotalToString";
-			this.TotalToString.HeaderText = "Total";
-			this.TotalToString.Name = "TotalToString";
-			this.TotalToString.ReadOnly = true;
-			// 
-			// Preco
-			// 
-			this.Preco.DataPropertyName = "PrecoToString";
-			this.Preco.HeaderText = "Preco";
-			this.Preco.Name = "Preco";
-			this.Preco.ReadOnly = true;
-			// 
-			// Observacao
-			// 
-			this.Observacao.DataPropertyName = "Observacao";
-			this.Observacao.HeaderText = "Observacao";
-			this.Observacao.Name = "Observacao";
-			this.Observacao.ReadOnly = true;
-			this.Observacao.Visible = false;
-			// 
-			// CadasterDate
-			// 
-			this.CadasterDate.DataPropertyName = "CadasterDate";
-			this.CadasterDate.HeaderText = "CadasterDate";
-			this.CadasterDate.Name = "CadasterDate";
-			this.CadasterDate.ReadOnly = true;
-			this.CadasterDate.Visible = false;
 			// 
 			// label12
 			// 
@@ -818,7 +664,7 @@
 			this.txtEstado.Location = new System.Drawing.Point(549, 34);
 			this.txtEstado.Name = "txtEstado";
 			this.txtEstado.Size = new System.Drawing.Size(97, 19);
-			this.txtEstado.TabIndex = 3;
+			this.txtEstado.TabIndex = 5500;
 			// 
 			// ddlCliente
 			// 
@@ -829,7 +675,7 @@
 			this.ddlCliente.Location = new System.Drawing.Point(29, 68);
 			this.ddlCliente.Name = "ddlCliente";
 			this.ddlCliente.Size = new System.Drawing.Size(396, 26);
-			this.ddlCliente.TabIndex = 4;
+			this.ddlCliente.TabIndex = 3;
 			this.ddlCliente.SelectedIndexChanged += new System.EventHandler(this.ddlCliente_SelectedIndexChanged);
 			// 
 			// txtObservacao
@@ -894,7 +740,7 @@
 			this.btnAddCliente.Name = "btnAddCliente";
 			this.btnAddCliente.Rotation = 0D;
 			this.btnAddCliente.Size = new System.Drawing.Size(25, 24);
-			this.btnAddCliente.TabIndex = 5;
+			this.btnAddCliente.TabIndex = 4;
 			this.btnAddCliente.UseVisualStyleBackColor = true;
 			this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
 			// 
@@ -988,7 +834,7 @@
 			this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
 			this.panelTitleBar.Name = "panelTitleBar";
 			this.panelTitleBar.Size = new System.Drawing.Size(711, 67);
-			this.panelTitleBar.TabIndex = 7;
+			this.panelTitleBar.TabIndex = 90;
 			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
 			// 
 			// btnMaximize
@@ -1084,6 +930,167 @@
 			this.iconCurrentChildForm.TabIndex = 0;
 			this.iconCurrentChildForm.TabStop = false;
 			// 
+			// ProdutoString
+			// 
+			this.ProdutoString.DataPropertyName = "ProdutoString";
+			this.ProdutoString.FillWeight = 140F;
+			this.ProdutoString.HeaderText = "Produto";
+			this.ProdutoString.Name = "ProdutoString";
+			this.ProdutoString.ReadOnly = true;
+			// 
+			// Preco
+			// 
+			this.Preco.DataPropertyName = "PrecoToString";
+			this.Preco.FillWeight = 70F;
+			this.Preco.HeaderText = "Preco";
+			this.Preco.Name = "Preco";
+			this.Preco.ReadOnly = true;
+			// 
+			// Id
+			// 
+			this.Id.DataPropertyName = "Id";
+			this.Id.HeaderText = "Id";
+			this.Id.Name = "Id";
+			this.Id.ReadOnly = true;
+			this.Id.Visible = false;
+			// 
+			// UnidadeMedida
+			// 
+			this.UnidadeMedida.DataPropertyName = "UnidadeMedida";
+			this.UnidadeMedida.HeaderText = "UnidadeMedida";
+			this.UnidadeMedida.Name = "UnidadeMedida";
+			this.UnidadeMedida.ReadOnly = true;
+			this.UnidadeMedida.Visible = false;
+			// 
+			// DescricaoProduto
+			// 
+			this.DescricaoProduto.DataPropertyName = "DescricaoProduto";
+			this.DescricaoProduto.HeaderText = "DescricaoProduto";
+			this.DescricaoProduto.Name = "DescricaoProduto";
+			this.DescricaoProduto.ReadOnly = true;
+			this.DescricaoProduto.Visible = false;
+			// 
+			// CodigoProduto
+			// 
+			this.CodigoProduto.DataPropertyName = "CodigoProduto";
+			this.CodigoProduto.HeaderText = "CodigoProduto";
+			this.CodigoProduto.Name = "CodigoProduto";
+			this.CodigoProduto.ReadOnly = true;
+			this.CodigoProduto.Visible = false;
+			// 
+			// TotalBrutoToString
+			// 
+			this.TotalBrutoToString.DataPropertyName = "TotalBrutoToString";
+			this.TotalBrutoToString.HeaderText = "TotalBrutoToString";
+			this.TotalBrutoToString.Name = "TotalBrutoToString";
+			this.TotalBrutoToString.ReadOnly = true;
+			this.TotalBrutoToString.Visible = false;
+			// 
+			// TotalBruto
+			// 
+			this.TotalBruto.DataPropertyName = "TotalBruto";
+			this.TotalBruto.HeaderText = "TotalBruto";
+			this.TotalBruto.Name = "TotalBruto";
+			this.TotalBruto.ReadOnly = true;
+			this.TotalBruto.Visible = false;
+			// 
+			// ValorDesconto
+			// 
+			this.ValorDesconto.DataPropertyName = "ValorDesconto";
+			this.ValorDesconto.FillWeight = 70F;
+			this.ValorDesconto.HeaderText = "ValorDesconto";
+			this.ValorDesconto.Name = "ValorDesconto";
+			this.ValorDesconto.ReadOnly = true;
+			this.ValorDesconto.Visible = false;
+			// 
+			// QuantidadeToString
+			// 
+			this.QuantidadeToString.DataPropertyName = "QuantidadeToString";
+			this.QuantidadeToString.FillWeight = 70F;
+			this.QuantidadeToString.HeaderText = "Quantidade";
+			this.QuantidadeToString.Name = "QuantidadeToString";
+			this.QuantidadeToString.ReadOnly = true;
+			// 
+			// IdPedido
+			// 
+			this.IdPedido.DataPropertyName = "IdPedido";
+			this.IdPedido.HeaderText = "IdPedido";
+			this.IdPedido.Name = "IdPedido";
+			this.IdPedido.ReadOnly = true;
+			this.IdPedido.Visible = false;
+			// 
+			// IdProduto
+			// 
+			this.IdProduto.DataPropertyName = "IdProduto";
+			this.IdProduto.HeaderText = "IdProduto";
+			this.IdProduto.Name = "IdProduto";
+			this.IdProduto.ReadOnly = true;
+			this.IdProduto.Visible = false;
+			// 
+			// Produto
+			// 
+			this.Produto.DataPropertyName = "Produto";
+			this.Produto.HeaderText = "_Produto";
+			this.Produto.Name = "Produto";
+			this.Produto.ReadOnly = true;
+			this.Produto.Visible = false;
+			// 
+			// Quantidade
+			// 
+			this.Quantidade.DataPropertyName = "Quantidade";
+			this.Quantidade.HeaderText = "Quantidade";
+			this.Quantidade.Name = "Quantidade";
+			this.Quantidade.ReadOnly = true;
+			this.Quantidade.Visible = false;
+			// 
+			// Desconto
+			// 
+			this.Desconto.DataPropertyName = "Desconto";
+			this.Desconto.FillWeight = 70F;
+			this.Desconto.HeaderText = "Desconto";
+			this.Desconto.Name = "Desconto";
+			this.Desconto.ReadOnly = true;
+			// 
+			// ValorDescontoToString
+			// 
+			this.ValorDescontoToString.DataPropertyName = "ValorDescontoToString";
+			this.ValorDescontoToString.FillWeight = 80F;
+			this.ValorDescontoToString.HeaderText = "Valor Desc.";
+			this.ValorDescontoToString.Name = "ValorDescontoToString";
+			this.ValorDescontoToString.ReadOnly = true;
+			// 
+			// Total
+			// 
+			this.Total.DataPropertyName = "TotalLiquido";
+			this.Total.HeaderText = "Total";
+			this.Total.Name = "Total";
+			this.Total.ReadOnly = true;
+			this.Total.Visible = false;
+			// 
+			// TotalToString
+			// 
+			this.TotalToString.DataPropertyName = "TotalToString";
+			this.TotalToString.FillWeight = 70F;
+			this.TotalToString.HeaderText = "Total";
+			this.TotalToString.Name = "TotalToString";
+			this.TotalToString.ReadOnly = true;
+			// 
+			// Observacao
+			// 
+			this.Observacao.DataPropertyName = "Observacao";
+			this.Observacao.HeaderText = "Observacao";
+			this.Observacao.Name = "Observacao";
+			this.Observacao.ReadOnly = true;
+			this.Observacao.Visible = false;
+			// 
+			// CadasterDate
+			// 
+			this.CadasterDate.DataPropertyName = "CadasterDate";
+			this.CadasterDate.HeaderText = "CadasterDate";
+			this.CadasterDate.Name = "CadasterDate";
+			this.CadasterDate.ReadOnly = true;
+			this.CadasterDate.Visible = false;
+			// 
 			// dataGridViewTextBoxColumn1
 			// 
 			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -1110,6 +1117,7 @@
 			// Numero
 			// 
 			this.Numero.DataPropertyName = "Numero";
+			this.Numero.FillWeight = 50F;
 			this.Numero.HeaderText = "Numero";
 			this.Numero.Name = "Numero";
 			this.Numero.ReadOnly = true;
@@ -1131,6 +1139,7 @@
 			// Estado
 			// 
 			this.Estado.DataPropertyName = "Estado";
+			this.Estado.FillWeight = 50F;
 			this.Estado.HeaderText = "Estado";
 			this.Estado.Name = "Estado";
 			this.Estado.ReadOnly = true;
@@ -1241,6 +1250,12 @@
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label lblValorPagar;
 		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.DataGridView grdEndereco;
+		private FontAwesome.Sharp.IconButton btnAddAddress;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoString;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn UnidadeMedida;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoProduto;
@@ -1249,7 +1264,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn TotalBruto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ValorDesconto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeToString;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoString;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IdPedido;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Produto;
@@ -1258,13 +1272,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ValorDescontoToString;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Total;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TotalToString;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Observacao;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CadasterDate;
-		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.DataGridView grdEndereco;
-		private FontAwesome.Sharp.IconButton btnAddAddress;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn _CadasterDate;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Rua;

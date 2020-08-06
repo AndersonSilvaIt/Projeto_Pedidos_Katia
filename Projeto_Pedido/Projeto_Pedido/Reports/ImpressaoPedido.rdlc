@@ -356,9 +356,9 @@
           </Tablix>
           <Line Name="Line2">
             <Top>4.68816cm</Top>
-            <Left>18.27605cm</Left>
+            <Left>19.05011cm</Left>
             <Height>0cm</Height>
-            <Width>-18.06962cm</Width>
+            <Width>-18.84368cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -404,16 +404,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.07128cm</Width>
+                  <Width>0.9919cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.37177cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5916cm</Width>
+                  <Width>1.98848cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.71588cm</Width>
+                  <Width>0.26609cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.9899cm</Width>
@@ -422,16 +422,16 @@
                   <Width>0.37255cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.79083cm</Width>
+                  <Width>2.26708cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.35158cm</Width>
+                  <Width>0.11345cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.6972cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.37127cm</Width>
+                  <Width>0.4771cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -1445,10 +1445,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet2</DataSetName>
-            <Top>4.69709cm</Top>
-            <Left>0.23818cm</Left>
+            <Top>4.69874cm</Top>
+            <Left>0.23966cm</Left>
             <Height>2.27624cm</Height>
-            <Width>11.82386cm</Width>
+            <Width>12.03553cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1463,7 +1463,7 @@
                   <Width>1.9404cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.06793cm</Width>
+                  <Width>6.49126cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.94426cm</Width>
@@ -2091,7 +2091,7 @@
             <Top>7.0307cm</Top>
             <Left>0.23818cm</Left>
             <Height>0.95334cm</Height>
-            <Width>18.01387cm</Width>
+            <Width>18.4372cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -2101,9 +2101,9 @@
           </Tablix>
           <Line Name="Line3">
             <Top>6.98568cm</Top>
-            <Left>18.27605cm</Left>
+            <Left>19.01688cm</Left>
             <Height>0cm</Height>
-            <Width>-18.06962cm</Width>
+            <Width>-18.81045cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -2168,7 +2168,7 @@
                   <Width>1.07128cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.17517cm</Width>
+                  <Width>2.49267cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.2775cm</Width>
@@ -2709,7 +2709,7 @@
             <Top>8.08639cm</Top>
             <Left>0.23818cm</Left>
             <Height>0.49229cm</Height>
-            <Width>18.14616cm</Width>
+            <Width>18.46366cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -2719,9 +2719,9 @@
           </Tablix>
           <Line Name="Line4">
             <Top>8.03343cm</Top>
-            <Left>18.23375cm</Left>
+            <Left>18.94812cm</Left>
             <Height>0cm</Height>
-            <Width>-18.06962cm</Width>
+            <Width>-18.784cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -2859,9 +2859,9 @@
           </Tablix>
           <Line Name="Line5">
             <Top>9.5395cm</Top>
-            <Left>18.25205cm</Left>
+            <Left>18.93997cm</Left>
             <Height>0cm</Height>
-            <Width>-18.06962cm</Width>
+            <Width>-18.75754cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -2996,22 +2996,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.19813cm</Width>
+                  <Width>0.11876cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.01201cm</Width>
+                  <Width>1.06493cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.48184cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.20987cm</Width>
+                  <Width>1.07758cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.02129cm</Width>
+                  <Width>1.44462cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -3636,9 +3636,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet2</DataSetName>
             <Top>4.69874cm</Top>
-            <Left>12.13287cm</Left>
-            <Height>2.19874cm</Height>
-            <Width>6.42314cm</Width>
+            <Left>12.38687cm</Left>
+            <Height>2.19875cm</Height>
+            <Width>6.68772cm</Width>
             <ZIndex>15</ZIndex>
             <Style>
               <Border>
@@ -3646,18 +3646,54 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>ENDEREÇO ENTREGA</Value>
+                    <Style>
+                      <FontFamily>Arial Black</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>4.09698cm</Top>
+            <Left>12.85579cm</Left>
+            <Height>0.54708cm</Height>
+            <Width>5.84605cm</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Bottom</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.41832in</Height>
         <Style />
       </Body>
-      <Width>7.34718in</Width>
+      <Width>7.53468in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>1cm</LeftMargin>
-        <RightMargin>1cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0.5cm</LeftMargin>
+        <RightMargin>0.5cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -3666,200 +3702,241 @@
   <ReportParameters>
     <ReportParameter Name="RazaoSocial">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Documento">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="EmailEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="FoneFixoEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="FoneCelularEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Site">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="RuaEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="NumeroEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="BairroEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="CidadeEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="EstadoEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="CEPEmpresa">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Numero">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="ClienteString">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="TipoPagamentoString">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="TotalBrutoToString">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="TotalDescontos">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="TotalLiquidoToString">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Entrada">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="ObservacaoPedido">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="RuaCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="NumeroCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="BairroCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="CidadeCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="EstadoCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="CEPCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="FoneFixoCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="FoneCelularCliente">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="DataPedido">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="HoraPedido">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="DataImpressaoPedido">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="ClienteCodigo">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Imagem">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="RuaEntrega">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="NumeroEntrega">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="BairroEntrega">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="CidadeEntrega">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="EstadoEntrega">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="CEPEntrega">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Destinatario">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

@@ -26,8 +26,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btnPrint = new FontAwesome.Sharp.IconButton();
 			this.btnRefresh = new FontAwesome.Sharp.IconButton();
 			this.grdPedido = new System.Windows.Forms.DataGridView();
 			this.btnAdd = new FontAwesome.Sharp.IconButton();
@@ -52,6 +56,7 @@
 			this.txtNumero = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ObterEstadoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NovoEnderecoEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.EnderecoEntregaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.EnderecoEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +100,7 @@
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.btnPrint);
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.btnRefresh);
 			this.groupBox2.Controls.Add(this.grdPedido);
@@ -102,9 +108,28 @@
 			this.groupBox2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox2.Location = new System.Drawing.Point(14, 230);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(737, 296);
-			this.groupBox2.TabIndex = 10;
+			this.groupBox2.Size = new System.Drawing.Size(885, 296);
+			this.groupBox2.TabIndex = 90;
 			this.groupBox2.TabStop = false;
+			// 
+			// btnPrint
+			// 
+			this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnPrint.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+			this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+			this.btnPrint.IconColor = System.Drawing.Color.LightGray;
+			this.btnPrint.IconSize = 20;
+			this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnPrint.Location = new System.Drawing.Point(774, 14);
+			this.btnPrint.Name = "btnPrint";
+			this.btnPrint.Rotation = 0D;
+			this.btnPrint.Size = new System.Drawing.Size(35, 29);
+			this.btnPrint.TabIndex = 11;
+			this.btnPrint.UseVisualStyleBackColor = true;
+			this.btnPrint.Visible = false;
+			this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
 			// 
 			// btnRefresh
 			// 
@@ -115,11 +140,11 @@
 			this.btnRefresh.IconChar = FontAwesome.Sharp.IconChar.SyncAlt;
 			this.btnRefresh.IconColor = System.Drawing.Color.Blue;
 			this.btnRefresh.IconSize = 20;
-			this.btnRefresh.Location = new System.Drawing.Point(678, 14);
+			this.btnRefresh.Location = new System.Drawing.Point(826, 14);
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Rotation = 0D;
 			this.btnRefresh.Size = new System.Drawing.Size(35, 29);
-			this.btnRefresh.TabIndex = 8;
+			this.btnRefresh.TabIndex = 12;
 			this.btnRefresh.UseVisualStyleBackColor = true;
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
@@ -135,6 +160,7 @@
 			this.grdPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.grdPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.ObterEstadoPedido,
             this.NovoEnderecoEntrega,
             this.EnderecoEntregaId,
             this.EnderecoEntrega,
@@ -172,8 +198,8 @@
 			this.grdPedido.ShowCellToolTips = false;
 			this.grdPedido.ShowEditingIcon = false;
 			this.grdPedido.ShowRowErrors = false;
-			this.grdPedido.Size = new System.Drawing.Size(693, 225);
-			this.grdPedido.TabIndex = 5;
+			this.grdPedido.Size = new System.Drawing.Size(841, 225);
+			this.grdPedido.TabIndex = 100;
 			this.grdPedido.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPedido_CellDoubleClick);
 			// 
 			// btnAdd
@@ -189,7 +215,7 @@
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Rotation = 0D;
 			this.btnAdd.Size = new System.Drawing.Size(35, 29);
-			this.btnAdd.TabIndex = 7;
+			this.btnAdd.TabIndex = 10;
 			this.btnAdd.UseVisualStyleBackColor = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -217,8 +243,8 @@
 			this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(12, 22);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(737, 189);
-			this.groupBox1.TabIndex = 9;
+			this.groupBox1.Size = new System.Drawing.Size(887, 189);
+			this.groupBox1.TabIndex = 70;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Filtro";
 			// 
@@ -226,7 +252,7 @@
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(296, 105);
+			this.label11.Location = new System.Drawing.Point(349, 105);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(29, 18);
 			this.label11.TabIndex = 61;
@@ -244,18 +270,18 @@
 			// 
 			// txtHoraPedidoFim
 			// 
-			this.txtHoraPedidoFim.Location = new System.Drawing.Point(431, 103);
+			this.txtHoraPedidoFim.Location = new System.Drawing.Point(484, 103);
 			this.txtHoraPedidoFim.Mask = "00:00";
 			this.txtHoraPedidoFim.Name = "txtHoraPedidoFim";
 			this.txtHoraPedidoFim.Size = new System.Drawing.Size(47, 24);
-			this.txtHoraPedidoFim.TabIndex = 59;
+			this.txtHoraPedidoFim.TabIndex = 7;
 			this.txtHoraPedidoFim.ValidatingType = typeof(System.DateTime);
 			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(328, 82);
+			this.label7.Location = new System.Drawing.Point(381, 82);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(36, 18);
 			this.label7.TabIndex = 56;
@@ -263,18 +289,18 @@
 			// 
 			// txtDataPedidoFim
 			// 
-			this.txtDataPedidoFim.Location = new System.Drawing.Point(331, 103);
+			this.txtDataPedidoFim.Location = new System.Drawing.Point(384, 103);
 			this.txtDataPedidoFim.Mask = "00/00/0000";
 			this.txtDataPedidoFim.Name = "txtDataPedidoFim";
 			this.txtDataPedidoFim.Size = new System.Drawing.Size(94, 24);
-			this.txtDataPedidoFim.TabIndex = 58;
+			this.txtDataPedidoFim.TabIndex = 6;
 			this.txtDataPedidoFim.ValidatingType = typeof(System.DateTime);
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(427, 82);
+			this.label9.Location = new System.Drawing.Point(480, 82);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(38, 18);
 			this.label9.TabIndex = 57;
@@ -286,7 +312,7 @@
 			this.txtHoraPedidoInicio.Mask = "00:00";
 			this.txtHoraPedidoInicio.Name = "txtHoraPedidoInicio";
 			this.txtHoraPedidoInicio.Size = new System.Drawing.Size(47, 24);
-			this.txtHoraPedidoInicio.TabIndex = 55;
+			this.txtHoraPedidoInicio.TabIndex = 5;
 			this.txtHoraPedidoInicio.ValidatingType = typeof(System.DateTime);
 			// 
 			// label3
@@ -305,7 +331,7 @@
 			this.txtDataPedidoInicio.Mask = "00/00/0000";
 			this.txtDataPedidoInicio.Name = "txtDataPedidoInicio";
 			this.txtDataPedidoInicio.Size = new System.Drawing.Size(94, 24);
-			this.txtDataPedidoInicio.TabIndex = 54;
+			this.txtDataPedidoInicio.TabIndex = 4;
 			this.txtDataPedidoInicio.ValidatingType = typeof(System.DateTime);
 			// 
 			// ddlCliente
@@ -314,16 +340,16 @@
 			this.ddlCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.ddlCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.ddlCliente.FormattingEnabled = true;
-			this.ddlCliente.Location = new System.Drawing.Point(286, 31);
+			this.ddlCliente.Location = new System.Drawing.Point(339, 31);
 			this.ddlCliente.Name = "ddlCliente";
 			this.ddlCliente.Size = new System.Drawing.Size(216, 25);
-			this.ddlCliente.TabIndex = 53;
+			this.ddlCliente.TabIndex = 2;
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(194, 82);
+			this.label6.Location = new System.Drawing.Point(195, 84);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(38, 18);
 			this.label6.TabIndex = 50;
@@ -335,10 +361,10 @@
 			this.ddlTipoPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.ddlTipoPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.ddlTipoPagamento.FormattingEnabled = true;
-			this.ddlTipoPagamento.Location = new System.Drawing.Point(607, 102);
+			this.ddlTipoPagamento.Location = new System.Drawing.Point(702, 105);
 			this.ddlTipoPagamento.Name = "ddlTipoPagamento";
 			this.ddlTipoPagamento.Size = new System.Drawing.Size(109, 25);
-			this.ddlTipoPagamento.TabIndex = 52;
+			this.ddlTipoPagamento.TabIndex = 8;
 			// 
 			// ddlStatus
 			// 
@@ -347,16 +373,16 @@
 			this.ddlStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.ddlStatus.FormattingEnabled = true;
 			this.ddlStatus.ItemHeight = 17;
-			this.ddlStatus.Location = new System.Drawing.Point(607, 30);
+			this.ddlStatus.Location = new System.Drawing.Point(702, 33);
 			this.ddlStatus.Name = "ddlStatus";
 			this.ddlStatus.Size = new System.Drawing.Size(109, 25);
-			this.ddlStatus.TabIndex = 46;
+			this.ddlStatus.TabIndex = 3;
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(554, 33);
+			this.label8.Location = new System.Drawing.Point(649, 36);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(47, 18);
 			this.label8.TabIndex = 40;
@@ -366,7 +392,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(499, 104);
+			this.label4.Location = new System.Drawing.Point(594, 107);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(102, 18);
 			this.label4.TabIndex = 12;
@@ -385,7 +411,7 @@
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Rotation = 0D;
 			this.btnSearch.Size = new System.Drawing.Size(83, 29);
-			this.btnSearch.TabIndex = 4;
+			this.btnSearch.TabIndex = 9;
 			this.btnSearch.UseVisualStyleBackColor = true;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
@@ -393,7 +419,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(235, 33);
+			this.label2.Location = new System.Drawing.Point(288, 33);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(50, 18);
 			this.label2.TabIndex = 2;
@@ -425,6 +451,14 @@
 			this.Id.ReadOnly = true;
 			this.Id.Visible = false;
 			// 
+			// ObterEstadoPedido
+			// 
+			this.ObterEstadoPedido.DataPropertyName = "ObterEstadoPedido";
+			this.ObterEstadoPedido.HeaderText = "ObterEstadoPedido";
+			this.ObterEstadoPedido.Name = "ObterEstadoPedido";
+			this.ObterEstadoPedido.ReadOnly = true;
+			this.ObterEstadoPedido.Visible = false;
+			// 
 			// NovoEnderecoEntrega
 			// 
 			this.NovoEnderecoEntrega.DataPropertyName = "NovoEnderecoEntrega";
@@ -452,6 +486,7 @@
 			// DataPedido
 			// 
 			this.DataPedido.DataPropertyName = "DataPedido";
+			this.DataPedido.FillWeight = 120F;
 			this.DataPedido.HeaderText = "DataPedido";
 			this.DataPedido.Name = "DataPedido";
 			this.DataPedido.ReadOnly = true;
@@ -468,13 +503,15 @@
 			// Numero
 			// 
 			this.Numero.DataPropertyName = "Numero";
-			this.Numero.HeaderText = "Número";
+			this.Numero.FillWeight = 50F;
+			this.Numero.HeaderText = "Núm.";
 			this.Numero.Name = "Numero";
 			this.Numero.ReadOnly = true;
 			// 
 			// ClienteString
 			// 
 			this.ClienteString.DataPropertyName = "ClienteString";
+			this.ClienteString.FillWeight = 150F;
 			this.ClienteString.HeaderText = "Cliente";
 			this.ClienteString.Name = "ClienteString";
 			this.ClienteString.ReadOnly = true;
@@ -578,6 +615,7 @@
 			// DataToString
 			// 
 			this.DataToString.DataPropertyName = "DataToString";
+			this.DataToString.FillWeight = 120F;
 			this.DataToString.HeaderText = "Data";
 			this.DataToString.Name = "DataToString";
 			this.DataToString.ReadOnly = true;
@@ -585,6 +623,7 @@
 			// TipoPagamentoString
 			// 
 			this.TipoPagamentoString.DataPropertyName = "TipoPagamentoString";
+			this.TipoPagamentoString.FillWeight = 90F;
 			this.TipoPagamentoString.HeaderText = "Pagamento";
 			this.TipoPagamentoString.Name = "TipoPagamentoString";
 			this.TipoPagamentoString.ReadOnly = true;
@@ -592,6 +631,9 @@
 			// TotalBrutoToString
 			// 
 			this.TotalBrutoToString.DataPropertyName = "TotalBrutoToString";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.TotalBrutoToString.DefaultCellStyle = dataGridViewCellStyle1;
+			this.TotalBrutoToString.FillWeight = 80F;
 			this.TotalBrutoToString.HeaderText = "Bruto";
 			this.TotalBrutoToString.Name = "TotalBrutoToString";
 			this.TotalBrutoToString.ReadOnly = true;
@@ -599,6 +641,9 @@
 			// TotalDescontos
 			// 
 			this.TotalDescontos.DataPropertyName = "TotalDescontos";
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.TotalDescontos.DefaultCellStyle = dataGridViewCellStyle2;
+			this.TotalDescontos.FillWeight = 60F;
 			this.TotalDescontos.HeaderText = "Desconto";
 			this.TotalDescontos.Name = "TotalDescontos";
 			this.TotalDescontos.ReadOnly = true;
@@ -614,6 +659,9 @@
 			// TotalLiquidoToString
 			// 
 			this.TotalLiquidoToString.DataPropertyName = "TotalLiquidoToString";
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.TotalLiquidoToString.DefaultCellStyle = dataGridViewCellStyle3;
+			this.TotalLiquidoToString.FillWeight = 80F;
 			this.TotalLiquidoToString.HeaderText = "Líquido";
 			this.TotalLiquidoToString.Name = "TotalLiquidoToString";
 			this.TotalLiquidoToString.ReadOnly = true;
@@ -621,6 +669,7 @@
 			// _StatusString
 			// 
 			this._StatusString.DataPropertyName = "_StatusString";
+			this._StatusString.FillWeight = 60F;
 			this._StatusString.HeaderText = "Status";
 			this._StatusString.Name = "_StatusString";
 			this._StatusString.ReadOnly = true;
@@ -630,7 +679,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(188)))), ((int)(((byte)(246)))));
-			this.ClientSize = new System.Drawing.Size(763, 619);
+			this.ClientSize = new System.Drawing.Size(916, 560);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "FormListPedido";
@@ -671,7 +720,9 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label10;
+		private FontAwesome.Sharp.IconButton btnPrint;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ObterEstadoPedido;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NovoEnderecoEntrega;
 		private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoEntregaId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoEntrega;
